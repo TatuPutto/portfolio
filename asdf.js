@@ -1,1 +1,1 @@
-(function () => document.write('213'))();
+(() => document.write('213'))();
