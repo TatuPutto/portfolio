@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="http://localhost/portfolio/tatuputto.github.io/styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css"></link>
 </head>
 <body>
-    <div class="header"></div>
+    <div class="overlay">
+        <div class="image-carousel" onclick="stopPropagation(event)">
+            <img class="project-image-large" src="" />
+        </div>
+    </div>
+
+
+    <div class="header">
+        <div class="row">
+            <div class="col-lg-5 nav-menu">
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#projects">About</a></li>
+                    <li><a href="#projects">Programming Skills</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid col-lg-10 col-md-8 col-sm-10 col-xs-10">
         <div class="mx-auto">
             <section>
@@ -22,9 +40,49 @@
                 </div>
 
                 <div class="project">
+                    <h3 class="text-center">Cloud-Based Web Application for Code Snippet Management (React, Redux, Node)</h3>
                     <div class="project-thumbnails">
-                        <h3 class="text-center">Cloud-Based Web Application for Code Snippet Management (React, Redux, Node)</h3>
-                        <div class="row project-row">
+
+                        <div class="row thumbnail-row">
+                            <div class="col-lg-3 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front.png')">
+                                <img alt="Thesis project thumbnail listing view" src="./images/gist-management-app-front.png" />
+                            </div>
+                            <div class="col-lg-3 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front-filtering.png')">
+                                <img alt="Thesis project thumbnail listing view filtering gists" src="./images/gist-management-app-front-filtering.png" />
+                            </div>
+                            <div class="col-lg-3 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-creategist.png')">
+                                <img alt="Thesis project thumbnail gist creation view" src="./images/gist-management-app-creategist.png" />
+                            </div>
+                            <div class="col-lg-3 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front.png')">
+                                <img alt="Thesis project thumbnail single gist view" src="./images/gist-management-app-front.png" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-description">
+                        <p>This project was the practical part of my thesis on my bachelor's degree.
+
+                            The aim of this thesis was to implement a cloud-based web application for code snippet management. Instead of using a traditional database, data persistence is outsourced to GitHub's Gist service. The subject for this thesis arose from the author's desire to develop an application which utilizes an alternative way of handling data persistence. Author also wanted to become acquainted with modern web development techniques.</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
+                            <button class="btn btn-info">
+                                <i class="fa fa-github"></i> GitHub Repository
+                            </button>
+                        </a>
+                        <a href="https://floating-basin-70375.herokuapp.com">
+                            <button class="btn btn-success">
+                                Try it out in Heroku
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="text-center">Cloud-Based Web Application for Code Snippet Management (React, Redux, Node)</h3>
+                    <div class="project-thumbnails">
+
+                        <div class="row thumbnail-row">
                             <div class="col-lg-3 thumbnail-container" onclick="showLargePicture()">
                                 <img alt="Thesis project thumbnail listing view" src="./images/gist-management-app-front.png" />
                             </div>
@@ -50,33 +108,19 @@
                             Fusce iaculis condimentum ultrices. Pellentesque pellentesque eros id orci vehicula, volutpat tempor nulla dictum.
                              Vestibulum eget lobortis magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                     </div>
-                </div>
-
-
-
-<!--
-                    <h3 class="text-center">Basic E-Commerce Web application (PHP, Savant, PDO)</h3>
-                    <div class="row project-row">
-                        <div class="col-lg-3 thumbnail-container">
-                            <img alt="Thesis project thumbnail listing view" src="./images/gist-management-app-front.png" />
-                        </div>
-                        <div class="col-lg-3 thumbnail-container">
-                            <img alt="Thesis project thumbnail listing view filtering gists" src="./images/gist-management-app-front-filtering.png" />
-                        </div>
-                        <div class="col-lg-3 thumbnail-container">
-                            <img alt="Thesis project thumbnail gist creation view" src="./images/gist-management-app-creategist.png" />
-                        </div>
-                        <div class="col-lg-3 thumbnail-container">
-                            <img alt="Thesis project thumbnail single gist view" src="./images/gist-management-app-front.png" />
-                        </div>
+                    <div class="project-links">
+                        <button class="btn btn-info">
+                            <i class="fa fa-github"></i> GitHub Repository
+                        </button>
+                        <button class="btn btn-success">
+                            Try it out in Heroku
+                        </button>
                     </div>
-                <div>
-
--->
+                </div>
             </section>
 
 
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="http://localhost/portfolio/tatuputto.github.io/scripts.js"></script>
+    <script src="/tatuputto.github.io/scripts.js?adfs=123"></script>
 </body>
