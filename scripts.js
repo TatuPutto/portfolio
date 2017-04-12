@@ -1,22 +1,73 @@
-$(document).ready(function setImageAspectRatio() {
-    var thumbnails = $('img');
-    var height = thumbnails[1].offsetWidth / 4 * 3;
-    //console.log(document.getElementsByClassName('thumbnail-container')[0].offsetWidth);
-    for(var i = 1; i < thumbnails.length; i++) {
-        thumbnails[i].style.height = height + 'px';
-    }
+var gistManagementAppPics = [
+    './images/gist-management-app-front.png',
+    './images/gist-management-app-front-filtering.png',
+    './images/gist-management-app-creategist.png',
+    './images/gist-management-app-front.png'
+];
+
+$(document).ready(function () {
+    maintainImageAspectRatio();
 });
 
+$(window).resize(function () {
+    maintainImageAspectRatio();
+});
+
+function maintainImageAspectRatio() {
+    var thumbnails = $('img');
+    var height = thumbnails[2].offsetWidth / 4 * 3;
+
+    for(var i = 2; i < thumbnails.length; i++) {
+        thumbnails[i].style.height = height + 'px';
+    }
+}
+
+var currentPic = 0;
+function rotateImageCarousel(imageNum, method) {
+    currentPic = calcNextPic(currentPic, imageNum, method);
+
+    $('#gist-management-app-pic').animate({opacity: 0}, 200, function () {
+        $('#gist-management-app-pic').attr('src', gistManagementAppPics[currentPic]);
+        $('#gist-management-app-pic').animate({opacity: 1}, 200);
+
+        $('.carousel-img-indicator').attr('class', 'fa fa-circle-thin carousel-img-indicator');
+        var activeIndicator = $('.carousel-img-indicator')[currentPic];
+        $(activeIndicator).attr('class', 'fa fa-circle carousel-img-indicator');
+    });
+
+}
+
+function calcNextPic(currentPic, imageNum, method) {
+
+    if(!imageNum && method == 'increment') {
+        if(currentPic < gistManagementAppPics.length - 1) {
+            currentPic++;
+        } else {
+            currentPic = 0;
+        }
+    } else if(!imageNum && method == 'decrement') {
+        if(currentPic > 0) {
+            currentPic--;
+        } else {
+            currentPic = gistManagementAppPics.length - 1;
+        }
+    } else {
+        currentPic = imageNum;
+    }
+
+    return currentPic;
+}
+
+
 function showLargePicture(imageSrc) {
-    //$(document.body).append('<div class="overlay"><div class="image-carousel" onclick="stop(stopPropagation)"><img class="project-image-large" src="./images/gist-management-app-front.png"/></div></div>');
     $('.overlay').css('display', 'inline');
     $('.image-carousel img').attr('src', imageSrc);
-    $('.image-carousel').animate({opacity: 1}, 300);
+    $('.image-carousel').animate({opacity: 1}, 200);
 
     setTimeout(function () {
         $('.overlay').on('click', function () {
             $('.overlay').off('click');
-            $('.image-carousel').animate({opacity: 0}, 300, function () {
+            $('.image-carousel').animate({opacity: 0}, 200, function () {
                 $('.overlay').css('display', 'none');
             });
         });
@@ -25,4 +76,9 @@ function showLargePicture(imageSrc) {
 
 function stopPropagation(event) {
     event.stopPropagation();
+}
+
+function scrollToSection(section) {
+    var sectionSelector = '#' + section;
+    $('body').animate({scrollTop: $(sectionSelector).offset().top - 80}, '500', 'swing');
 }

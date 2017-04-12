@@ -9,6 +9,12 @@ body {
     margin-top: 50px;
 }
 
+section {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid white;
+}
+
 h2, h3 {
     margin: 0;
 }
@@ -50,21 +56,58 @@ a:hover {
 .nav-menu ul {
     list-style-type: none;
     padding: 15px;
-    /*margin-top: 20px;*/
+    margin-right: 10px;
 }
 
 .nav-menu li {
     display: inline;
+    font-size: 16px;
+    padding: 4px 15px;
+    cursor: pointer;
+    border-right: 1px solid #fff;
 }
 
+.nav-menu li:first-child {
+    padding-left: 0;
+}
+
+.nav-menu li:last-child {
+    border: none;
+}
+
+.nav-menu li:hover {
+    text-decoration: underline;
+}
+
+
+.to-github-account {
+    float: right;
+    background: transparent;
+    position: relative;
+    top: 7px;
+    right: 8px;
+}
+
+.to-github-account:hover {
+    background-color: #5bc0de;
+}
+
+
 .section-head {
-    margin: 40px 0 0 0;
+    /*margin: 40px 0 0 0;*/
     padding: 10px;
     /*background: #888888;*/
 }
 
-.section-head-2 {
-    margin-top: 100%;
+.about {
+    margin-top: 40px;
+}
+
+.about-text {
+    margin-top: 20px;
+    line-height: 130%;
+    font-size: 16px;
+    text-align: justify;
 }
 
 
@@ -139,4 +182,18 @@ a:hover {
     height: 40px;
     border-bottom: 1px solid #a7a7a7;
     display: block;
+}
+
+
+.skills {
+    text-align: center;
+}
+
+.skills-display {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.icon-wordmark {
+    margin-top: 10px;
 }
