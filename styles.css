@@ -142,6 +142,22 @@ p {
     /*border-bottom: 1px solid #a7a7a7;*/
 }
 
+.thumbnail-container {
+    text-align: center;
+}
+
+.carousel-controls {
+    margin-top: 10px;
+}
+
+.carousel-indicators {
+    position: relative;
+    display: inline;
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+}
+
 .project-description {
     text-align: justify;
     padding-left: 15px;
@@ -156,6 +172,7 @@ p {
 
 .project-technologies {
     text-align: center;
+    font-size: 40px;
 }
 
 .project-technologies i {
@@ -238,7 +255,9 @@ p {
 .skills-display {
     margin-top: 30px;
     margin-bottom: 40px;
+    font-size: 100px;
 }
+
 
 .icon-wordmark {
     margin-top: 10px;

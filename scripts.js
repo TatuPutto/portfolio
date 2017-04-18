@@ -87,3 +87,14 @@ function scrollToSection(section) {
     var sectionSelector = '#' + section;
     $('body').animate({scrollTop: $(sectionSelector).offset().top - 80}, '500', 'swing');
 }
+
+
+
+
+function spin() {
+    console.log('täällä');
+    var lastActive = $('.carousel-item')[1];
+    var activeItem = $('.carousel-item')[1];
+    $(lastActive).removeClass('active');
+    $(activeItem).addClass('active');
+}
