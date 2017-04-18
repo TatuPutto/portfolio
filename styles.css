@@ -7,12 +7,17 @@ body {
     background: none;
     color: #fbfbfb;
     margin-top: 50px;
+    min-width: 576px;
 }
 
 section {
     margin-top: 40px;
     padding-bottom: 40px;
     border-bottom: 2px solid white;
+}
+
+section:last-child {
+    border-bottom: none;
 }
 
 h2, h3 {
@@ -25,19 +30,24 @@ button {
 }
 
 a {
-    font-size: 16px;
+    /*font-size: 16px;
     color: white;
+    text-decoration: none;*/
 }
 
 a:hover {
-    color: white;
-    text-decoration: underline;
+    /*color: white;*/
+    /*text-decoration: underline;*/
 }
 
+p {
+    font-size: 16px;
+}
 
 .container-fluid {
     float: none;
     margin-top: 50px;
+    max-width: 1400px;
 }
 
 .row {
@@ -53,10 +63,18 @@ a:hover {
     z-index: 1;
 }
 
+.header-content {
+    max-width: 1600px;
+}
+
+.nav-menu {
+    margin-top: 14px;
+    display: inline;
+}
+
 .nav-menu ul {
     list-style-type: none;
-    padding: 15px;
-    margin-right: 10px;
+    -webkit-padding-start: 0;
 }
 
 .nav-menu li {
@@ -79,16 +97,17 @@ a:hover {
     text-decoration: underline;
 }
 
-
 .to-github-account {
-    float: right;
-    background: transparent;
-    position: relative;
-    top: 7px;
-    right: 8px;
+    margin-top: 7px;
 }
 
-.to-github-account:hover {
+.to-github-account button {
+    float: right;
+    background: transparent;
+    margin-right: 0;
+}
+
+.to-github-account button:hover {
     background-color: #5bc0de;
 }
 
@@ -115,6 +134,10 @@ a:hover {
     padding-top: 40px;
 }
 
+.project-name {
+    margin-bottom: 20px;
+}
+
 .thumbnail-row {
     /*border-bottom: 1px solid #a7a7a7;*/
 }
@@ -131,13 +154,22 @@ a:hover {
     padding-right: 15px;
 }
 
-.project-thumbnails {
-    /*height: 400px;*/
+.project-technologies {
+    text-align: center;
+}
 
+.project-technologies i {
+    margin-right: 15px;
+}
+
+.project-technologies i:last-child {
+    margin-right: 0;
+}
+
+.project-thumbnails {
     padding-top: 20px;
     padding-bottom: 30px;
     width: 100%;
-    /*background: #676767;*/
 }
 
 .project-thumbnails img {
@@ -166,19 +198,33 @@ a:hover {
 }
 
 .image-carousel {
-    position: fixed;
+    /*position: fixed;
     top: 100px;
     left: 100px;
     right: 100px;
     bottom: 100px;
     background: whitesmoke;
-    opacity: 0;
+    opacity: 0;*/
 }
+
+.image-carousel:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+
+.project-image-large {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
 
 .project:after {
     content: "";
-    width: 94%;
-    margin-left: 3%;
+    width: 98%;
+    margin-left: 1%;
     height: 40px;
     border-bottom: 1px solid #a7a7a7;
     display: block;

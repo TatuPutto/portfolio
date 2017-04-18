@@ -4,53 +4,59 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css?cache-bust1=123456"></link>
+    <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css?123=ghfadsdrweefasdfrdasdffsjgh"></link>
 </head>
 <body>
     <div class="overlay">
-        <div class="image-carousel" onclick="stopPropagation(event)">
+        <div class="col-lg-10 image-carousel" onclick="stopPropagation(event)">
             <img class="project-image-large" src="" />
         </div>
     </div>
 
-
-    <div class="header">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-1 nav-menu">
+    <div class="col-xs-12 col-sm-10 header">
+        <div class="row header-content">
+            <div class="col-xs-7 col-sm-offset-1 nav-menu">
                 <ul>
                     <li onclick="scrollToSection('about')">About Me</li>
                     <li onclick="scrollToSection('skills')">Skills</a></li>
                     <li onclick="scrollToSection('projects')">Projects</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-lg-offset-1">
+            <div class="col-sm-3 col-xs-5 to-github-account">
                 <a href="https://github.com/TatuPutto">
-                    <button class="btn btn-info to-github-account">
+                    <button class="btn btn-info">
                         <i class="fa fa-github"></i> My GitHub Profile
                     </button>
                 </a>
             </div>
         </div>
     </div>
-    <div class="container-fluid col-xs-10">
+
+
+    <div class="container-fluid col-xs-12 col-sm-10">
         <div class="mx-auto">
             <section id="about">
                 <div class="section-head">
                     <h2 class="text-center">About Me</h2>
                 </div>
                 <div class="row about">
-                    <div class="col-lg-4 profile-image">
+                    <div class="col-lg-4 col-sm-8 col-xs-10 col-lg-offset-0 col-sm-offset-2 col-xs-offset-1 profile-image">
                         <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="height: auto; width: 100%; display: inline-block;" />
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 col-xs-12">
                         <h3 class="text-center">Tatu Putto, Full-Stack Web Developer (or atleast aspiring to be one some day)</h3>
                         <p class="about-text">
                             Hi there! My name is Tatu Putto, I am a 24 years old web developer from Joensuu, Finland.
                             I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
-                            I do all sorts of web development projects with a number of different programming languages and technologies. Mainly I use JavaScript, HTML, CSS, Java, PHP, MongoDB and MySQL in my projects.
+                            I do all sorts of web development projects with a number of different programming languages and technologies. I mainly use JavaScript, HTML, CSS, Node, Java, MongoDB and MySQL in my projects.
                             I also have some exprerience in UI and UX design, but I much rather focus on the implementation than design.
                             </br></br>
+                            My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
+                            While both of those projects included alot of back-end work aswell
+                            My skillset leans towards front-end development
                         </p>
+                        <hr>
+                        tatuputto@gmail.com  |  <a href="">GitHub</a>  |  <a href="">LinkedIn</a>
                     </div>
                 </div>
 
@@ -65,28 +71,28 @@
                 <div class="skills" style="margin-top:40px;">
                     <h3 class="text-center" style="text-decoration:underline;">Front-end</h3>
                     <div class="row skills-display">
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-javascript-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">JavaScript</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-react-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">React</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-jquery-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">jQuery</p>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-html5-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">HTML5</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-css3-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">CSS3</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-bootstrap-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">Bootstrap</p>
                         </div>
@@ -95,37 +101,38 @@
 
                     <h3 class="text-center" style="text-decoration:underline;">Back-end</h3>
                     <div class="row skills-display">
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-java-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">Java</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-nodejs-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">Node.js</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-php-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">PHP</p>
                         </div>
 
-
-                        <div class="col-md-2">
-                            <i class="devicon-mysql-plain colored" style="font-size: 100px;"></i>
-                            <p class="icon-wordmark">MySQL</p>
-                        </div>
-                        <div class="col-md-2">
-                            <i class="devicon-mongodb-plain colored" style="font-size: 100px;"></i>
-                            <p class="icon-wordmark">MongoDB</p>
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col-xs-4 col-md-2">
                             <i class="devicon-wordpress-plain colored" style="font-size: 100px;"></i>
                             <p class="icon-wordmark">WordPress</p>
                         </div>
-
-
+                        <div class="col-xs-4 col-md-2">
+                            <i class="devicon-mysql-plain colored" style="font-size: 100px;"></i>
+                            <p class="icon-wordmark">MySQL</p>
+                        </div>
+                        <div class="col-xs-4 col-md-2">
+                            <i class="devicon-mongodb-plain colored" style="font-size: 100px;"></i>
+                            <p class="icon-wordmark">MongoDB</p>
+                        </div>
                     </div>
                 </div>
             </section>
+
+
+
+
 
             <section id="projects">
                 <div class="section-head">
@@ -133,13 +140,13 @@
                 </div>
 
                 <div class="project">
-                    <h3 class="text-center">Cloud-Based Web Application for Code Snippet Management</h3>
                     <div class="row" style="margin-top:20px;">
                         <div class="col-md-6 project-description">
+                            <h3 class="text-center project-name">Cloud-Based Web Application for Code Snippet Management</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat vitae turpis at tristique. Vestibulum facilisis dictum dui eget viverra. Nam ut semper massa. Ut eu nibh felis. Quisque interdum consequat elit, scelerisque sollicitudin lacus vestibulum quis. Pellentesque at dictum purus, non pretium neque. Aliquam id neque id arcu mattis dignissim quis nec diam. Praesent sapien leo, scelerisque vel hendrerit eu, sodales nec justo. Aliquam et elit non magna faucibus congue a eget turpis. Vivamus a iaculis nisi. Cras hendrerit orci eros, quis feugiat est faucibus eget. Morbi ut lorem eu urna tincidunt egestas non quis felis.</p>
                         </div>
                     <!--<div class="project-thumbnails col-md-6 col-sm-6">-->
-                        <div class="thumbnail-container col-md-6 col-sm-6">
+                        <div class="thumbnail-container col-md-6">
                             <img  onclick="showLargePicture(this.src)" id="gist-management-app-pic" style="width: 100%" alt="Thesis project thumbnail listing view" src="./images/gist-management-app-front.png" />
                             <div style="width: 100%; text-align:center; margin-top:10px;" class="image-carousel-indicator">
                                 <i class="fa fa-chevron-left" onclick="rotateImageCarousel(null, 'decrement')"></i>
@@ -152,6 +159,7 @@
                                 &nbsp;<i class="fa fa-chevron-right" onclick="rotateImageCarousel(null, 'increment')"></i>
                             </div>
                         </div>
+
 
                         <!--<div class="row thumbnail-row">
                             <div class="col-md-3 col-sm-6 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front.png')">
@@ -172,18 +180,98 @@
 
                     </div>
 
+                    <div class="row" style="margin-top:30px;">
+                        <div class="col-md-6 project-links">
+                            <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
+                                <button class="btn btn-info">
+                                    <i class="fa fa-github"></i> GitHub Repository
+                                </button>
+                            </a>
+                            <a href="https://floating-basin-70375.herokuapp.com">
+                                <button class="btn btn-success">
+                                    Try it out in Heroku
+                                </button>
+                            </a>
+                        </div>
 
-                    <div class="project-links">
-                        <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
-                            <button class="btn btn-info">
-                                <i class="fa fa-github"></i> GitHub Repository
-                            </button>
-                        </a>
-                        <a href="https://floating-basin-70375.herokuapp.com">
-                            <button class="btn btn-success">
-                                Try it out in Heroku
-                            </button>
-                        </a>
+                        <div class="col-md-6 project-technologies">
+                            <i class="devicon-javascript-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-react-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-html5-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-css3-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-less-plain-wordmark colored" style="font-size: 40px;"></i>
+                            <i class="devicon-nodejs-plain colored" style="font-size: 40px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project">
+                    <h3 class="text-center project-name">Small React Applications</h3>
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col-md-6 project-description">
+                            <h3 class="text-center project-name">Conway's Game of Life</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat vitae turpis at tristique. Vestibulum facilisis dictum dui eget viverra. Nam ut semper massa. Ut eu nibh felis. Quisque interdum consequat elit, scelerisque sollicitudin lacus vestibulum quis. Pellentesque at dictum purus, non pretium neque. Aliquam id neque id arcu mattis dignissim quis nec diam. Praesent sapien leo, scelerisque vel hendrerit eu, sodales nec justo. Aliquam et elit non magna faucibus congue a eget turpis. Vivamus a iaculis nisi. Cras hendrerit orci eros, quis feugiat est faucibus eget. Morbi ut lorem eu urna tincidunt egestas non quis felis.</p>
+                        </div>
+                    <!--<div class="project-thumbnails col-md-6 col-sm-6">-->
+                        <div class="thumbnail-container col-md-6">
+                            <img
+                                onclick="showLargePicture(this.src)"
+                                id="gist-management-app-pic"
+                                style="width: 100%"
+                                alt="Thesis project thumbnail listing view"
+                                src="./images/game-of-life.png"
+                            />
+                            <div style="width: 100%; text-align:center; margin-top:10px;" class="image-carousel-indicator">
+                                <i class="fa fa-chevron-left" onclick="rotateImageCarousel(null, 'decrement')"></i>
+                                &nbsp;<i class="fa fa-circle carousel-img-indicator" onclick="rotateImageCarousel(0)"></i>
+                                <i class="fa fa-circle-thin carousel-img-indicator" onclick="rotateImageCarousel(1)"></i>
+                                <i class="fa fa-circle-thin carousel-img-indicator" onclick="rotateImageCarousel(2)"></i>
+                                <i class="fa fa-circle-thin carousel-img-indicator" onclick="rotateImageCarousel(3)"></i>
+                                &nbsp;<i class="fa fa-chevron-right" onclick="rotateImageCarousel(null, 'increment')"></i>
+                            </div>
+                        </div>
+
+
+                        <!--<div class="row thumbnail-row">
+                            <div class="col-md-3 col-sm-6 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front.png')">
+                                <img alt="Thesis project thumbnail listing view" src="./images/gist-management-app-front.png" />
+                            </div>
+                            <div class="col-md-3 col-sm-6 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front-filtering.png')">
+                                <img alt="Thesis project thumbnail listing view filtering gists" src="./images/gist-management-app-front-filtering.png" />
+                            </div>
+                            <div class="col-md-3 col-sm-6 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-creategist.png')">
+                                <img alt="Thesis project thumbnail gist creation view" src="./images/gist-management-app-creategist.png" />
+                            </div>
+                            <div class="col-md-3 col-sm-6 thumbnail-container" onclick="showLargePicture('./images/gist-management-app-front.png')">
+                                <img alt="Thesis project thumbnail single gist view" src="./images/gist-management-app-front.png" />
+                            </div>
+                        </div>-->
+                    <!--</div>-->
+
+
+                    </div>
+
+                    <div class="row" style="margin-top:30px;">
+                        <div class="col-md-6 project-links">
+                            <a href="https://github.com/TatuPutto/conway-game-of-life">
+                                <button class="btn btn-info">
+                                    <i class="fa fa-github"></i> GitHub Repository
+                                </button>
+                            </a>
+                            <a href="http://codepen.io/TatuPutto/full/NjWEOM/">
+                                <button class="btn btn-success">
+                                    Try it out in CodePen
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6 project-technologies">
+                            <i class="devicon-javascript-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-react-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-html5-plain colored" style="font-size: 40px;"></i>
+                            <i class="devicon-css3-plain colored" style="font-size: 40px;"></i>
+                        </div>
                     </div>
                 </div>
 <!--
@@ -258,5 +346,5 @@
 
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/tatuputto.github.io/scripts.js?cache-buster=213123"></script>
+    <script src="/tatuputto.github.io/scripts.js?cache-fadsbuster=afsdf"></script>
 </body>

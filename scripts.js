@@ -2,7 +2,7 @@ var gistManagementAppPics = [
     './images/gist-management-app-front.png',
     './images/gist-management-app-front-filtering.png',
     './images/gist-management-app-creategist.png',
-    './images/gist-management-app-front.png'
+    './images/gist-management-app-creategist-small.png'
 ];
 
 $(document).ready(function () {
@@ -13,9 +13,10 @@ $(window).resize(function () {
     maintainImageAspectRatio();
 });
 
+
 function maintainImageAspectRatio() {
     var thumbnails = $('img');
-    var height = thumbnails[2].offsetWidth / 4 * 3;
+    var height = thumbnails[2].offsetWidth / 16 * 10;
 
     for(var i = 2; i < thumbnails.length; i++) {
         thumbnails[i].style.height = height + 'px';
@@ -38,7 +39,6 @@ function rotateImageCarousel(imageNum, method) {
 }
 
 function calcNextPic(currentPic, imageNum, method) {
-
     if(!imageNum && method == 'increment') {
         if(currentPic < gistManagementAppPics.length - 1) {
             currentPic++;
@@ -60,6 +60,11 @@ function calcNextPic(currentPic, imageNum, method) {
 
 
 function showLargePicture(imageSrc) {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if(viewportWidth < 992) {
+        return;
+    }
+
     $('.overlay').css('display', 'inline');
     $('.image-carousel img').attr('src', imageSrc);
     $('.image-carousel').animate({opacity: 1}, 200);
