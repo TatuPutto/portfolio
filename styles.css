@@ -156,6 +156,7 @@ p {
     bottom: 0;
     left: 0;
     margin-left: 0;
+    z-index: 0;
 }
 
 .project-description {
