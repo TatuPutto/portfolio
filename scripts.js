@@ -6,12 +6,50 @@ var gistManagementAppPics = [
 ];
 
 
-var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
 
 $(document).ready(function () {
+    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     $('#projects').css('height', viewportHeight - 50);
     console.log(viewportHeight - 50);
+
+
+    $('#gist-management-app-pic-carousel').css('height', viewportHeight - 160);
+
+
+    if(viewportWidth < 992) {
+        return;
+    }
+
+    var naturalWidth = element.naturalWidth;
+    var naturalHeight = element.naturalHeight;
+    var aspectRatio = naturalWidth / naturalHeight;
+
+
+    var newWidth;
+    var newHeight = viewportHeight - 200;
+
+
+    newWidth = (naturalWidth / naturalHeight) * newHeight;
+
+
+    if(newWidth > (viewportWidth - 300)) {
+        var exceedingWidth = newWidth - (viewportWidth - 300);
+        newHeight -= (exceedingWidth / aspectRatio);
+        newWidth = (naturalWidth / naturalHeight) * newHeight;
+    }
+    console.log(newWidth);
+
+    var marginTop = (viewportHeight - newHeight) / 2;
+    var marginLeft = (viewportWidth - newWidth) / 2;
+
+
+    $('#gist-management-app-pic-carousel img').css('width', newWidth);
+    $('#gist-management-app-pic-carousel img').css('height', newHeight);
+    $('#gist-management-app-pic-carousel img').css('margin-top', marginTop);
+    $('#gist-management-app-pic-carousel img').css('margin-left', marginLeft);
+
 });
 
 
@@ -155,7 +193,7 @@ function stopPropagation(event) {
 
 function scrollToSection(section) {
     var sectionSelector = '#' + section;
-    $('body').animate({scrollTop: $(sectionSelector).offset().top - 80}, '500', 'swing');
+    $('body').animate({scrollTop: $(sectionSelector).offset().top - 50}, '500', 'swing');
 }
 
 
