@@ -24,6 +24,10 @@ h2, h3 {
     margin: 0;
 }
 
+hr {
+    margin: 0;
+}
+
 button {
     font-size: 16px !important;
     margin-right: 6px;
@@ -47,7 +51,7 @@ p {
 .container-fluid {
     float: none;
     margin-top: 50px;
-    max-width: 1400px;
+    /*max-width: 1400px;*/
 }
 
 .row {
@@ -129,9 +133,13 @@ p {
     text-align: justify;
 }
 
+#projects {
+    overflow-y: hidden;
+}
+
 
 .project {
-    padding-top: 40px;
+    /*padding-top: 40px;*/
 }
 
 .project-name {
@@ -164,6 +172,10 @@ p {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 20px;
+}
+
+.project-description i {
+    font-size: 40px;
 }
 
 .project-links {
@@ -215,6 +227,7 @@ p {
     display: none;
 }
 
+
 .image-carousel {
     /*position: fixed;
     top: 100px;
@@ -227,7 +240,6 @@ p {
 
 .image-carousel:after {
   padding-top: 56.25%;
-  /* 16:9 ratio */
   display: block;
   content: '';
 }
