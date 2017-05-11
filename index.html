@@ -40,10 +40,12 @@
     <div class="container-fluid col-xs-12 col-sm-12">
         <div class="mx-auto">
             <section id="about">
+
                 <div class="section-head">
                     <h2 class="text-center">About Me</h2>
                 </div>
                 <div class="row about">
+                    <div class="about-wrapper col-xs-10 col-xs-offset-1">
                     <div class="col-lg-4 col-sm-8 col-xs-10 col-lg-offset-0 col-sm-offset-2 col-xs-offset-1 profile-image">
                         <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="height: auto; width: 100%; display: inline-block;" />
                     </div>
@@ -64,7 +66,7 @@
                         tatuputto@gmail.com  |  <a href="">GitHub</a>  |  <a href="">LinkedIn</a>
                     </div>
                 </div>
-
+                </div>
             </section>
 
 
@@ -136,26 +138,25 @@
             </section>
 
 
-
             <section id="projects">
                 <!--<div class="section-head">
                     <h2 class="text-center">Projects (open source)</h2>
                 </div>-->
 
-                <div class="project">
-                    <div class="row">
-
+                <div id="project-1" style="height:100%;">
+                    <div class="row" style="height:100%;">
                         <div class="thumbnail-container col-md-9">
                             <div id="gist-management-app-pic-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-listing-new.png" alt="First slide" onclick="showLargePicture(this)">
+                                        <img class="d-block img-fluid" src="./images/gist-management-app-with-tabs.png" alt="First slide" onclick="showLargePicture(this)">
                                     </div>
                                     <div class="item">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-test3.png" alt="Second slide" onclick="showLargePicture(this)">
+                                        <img class="d-block img-fluid" src="./images/fooddiary-front_roboto.png" alt="Second slide" onclick="showLargePicture(this)">
+                                        <!--<img class="d-block img-fluid" src="./images/gist-management-app-with-tabs-single.png" alt="Second slide" onclick="showLargePicture(this)">-->
                                     </div>
                                     <div class="item">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-test4.png" alt="Third slide" onclick="showLargePicture(this)">
+                                        <img class="d-block img-fluid" src="./images/gist-management-app-with-tabs-edit.png" alt="Third slide" onclick="showLargePicture(this)">
                                     </div>
                                     <div class="item">
                                         <img class="d-block img-fluid" src="./images/gist-management-app-creategist-new.png" alt="Third slide" onclick="showLargePicture(this)">
@@ -178,8 +179,22 @@
                         </div>
 
 
-                        <div class="col-md-3 project-info">
-                            <h3 class="text-center project-name">Code Snippet Management App</h3>
+                        <div class="project-info col-md-3">
+                            <div class="project-navigation row">
+                                <div class="col-md-6" style="padding: 0 10px 0 0;">
+                                    <button class="btn btn-default pull-left" onclick="previousProject()">
+                                        <i class="fa fa-caret-left"></i> Previous project
+                                    </button>
+                                    </div>
+                                <div class="col-md-6" style="padding: 0 0 0 10px;">
+                                <button class="btn btn-default pull-right" onclick="nextProject()">
+                                    Next project <i class="fa fa-caret-right"></i>
+                                </button>
+                                </div>
+                            </div>
+
+
+                            <h3 class="text-center">Code Snippet Management App</h3>
 
                             <div class="project-description">
                                 <h4 class="text-center">Description</h4>
@@ -209,16 +224,107 @@
                             </a>
                             <a href="https://floating-basin-70375.herokuapp.com">
                                 <button class="btn btn-success">
-                                    Try it out in Heroku
+                                    Heroku
                                 </button>
                             </a>
                         </div>
                     </div>
-
-
                 </div>
-                </section>
-    </div>
+            </div>
+
+            <div id="project-2" style="height: 100%; position: absolute; left: -9999px; top: -9999px;">
+                <div class="row" style="height: 100%;">
+
+                    <div class="thumbnail-container col-md-9"><!--
+                        <div id="game-of-life-pic-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img class="d-block img-fluid" src="./images/game-of-life.png" alt="First slide" onclick="showLargePicture(this)">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/fooddiary-front_roboto.png" alt="Second slide" onclick="showLargePicture(this)">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-with-tabs-edit.png" alt="Third slide" onclick="showLargePicture(this)">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-creategist-new.png" alt="Third slide" onclick="showLargePicture(this)">
+                                </div>
+                            </div>
+
+                            <div class="carousel-controls">
+                                <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                                <ol class="carousel-indicators">
+                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="1"></li>
+                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="2"></li>
+                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="3"></li>
+                                </ol>
+                                <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>-->
+
+                            <p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen">See the Pen <a href="http://codepen.io/TatuPutto/pen/NjWEOM/">Game-of-life</a> by Tatu Putto (<a href="http://codepen.io/TatuPutto">@TatuPutto</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                            <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+                    </div>
+
+
+                    <div class="project-info col-md-3">
+                        <div class="project-navigation row">
+                            <div class="col-md-6" style="padding: 0 10px 0 0;">
+                                <button class="btn btn-default pull-left">
+                                    <i class="fa fa-caret-left"></i> Previous project
+                                </button>
+                                </div>
+                            <div class="col-md-6" style="padding: 0 0 0 10px;">
+                            <button class="btn btn-default pull-right">
+                                Next project <i class="fa fa-caret-right"></i>
+                            </button>
+                            </div>
+                        </div>
+
+
+                        <h3 class="text-center">Game of Life</h3>
+
+                        <div class="project-description">
+                            <h4 class="text-center">Description</h4>
+                            <hr>
+                            <p>Implementation of Conway's Game of Life with React.</p>
+                        </div>
+                    <!--</div>-->
+
+                    <div class="project-technologies">
+                        <h4 class='text-center'>Technologies used</h4>
+                        <hr>
+                        <div class="project-technologies-wrapper">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <i class="devicon-react-plain colored"></i>
+                            <i class="devicon-html5-plain colored"></i>
+                            <i class="devicon-css3-plain colored"></i>
+                        </div>
+                    </div>
+
+                    <h4 class="text-center">Links</h4>
+                    <hr>
+                    <div class="project-links">
+                        <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
+                            <button class="btn btn-info">GitHub repository</button>
+                        </a>
+                        <a href="https://floating-basin-70375.herokuapp.com">
+                            <button class="btn btn-success">
+                                CodePen
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            </section>
     <script src="/tatuputto.github.io/scripts.js"></script>
 
 

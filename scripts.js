@@ -6,7 +6,29 @@ var gistManagementAppPics = [
 ];
 
 
+function nextProject() {
+    $('#project-1').css('display', 'none');
+    $('#project-2').css('position', 'inherit');
 
+}
+
+
+//function setMarginTop() {
+$(document).ready(function () {
+    setTimeout(function () {
+        var carouselImages = $('.item');
+
+        for(var i = 0; i < carouselImages.length; i++) {
+            var parentHeight = $('.carousel-inner').height();
+            var image = $(carouselImages[i]);
+            var imageHeight = image.height();
+            console.log(imageHeight);
+            var marginTop = (parentHeight - imageHeight) / 2;
+
+            image.css('margin-top', marginTop);
+        }
+    }, 100);
+});
 
 $(document).ready(function () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
