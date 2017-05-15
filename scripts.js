@@ -5,15 +5,24 @@ var gistManagementAppPics = [
     './images/gist-management-app-creategist-small.png'
 ];
 
-
+var activeProject = 1;
 function nextProject() {
-    $('#project-1').css('display', 'none');
-    $('#project-2').css('position', 'inherit');
+    var currentProject = '#project-' + activeProject;
+    var nextProject = '#project-' + (activeProject + 1);
+    $(currentProject).css('position', 'absolute');
+    $(nextProject).css('position', 'inherit');
+    activeProject++;
+}
 
+function previousProject() {
+    var currentProject = '#project-' + activeProject;
+    var nextProject = '#project-' + (activeProject - 1);
+    $(currentProject).css('position', 'absolute');
+    $(nextProject).css('position', 'inherit');
+    activeProject--;
 }
 
 
-//function setMarginTop() {
 $(document).ready(function () {
     setTimeout(function () {
         var carouselImages = $('.item');
@@ -22,7 +31,6 @@ $(document).ready(function () {
             var parentHeight = $('.carousel-inner').height();
             var image = $(carouselImages[i]);
             var imageHeight = image.height();
-            console.log(imageHeight);
             var marginTop = (parentHeight - imageHeight) / 2;
 
             image.css('margin-top', marginTop);
@@ -38,8 +46,9 @@ $(document).ready(function () {
 
 
     $('#gist-management-app-pic-carousel').css('height', viewportHeight - 160);
-
-
+    $('#food-diary-img-carousel').css('height', viewportHeight - 160);
+    $('#game-of-life-pic-carousel').css('height', viewportHeight - 160);
+/*
     if(viewportWidth < 992) {
         return;
     }
@@ -71,7 +80,7 @@ $(document).ready(function () {
     $('#gist-management-app-pic-carousel img').css('height', newHeight);
     $('#gist-management-app-pic-carousel img').css('margin-top', marginTop);
     $('#gist-management-app-pic-carousel img').css('margin-left', marginLeft);
-
+    */
 });
 
 
