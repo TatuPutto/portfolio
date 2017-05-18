@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     setTimeout(function () {
         var carouselImages = $('.item');
 
@@ -11,8 +11,8 @@ $(document).ready(function () {
             image.css('margin-top', marginTop);
         }
     }, 100);
-});
-
+});*/
+/*
 
 $(document).ready(function () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -23,7 +23,7 @@ $(document).ready(function () {
     $('#food-diary-img-carousel').css('height', viewportHeight - 160);
     $('#game-of-life-pic-carousel').css('height', viewportHeight - 160);
 });
-
+*/
 /*
 var timeout = null;
 $(document).scroll(function () {
