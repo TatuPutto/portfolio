@@ -1,28 +1,3 @@
-var gistManagementAppPics = [
-    './images/gist-management-app-front.png',
-    './images/gist-management-app-front-filtering.png',
-    './images/gist-management-app-creategist.png',
-    './images/gist-management-app-creategist-small.png'
-];
-
-var activeProject = 1;
-function nextProject() {
-    var currentProject = '#project-' + activeProject;
-    var nextProject = '#project-' + (activeProject + 1);
-    $(currentProject).css('position', 'absolute');
-    $(nextProject).css('position', 'inherit');
-    activeProject++;
-}
-
-function previousProject() {
-    var currentProject = '#project-' + activeProject;
-    var nextProject = '#project-' + (activeProject - 1);
-    $(currentProject).css('position', 'absolute');
-    $(nextProject).css('position', 'inherit');
-    activeProject--;
-}
-
-
 $(document).ready(function () {
     setTimeout(function () {
         var carouselImages = $('.item');
@@ -38,106 +13,81 @@ $(document).ready(function () {
     }, 100);
 });
 
+
 $(document).ready(function () {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    $('#projects').css('height', viewportHeight - 50);
-    console.log(viewportHeight - 50);
 
-
+    $('section').css('height', viewportHeight - 48);
     $('#gist-management-app-pic-carousel').css('height', viewportHeight - 160);
     $('#food-diary-img-carousel').css('height', viewportHeight - 160);
     $('#game-of-life-pic-carousel').css('height', viewportHeight - 160);
-/*
-    if(viewportWidth < 992) {
-        return;
-    }
-
-    var naturalWidth = element.naturalWidth;
-    var naturalHeight = element.naturalHeight;
-    var aspectRatio = naturalWidth / naturalHeight;
-
-
-    var newWidth;
-    var newHeight = viewportHeight - 200;
-
-
-    newWidth = (naturalWidth / naturalHeight) * newHeight;
-
-
-    if(newWidth > (viewportWidth - 300)) {
-        var exceedingWidth = newWidth - (viewportWidth - 300);
-        newHeight -= (exceedingWidth / aspectRatio);
-        newWidth = (naturalWidth / naturalHeight) * newHeight;
-    }
-    console.log(newWidth);
-
-    var marginTop = (viewportHeight - newHeight) / 2;
-    var marginLeft = (viewportWidth - newWidth) / 2;
-
-
-    $('#gist-management-app-pic-carousel img').css('width', newWidth);
-    $('#gist-management-app-pic-carousel img').css('height', newHeight);
-    $('#gist-management-app-pic-carousel img').css('margin-top', marginTop);
-    $('#gist-management-app-pic-carousel img').css('margin-left', marginLeft);
-    */
 });
-
 
 /*
-$(document).ready(function () {
-    maintainImageAspectRatio();
-});
-
-$(window).resize(function () {
-    maintainImageAspectRatio();
-});
-
-
-function maintainImageAspectRatio() {
-    var thumbnails = $('img');
-    var height = thumbnails[2].offsetWidth / 16 * 10;
-
-    for(var i = 2; i < thumbnails.length; i++) {
-        thumbnails[i].style.height = height + 'px';
+var timeout = null;
+$(document).scroll(function () {
+    if(timeout) {
+        clearTimeout(timeout);
     }
+    timeout = setTimeout(function () {
+        scrollToClosestSection();
+    }, 500);
+});
+
+function scrollToClosestSection() {
+    var distanceToAbout = Math.abs($('#about').offset().top - $(document).scrollTop());
+    var distanceToSkills = Math.abs($('#skills').offset().top - $(document).scrollTop());
+    var distanceToProjects = Math.abs($('#projects').offset().top - $(document).scrollTop());
+    var closestSection;
+
+    if(distanceToAbout > distanceToSkills) {
+        closestSection = '#skills';
+        if(distanceToSkills > distanceToProjects) {
+            closestSection = '#projects';
+        }
+    } else if(distanceToSkills > distanceToAbout) {
+        closestSection = '#about';
+        if(distanceToAbout > distanceToProjects) {
+            closestSection = '#projects';
+        }
+    }
+
+    $('body').animate({scrollTop: $(closestSection).offset().top - 50}, '800', 'swing');
 }
+
 */
-var currentPic = 0;
-function rotateImageCarousel(imageNum, method) {
-    currentPic = calcNextPic(currentPic, imageNum, method);
 
-    $('#gist-management-app-pic').animate({opacity: 0}, 200, function () {
-        $('#gist-management-app-pic').attr('src', gistManagementAppPics[currentPic]);
-        $('#gist-management-app-pic').animate({opacity: 1}, 200);
+var activeProject = 1;
+function nextProject() {
+    var currentProject = '#project-' + activeProject;
+    var nextProject = '#project-' + (activeProject + 1);
+    $(currentProject).css('position', 'absolute');
+    $(nextProject).css('position', 'inherit');
+    activeProject++;
 
-        $('.carousel-img-indicator').attr('class', 'fa fa-circle-thin carousel-img-indicator');
-        var activeIndicator = $('.carousel-img-indicator')[currentPic];
-        $(activeIndicator).attr('class', 'fa fa-circle carousel-img-indicator');
-    });
+    if(nextProject == '#project-3') {
+        $('#project-3 .embed-container').html('<p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen"></p>');
 
-}
-
-function calcNextPic(currentPic, imageNum, method) {
-    if(!imageNum && method == 'increment') {
-        if(currentPic < gistManagementAppPics.length - 1) {
-            currentPic++;
-        } else {
-            currentPic = 0;
-        }
-    } else if(!imageNum && method == 'decrement') {
-        if(currentPic > 0) {
-            currentPic--;
-        } else {
-            currentPic = gistManagementAppPics.length - 1;
-        }
-    } else {
-        currentPic = imageNum;
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://production-assets.codepen.io/assets/embed/ei.js');
+        document.head.appendChild(script);
+        $('.cp_embed_wrapper').css('height', '100%');
+    } else if(currentProject == '#project-3') {
+        $('#project-3 .embed-container').html('');
     }
-
-    return currentPic;
 }
 
+
+function previousProject() {
+    var currentProject = '#project-' + activeProject;
+    var nextProject = '#project-' + (activeProject - 1);
+    $(currentProject).css('position', 'absolute');
+    $(nextProject).css('position', 'inherit');
+    activeProject--;
+
+
+}
 
 function showLargePicture(element) {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -150,13 +100,9 @@ function showLargePicture(element) {
     var naturalHeight = element.naturalHeight;
     var aspectRatio = naturalWidth / naturalHeight;
 
-
     var newWidth;
     var newHeight = viewportHeight - 100;
-
-
     newWidth = (naturalWidth / naturalHeight) * newHeight;
-
 
     if(newWidth > (viewportWidth - 200)) {
         var exceedingWidth = newWidth - (viewportWidth - 200);
@@ -164,10 +110,8 @@ function showLargePicture(element) {
         newWidth = (naturalWidth / naturalHeight) * newHeight;
     }
 
-
     var marginTop = (viewportHeight - newHeight) / 2;
     var marginLeft = (viewportWidth - newWidth) / 2;
-
 
     $('.project-image-large img').css('width', newWidth);
     $('.project-image-large img').css('height', newHeight);
@@ -207,11 +151,10 @@ function showLargePicture(element) {
     $('.project-image-large').animate({opacity: 1}, 200);
 
 
-
     setTimeout(function () {
         $('.overlay').on('click', function () {
             $('.overlay').off('click');
-            $('.image-carousel').animate({opacity: 0}, 200, function () {
+            $('.project-image-large').animate({opacity: 0}, 200, function () {
                 $('.overlay').css('display', 'none');
             });
         });
@@ -225,15 +168,4 @@ function stopPropagation(event) {
 function scrollToSection(section) {
     var sectionSelector = '#' + section;
     $('body').animate({scrollTop: $(sectionSelector).offset().top - 50}, '500', 'swing');
-}
-
-
-
-
-function spin() {
-    console.log('täällä');
-    var lastActive = $('.carousel-item')[1];
-    var activeItem = $('.carousel-item')[1];
-    $(lastActive).removeClass('active');
-    $(activeItem).addClass('active');
 }
