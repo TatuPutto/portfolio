@@ -11,320 +11,180 @@
     <title>Tatu Putto, Full Stack Developer</title>
 </head>
 <body>
-    <div class="overlay">
-        <div class="col-lg-10 project-image-large">
-            <img class="project-image-large" src="" />
-        </div>
-    </div>
-
-    <!--<div class="col-xs-12 col-sm-10 header">
-        <div class="row header-content">
-            <div class="col-xs-8 nav-menu">
-                <ul>
-                    <li onclick="scrollToSection('about')">About Me</li>
-                    <li onclick="scrollToSection('skills')">Skills</a></li>
-                    <li onclick="scrollToSection('projects')">Projects</a></li>
-                </ul>
+    <!-- Show image carousel for selected project-->
+    <div class="overlay closed">
+        <i class="toggle-overlay fa fa-close" onclick="toggleOverlay()"></i>
+        <!--Food diary image carousel-->
+        <div id="food-diary-img-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img class="d-block img-fluid" src="./images/food-diary-front.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-mobile.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-bottom-mobile.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-diary-view.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-diary-view-mobile.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-login.png">
+                </div>
             </div>
-            <div class="col-sm-4 col-xs-5 to-github-account">
-                <a href="https://github.com/TatuPutto">
-                    <button class="btn btn-info">
-                        <i class="fa fa-github"></i> My GitHub Profile
-                    </button>
+
+
+            <div class="carousel-controls">
+                <a href="#food-diary-img-carousel" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <a href="#food-diary-img-carousel" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
+
+            <ol class="carousel-indicators">
+                <li data-target="#food-diary-img-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="1"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="2"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="3"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="4"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="5"></li>
+                <li data-target="#food-diary-img-carousel" data-slide-to="6"></li>
+            </ol>
         </div>
-    </div>
--->
 
-    <div class="container-fluid col-xs-12 col-sm-12">
-        <div class="mx-auto">
-            <section id="about">
 
-                <!--<div class="section-head">
-                    <h2 class="text-center">About Me</h2>
-                </div>-->
-                <div class="row about">
-                    <!--<div class="about-wrapper col-xs-10 col-lg-offset-2 col-sm-offset-2 col-xs-offset-1 ">-->
-                    <div class="col-lg-8 col-xs-12 col-lg-offset-1">
-                        <h3 class="text-center">Tatu Putto, Web Developer</h3>
-                        <!--<h4 class="text-center"><i>or atleast aspiring to be one someday</i></h4>-->
-                        <p class="about-text">
-                            Hi there! My name is Tatu Putto, I am a 24 years old web developer from Joensuu, Finland.
-                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
-                            I do all sorts of web development projects with a number of different programming languages and technologies. I mainly use JavaScript, HTML, CSS, Node, Java, MongoDB and MySQL in my projects.
-                            I also have some exprerience in UI and UX design, but I much rather focus on the implementation than design.
-                            </br></br>
-                            Since my works has skewed quite heavily on the side of front-end, I am now looking to start working as a front-end developer and from there onwards
-                            moving to more challenging avenues of work and hopefully eventually
-                            <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
-                            While both of those projects included alot of back-end work aswell
-                            My skillset leans towards front-end development-->
-                        </p>
-
-                    </div>
-                    <div class="col-lg-2 col-sm-8 col-xs-10 text-center profile-image">
-                        <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="margin-bottom: 10px; height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
-                        <div class="contact-info">
-                            <a href="https://github.com/TatuPutto"><button class="to-github-account"><i class="fa fa-github"></i> GitHub</button></a>
-                            tatuputto@gmail.com</br>
-                            050-4073445
-                        </div>
-                    </div>
+        <!--Gist management app image carousel-->
+        <div id="gist-management-app-img-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
                 </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/gist-management-app-single.png">
                 </div>
-            </section>
-
-
-            <!--<section id="skills">
-                <div class="section-head">
-                    <h2 class="text-center">Skills</h2>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/gist-management-app-edit.png">
                 </div>
-
-                <div class="skills" style="margin-top:40px;">
-                    <h3 class="text-center" style="text-decoration:underline;">Front-end</h3>
-                    <div class="row skills-display">
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <p class="icon-wordmark">JavaScript</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-react-plain colored"></i>
-                            <p class="icon-wordmark">React</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-jquery-plain colored"></i>
-                            <p class="icon-wordmark">jQuery</p>
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-html5-plain colored"></i>
-                            <p class="icon-wordmark">HTML5</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-css3-plain colored"></i>
-                            <p class="icon-wordmark">CSS3</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-bootstrap-plain colored"></i>
-                            <p class="icon-wordmark">Bootstrap 3</p>
-                        </div>
-                    </div>
-
-
-                    <h3 class="text-center" style="text-decoration:underline;">Back-end</h3>
-                    <div class="row skills-display">
-                        <div class="col-xs-4 col-md-2 col-md-offset-1 col-xs-offset-2">
-                            <i class="devicon-java-plain colored"></i>
-                            <p class="icon-wordmark">Java</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-nodejs-plain colored"></i>
-                            <p class="icon-wordmark">Node.js</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-php-plain colored"></i>
-                            <p class="icon-wordmark">PHP</p>
-                        </div>
-
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-wordpress-plain colored"></i>
-                            <p class="icon-wordmark">WordPress</p>
-                        </div>
-                        <div class="col-xs-4 col-md-2">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <p class="icon-wordmark">MySQL</p>
-                        </div>
-                    </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/gist-management-app-creating.png">
                 </div>
-            </section>
-        -->
+            </div>
 
-            <section id="projects">
-                <!--<div class="section-head">
-                    <h2 class="text-center">Projects (open source)</h2>
-                </div>-->
+            <div class="carousel-controls">
+                <a href="#gist-management-app-img-carousel" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <a href="#gist-management-app-img-carousel" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
 
-                <div id="project-1" style="color: #7d7d7d; padding-bottom: 50px; left: -9999px; top: -9999px; padding-top:40px;">
-                    <!--<div class="row" style="height:100%;">-->
-                        <div class="row" style="max-width: 1200px; margin: 0 auto">
-                        <div class="thumbnail-container col-xs-10 col-xs-offset-1">
-                            <div class="thumbnail-overlay"><i class="icon-zoom-in"></i></div>
+            <ol class="carousel-indicators">
+                <li data-target="#gist-management-app-img-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#gist-management-app-img-carousel" data-slide-to="1"></li>
+                <li data-target="#gist-management-app-img-carousel" data-slide-to="2"></li>
+                <li data-target="#gist-management-app-img-carousel" data-slide-to="3"></li>
+            </ol>
+        </div>
 
-
-                            <div id="gist-management-app-pic-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-discover.png" alt="First slide" onclick="showLargePicture(this)">
-                                    </div>
-                                    <div class="item">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-single.png" alt="Second slide" onclick="showLargePicture(this)">
-                                    </div>
-                                    <div class="item">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-edit.png" alt="Third slide" onclick="showLargePicture(this)">
-                                    </div>
-                                    <div class="item">
-                                        <img class="d-block img-fluid" src="./images/gist-management-app-creating.png" alt="Third slide" onclick="showLargePicture(this)">
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-controls">
-                                    <a href="#gist-management-app-pic-carousel" data-slide="prev">
-                                        <i class="fa fa-chevron-left"></i>
-                                    </a>
-                                    <a href="#gist-management-app-pic-carousel" data-slide="next">
-                                        <i class="fa fa-chevron-right"></i>
-                                    </a>
-
-                                </div>
-
-                                <!--
-                                <ol class="carousel-indicators">
-                                    <li data-target="#gist-management-app-pic-carousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#gist-management-app-pic-carousel" data-slide-to="1"></li>
-                                    <li data-target="#gist-management-app-pic-carousel" data-slide-to="2"></li>
-                                    <li data-target="#gist-management-app-pic-carousel" data-slide-to="3"></li>
-                                </ol>
-                            -->
-                            </div>
-
-
-                        </div>
-                        <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                            <h3 style="padding: 10px 0 20px 0; color: #0064b1;"><a href="https://floating-basin-70375.herokuapp.com">Code Snippet Management App</a><a href="https://github.com/TatuPutto/opinnaytetyo-redux-react"><button class="to-github-repo"><i class="fa fa-github"></i> GitHub repo</button></a></h3>
-                            <p style="text-align: justify;">Web application for managing code snippets (gists). This project is by a wide margin, my largest solo project to date. It constitutes as the practical part of my thesis for my Bachelor’s degree and also the stepping stone to learning modern web development techniques and modern JavaScript. The goal of this project was to provide an alternative UI for GitHub Gists. In essence this project consists of two separate applications. Client app implemented with React / Redux. </p>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>React</span>
-                                <span>React Router</span>
-                                <span>Redux</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>LESS</span>
-                                <span>Single-page application</span>
-                                <span>Java</span>
-                                <span>Spring MVC</span>
-                            </div>
-                            <!--<hr style="border-top: 1px solid #7d7d7d;"></hr>
-                            <div class="project-links">
-                                <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
-                                    <button class="btn btn-info">GitHub repository</button>
-                                </a>
-                                <a href="https://floating-basin-70375.herokuapp.com">
-                                    <button class="btn btn-success">
-                                        Heroku
-                                    </button>
-                                </a>
-                            </div>-->
-                        </div>
-
-
-<!--
-                        <div class="project-info col-md-3">
-                            <div class="project-navigation row">
-                                <div class="col-md-6" style="padding: 0 10px 0 0;">
-                                    <button class="btn btn-default pull-left" onclick="previousProject()">
-                                        <i class="fa fa-caret-left"></i> Previous project
-                                    </button>
-                                    </div>
-                                <div class="col-md-6" style="padding: 0 0 0 10px;">
-                                <button class="btn btn-default pull-right" onclick="nextProject()">
-                                    Next project <i class="fa fa-caret-right"></i>
-                                </button>
-                                </div>
-                            </div>
-
-
-                            <h3 class="text-center">Code Snippet Management App</h3>
-
-                            <div class="project-description">
-                                <h4 class="text-center">Description</h4>
-                                <hr>
-                            </div>
-                        </div>
-
-                        <div class="project-technologies">
-                            <h4 class='text-center'>Technologies used</h4>
-                            <hr>
-                            <div class="project-technologies-wrapper">
-                                <i class="devicon-javascript-plain colored"></i>
-                                <i class="devicon-react-plain colored"></i>
-                                <i class="devicon-html5-plain colored"></i>
-                                <i class="devicon-css3-plain colored"></i>
-                                <i class="devicon-less-plain-wordmark colored"></i>
-                                <i class="devicon-java-plain colored"></i>
-                            </div>
-                        </div>
-
-                        <h4 class="text-center">Links</h4>
-                        <hr>
-                        <div class="project-links">
-                            <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
-                                <button class="btn btn-info">GitHub repository</button>
-                            </a>
-                            <a href="https://floating-basin-70375.herokuapp.com">
-                                <button class="btn btn-success">
-                                    Heroku
-                                </button>
-                            </a>
-                        </div>
-                    </div>-->
+        <!--T-idea image carousel-->
+        <div id="t-idea-img-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img class="d-block img-fluid" src="./images/t-idea-landing.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/t-idea-listing.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/t-idea-add-idea.png">
                 </div>
             </div>
 
 
-            <div id="project-2" style="color: #7d7d7d; border-top: 1px solid #c1c0c0; padding-bottom: 50px; left: -9999px; top: -9999px; padding-top:60px;">
-                <div class="row" style="max-width: 1200px; margin: 0 auto">
+            <div class="carousel-controls">
+                <a href="#t-idea-img-carousel" data-slide="prev">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <a href="#t-idea-img-carousel" data-slide="next">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+
+            <ol class="carousel-indicators">
+                <li data-target="#t-idea-img-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#t-idea-img-carousel" data-slide-to="1"></li>
+                <li data-target="#t-idea-img-carousel" data-slide-to="2"></li>
+                <li data-target="#t-idea-img-carousel" data-slide-to="3"></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container-fluid col-xs-12 col-sm-12">
+        <section id="about">
+            <div class="row about">
+                <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1">
+                    <h3 class="text-center">Tatu Putto, Web Developer</h3>
+                    <p class="about-text">
+                        Hi there! My name is Tatu Putto, I am a 24 years old web developer from Joensuu, Finland.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's
+                        degree in Business Information Technology. I do all sorts of web development projects
+                        with a number of different programming languages and technologies. I mainly use JavaScript,
+                        React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
+                        in UI and UX design, but I rather focus on the implementation than design.
+                        </br></br>
+                        Since my projects have been quite front-end development heavy during the later part of my studies,
+                        I am looking for full time employment as a front-end developer.
+                        <!--Then moving onto
+                        more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
+                        then from there gradually moving to more challenging avenues of work with an ultimate goal of  becoming a full-fledged full-stack developer.
+                        <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
+                        While both of those projects included alot of back-end work aswell
+                        My skillset leans towards front-end development-->
+                    </p>
+                </div>
+                <div class="col-sm-2 col-xs-4 col-sm-offset-0 col-xs-offset-4 text-center profile-image">
+                    <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="margin-top: 10px; margin-bottom: 10px; height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
+                    <div class="contact-info">
+                        <a href="https://github.com/TatuPutto">
+                            <button class="to-github-account">
+                                <i class="fa fa-github"></i> GitHub
+                            </button>
+                        </a>
+                        tatuputto@gmail.com
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div id="project-1">
+                <div class="row">
                     <div class="thumbnail-container col-xs-10 col-xs-offset-1">
-                        <div class="thumbnail-overlay"><i class="icon-zoom-in"></i></div>
-
-
-                        <div id="food-diary-img-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front-default-usage.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front-no-consumption.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front-add-daily-goal.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_responsive_iphone.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_responsive_iphone_2.png" onclick="showLargePicture(this)">
-                                </div>
-                            </div>
-
-
-                            <div class="carousel-controls">
-                                <a href="#food-diary-img-carousel" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                                <a href="#food-diary-img-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
-
-                            <!--
-                            <ol class="carousel-indicators">
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="1"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="2"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="3"></li>
-                            </ol>
-                        -->
+                        <div class="thumbnail-overlay" onclick="toggleOverlay('#food-diary-img-carousel')">
+                            <i class="icon-zoom-in"></i>
                         </div>
-
-
+                        <img class="d-block img-fluid" src="./images/food-diary-front.png">
                     </div>
                     <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #0064b1;"><a href="https://tatu-putto-food-diary.herokuapp.com">Food diary</a><a href="https://github.com/TatuPutto/food_diary"><button class="to-github-repo"><i class="fa fa-github"></i> GitHub Repo</button></a></h3>
-                        <p></p>
-                        <hr style="border-top: 1px solid #7d7d7d;"></hr>
+                        <h3 style="padding: 10px 0 20px 0; color: #0064b1;">
+                            <a target="_blank" href="http://www.fooddiary.tputto.com">Food diary</a>
+                            <a href="https://github.com/TatuPutto/food_diary">
+                                <button class="to-github-repo">
+                                    <i class="fa fa-github"></i> GitHub Repo
+                                </button>
+                            </a>
+                        </h3>
                         <div class="project-tags">
                             <span>JavaScript</span>
                             <span>React</span>
@@ -333,6 +193,7 @@
                             <span>CSS3</span>
                             <span>LESS</span>
                             <span>Bootstrap</span>
+                            <span>Webpack</span>
                             <span>Single-page application</span>
                             <span>Responsive design</span>
                             <span>Node.js</span>
@@ -342,16 +203,66 @@
                 </div>
             </div>
 
-
-            <div id="project-3" style="color: #7d7d7d; border-top: 1px solid #c1c0c0; padding-bottom: 50px; left: -9999px; top: -9999px; padding-top:60px;">
-                <div class="row" style="max-width: 1200px; margin: 0 auto">
-                    <div class="embed-container col-xs-10 col-xs-offset-1">
-                        <p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen"></p>
-                        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+            <div id="project-2">
+                <div class="row">
+                    <div class="thumbnail-container col-xs-10 col-xs-offset-1">
+                        <div class="thumbnail-overlay" onclick="toggleOverlay('#gist-management-app-img-carousel')">
+                            <i class="icon-zoom-in"></i>
+                        </div>
+                        <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
                     </div>
                     <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #616060;"><a href="http://codepen.io/TatuPutto/full/NjWEOM">Game of Life</a><a href="https://github.com/TatuPutto/conway-game-of-life"><button class="to-github-repo"><i class="fa fa-github"></i> GitHub Repo</button></a></h3>
-                        <p>Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.</p>
+                        <h3 style="padding: 10px 0 20px 0; color: #0064b1;">
+                            <a href="https://floating-basin-70375.herokuapp.com">Code Snippet Management App</a>
+                            <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react">
+                                <button class="to-github-repo">
+                                    <i class="fa fa-github"></i> GitHub repo
+                                </button>
+                            </a>
+                        </h3>
+                        <p>
+                            Web application for managing code snippets (gists). This project is by a wide margin,
+                            my largest solo project to date. It constitutes as the practical part of my thesis for my
+                            Bachelor’s degree and also the stepping stone to learning modern web development techniques
+                            and modern JavaScript. The goal of this project was to provide an alternative UI for GitHub Gists.
+                            In essence this project consists of two separate applications. Client app implemented with React / Redux.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>React Router</span>
+                            <span>Redux</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>LESS</span>
+                            <span>Webpack</span>
+                            <span>Single-page application</span>
+                            <span>Java</span>
+                            <span>Spring MVC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="project-3">
+                <div class="row">
+                    <div class="embed-container col-xs-10 col-xs-offset-1">
+                        <!--<p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen"></p>
+                        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>-->
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
+                        <h3 style="padding: 10px 0 20px 0; color: #616060;">
+                            <a href="http://codepen.io/TatuPutto/full/NjWEOM">Game of Life</a>
+                            <a href="https://github.com/TatuPutto/conway-game-of-life">
+                                <button class="to-github-repo">
+                                    <i class="fa fa-github"></i> GitHub Repo
+                                </button>
+                            </a>
+                        </h3>
+                        <p>
+                            Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
+                        </p>
                         <div class="project-tags">
                             <span>JavaScript</span>
                             <span>React</span>
@@ -363,344 +274,35 @@
             </div>
 
 
-            <div id="project-4" style="color: #7d7d7d; border-top: 1px solid #c1c0c0; padding-bottom: 50px; left: -9999px; top: -9999px; padding-top:60px;">
-                <div class="row" style="max-width: 1200px; margin: 0 auto">
-                    <div class="thumbnail-container col-xs-10 col-xs-offset-1">
-                        <div class="thumbnail-overlay"><i class="icon-zoom-in"></i></div>
-
-
-                        <div id="t-idea-img-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img class="d-block img-fluid" src="./images/t-idea-landing.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/t-idea-listing.png" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/t-idea-add-idea.png" onclick="showLargePicture(this)">
-                                </div>
-                            </div>
-
-
-                            <div class="carousel-controls">
-                                <a href="#t-idea-img-carousel" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                                <a href="#t-idea-img-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
-
-                            <!--
-                            <ol class="carousel-indicators">
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="1"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="2"></li>
-                                <li data-target="#gist-management-app-pic-carousel" data-slide-to="3"></li>
-                            </ol>
-                        -->
-                        </div>
-
-
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #616060;">T-idea<a href="https://github.com/TatuPutto/calorie_calculator"><button class="to-github-repo"><i class="fa fa-github"></i> GitHub Repo</button></a></h3>
-                        <p>
-                            Idea / concept sharing platform. Old project from the second year of my studies and this idea sharing platform was our assignment for the course. Worked as part of 6 man team, filling in where more work force was needed. Mostly focused on back-end and database layer.</p>
-                        <hr style="border-top: 1px solid #7d7d7d;"></hr>
-                        <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>jQuery</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                        </div>
+        <div id="project-4">
+            <div class="row">
+                <div class="thumbnail-container col-xs-10 col-xs-offset-1">
+                    <div class="thumbnail-overlay"><i class="icon-zoom-in"></i></div>
+                    <img class="d-block img-fluid" src="./images/t-idea-landing.png">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
+                    <h3 style="padding: 10px 0 20px 0; color: #616060;">T-idea
+                        <a href="https://github.com/TatuPutto/PHP-works">
+                            <button class="to-github-repo">
+                                <i class="fa fa-github"></i> GitHub Repo
+                            </button>
+                        </a>
+                    </h3>
+                    <p>
+                        Idea / concept sharing platform. Old project from the second year of my studies and this
+                        idea sharing platform was our assignment for the course. Worked as part of 6 man team,
+                        filling in where more work force was needed. Mostly focused on back-end and database layer.
+                    </p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>jQuery</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-            <div id="project-2" style="height: 100%; position: absolute; left: -9999px; top: -9999px;">
-                <div class="row" style="height: 100%;">
-
-                    <div class="thumbnail-container col-md-9">
-                        <div id="food-diary-img-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_new3.png" alt="First slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_responsive_iphone.png" alt="Second slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_responsive_iphone_2.png" alt="Third slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/gist-management-app-creategist-new.png" alt="Third slide" onclick="showLargePicture(this)">
-                                </div>
-                            </div>
-
-                            <div class="carousel-controls">
-                                <a style="color:white;padding:5px;" href="#food-diary-img-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                                <ol class="carousel-indicators">
-                                    <li data-target="#food-diary-img-carousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#food-diary-img-carousel" data-slide-to="1"></li>
-                                    <li data-target="#food-diary-img-carousel" data-slide-to="2"></li>
-                                    <li data-target="#food-diary-img-carousel" data-slide-to="3"></li>
-                                </ol>
-                                <a style="color:white;padding:5px;" href="#food-diary-img-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="project-info col-md-3">
-                        <div class="project-navigation row">
-                            <div class="col-md-6" style="padding: 0 10px 0 0;">
-                                <button class="btn btn-default pull-left" onclick="previousProject()">
-                                    <i class="fa fa-caret-left"></i> Previous project
-                                </button>
-                                </div>
-                            <div class="col-md-6" style="padding: 0 0 0 10px;">
-                            <button class="btn btn-default pull-right" onclick="nextProject()">
-                                Next project <i class="fa fa-caret-right"></i>
-                            </button>
-                            </div>
-                        </div>
-
-
-                        <h3 class="text-center">T-Idea</h3>
-
-                        <div class="project-description">
-                            <h4 class="text-center">Description</h4>
-                            <hr>
-                            <p>Food diary implemented with NodeJS and React.
-                                Foods and nutrients and their nutrition values are pulled Fineli's open data initiative CSV-files, converted into JSON-file which is then used in conjuction with a MySQL database.
-
-                                This project consists of two separate applications.
-                                Server side app created with NodeJS which exposes API and a client side application that uses the endpoints of API to get info.
-
-                            </p>
-                        </div>
-                    <!--</div>-->
-
-                    <div class="project-technologies">
-                        <h4 class='text-center'>Technologies used</h4>
-                        <hr>
-                        <div class="project-technologies-wrapper">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <i class="devicon-react-plain colored"></i>
-                            <i class="devicon-html5-plain colored"></i>
-                            <i class="devicon-css3-plain colored"></i>
-                            <i class="devicon-bootstrap-plain colored"></i>
-                            <i class="devicon-nodejs-plain colored"></i>
-                            <i class="devicon-mysql-plain colored"></i>
-                        </div>
-                    </div>
-
-                    <h4 class="text-center">Links</h4>
-                    <hr>
-                    <div class="project-links">
-                        <a href="https://github.com/TatuPutto/calorie_calculator">
-                            <button class="btn btn-info">GitHub repository</button>
-                        </a>
-                        <a href="https://tatu-putto-food-diary.herokuapp.com">
-                            <button class="btn btn-success">
-                                Heroku
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            <div id="project-3" style="height: 100%; position: absolute; left: -9999px; top: -9999px;">
-                <div class="row" style="height: 100%;">
-
-                    <div class="embed-container col-md-9"><!--
-                        <div id="game-of-life-pic-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img class="d-block img-fluid" src="./images/game-of-life.png" alt="First slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/fooddiary-front_roboto.png" alt="Second slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/gist-management-app-with-tabs-edit.png" alt="Third slide" onclick="showLargePicture(this)">
-                                </div>
-                                <div class="item">
-                                    <img class="d-block img-fluid" src="./images/gist-management-app-creategist-new.png" alt="Third slide" onclick="showLargePicture(this)">
-                                </div>
-                            </div>
-
-                            <div class="carousel-controls">
-                                <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                                <ol class="carousel-indicators">
-                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="1"></li>
-                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="2"></li>
-                                    <li data-target="#game-of-life-pic-carousel" data-slide-to="3"></li>
-                                </ol>
-                                <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>-->
-
-
-                    </div>
-
-
-                    <div class="project-info col-md-3">
-                        <div class="project-navigation row">
-                            <div class="col-md-6" style="padding: 0 10px 0 0;">
-                                <button class="btn btn-default pull-left" onclick="previousProject()">
-                                    <i class="fa fa-caret-left"></i> Previous project
-                                </button>
-                                </div>
-                            <div class="col-md-6" style="padding: 0 0 0 10px;">
-                            <button class="btn btn-default pull-right" onclick="nextProject()">
-                                Next project <i class="fa fa-caret-right"></i>
-                            </button>
-                            </div>
-                        </div>
-
-
-                        <h3 class="text-center">Game of Life</h3>
-
-                        <div class="project-description">
-                            <h4 class="text-center">Description</h4>
-                            <hr>
-                            <p>Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.</p>
-                        </div>
-                    <!--</div>-->
-
-                    <div class="project-technologies">
-                        <h4 class='text-center'>Technologies used</h4>
-                        <hr>
-                        <div class="project-technologies-wrapper">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <i class="devicon-react-plain colored"></i>
-                            <i class="devicon-html5-plain colored"></i>
-                            <i class="devicon-css3-plain colored"></i>
-                        </div>
-                    </div>
-
-                    <h4 class="text-center">Links</h4>
-                    <hr>
-                    <div class="project-links">
-                        <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
-                            <button class="btn btn-info">GitHub repository</button>
-                        </a>
-                        <a href="https://floating-basin-70375.herokuapp.com">
-                            <button class="btn btn-success">
-                                CodePen
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="project-4" style="height: 100%; position: absolute; left: -9999px; top: -9999px;">
-            <div class="row" style="height: 100%;">
-
-                <div class="thumbnail-container col-md-9"><!--
-                    <div id="game-of-life-pic-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="d-block img-fluid" src="./images/game-of-life.png" alt="First slide" onclick="showLargePicture(this)">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/fooddiary-front_roboto.png" alt="Second slide" onclick="showLargePicture(this)">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-with-tabs-edit.png" alt="Third slide" onclick="showLargePicture(this)">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-creategist-new.png" alt="Third slide" onclick="showLargePicture(this)">
-                            </div>
-                        </div>
-
-                        <div class="carousel-controls">
-                            <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                            <ol class="carousel-indicators">
-                                <li data-target="#game-of-life-pic-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#game-of-life-pic-carousel" data-slide-to="1"></li>
-                                <li data-target="#game-of-life-pic-carousel" data-slide-to="2"></li>
-                                <li data-target="#game-of-life-pic-carousel" data-slide-to="3"></li>
-                            </ol>
-                            <a style="color:white;padding:5px;" href="#game-of-life-pic-carousel" data-slide="next">
-                                <i class="fa fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>-->
-
-
-                </div>
-
-
-                <div class="project-info col-md-3">
-                    <div class="project-navigation row">
-                        <div class="col-md-6" style="padding: 0 10px 0 0;">
-                            <button class="btn btn-default pull-left">
-                                <i class="fa fa-caret-left"></i> Previous project
-                            </button>
-                            </div>
-                        <div class="col-md-6" style="padding: 0 0 0 10px;">
-                        <button class="btn btn-default pull-right">
-                            Next project <i class="fa fa-caret-right"></i>
-                        </button>
-                        </div>
-                    </div>
-
-
-                    <h3 class="text-center">Game of Life</h3>
-
-                    <div class="project-description">
-                        <h4 class="text-center">Description</h4>
-                        <hr>
-                        <p>Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.</p>
-                    </div>
-                <!--</div>-->
-
-                <div class="project-technologies">
-                    <h4 class='text-center'>Technologies used</h4>
-                    <hr>
-                    <div class="project-technologies-wrapper">
-                        <i class="devicon-javascript-plain colored"></i>
-                        <i class="devicon-react-plain colored"></i>
-                        <i class="devicon-html5-plain colored"></i>
-                        <i class="devicon-css3-plain colored"></i>
-                    </div>
-                </div>
-
-                <h4 class="text-center">Links</h4>
-                <hr>
-                <div class="project-links">
-                    <a href="https://github.com/TatuPutto/Opinnaytetyo-redux-react">
-                        <button class="btn btn-info">GitHub repository</button>
-                    </a>
-                    <a href="https://floating-basin-70375.herokuapp.com">
-                        <button class="btn btn-success">
-                            CodePen
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     </section>
     <script src="/tatuputto.github.io/scripts.js"></script>
 </body>
