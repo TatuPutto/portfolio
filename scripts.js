@@ -1,72 +1,3 @@
-/*$(document).ready(function () {
-    setTimeout(function () {
-        var carouselImages = $('.item');
-
-        for(var i = 0; i < carouselImages.length; i++) {
-            var parentHeight = $('.carousel-inner').height();
-            var image = $(carouselImages[i]);
-            var imageHeight = image.height();
-            var marginTop = (parentHeight - imageHeight) / 2;
-
-            image.css('margin-top', marginTop);
-        }
-    }, 100);
-});*/
-
-$(document).ready(function () {
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    $('.overlay').height(viewportHeight);
-});
-
-/*
-
-
-
-
-$(document).ready(function () {
-    var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-    $('section').css('height', viewportHeight - 48);
-    $('#gist-management-app-pic-carousel').css('height', viewportHeight - 160);
-    $('#food-diary-img-carousel').css('height', viewportHeight - 160);
-    $('#game-of-life-pic-carousel').css('height', viewportHeight - 160);
-});
-*/
-/*
-var timeout = null;
-$(document).scroll(function () {
-    if(timeout) {
-        clearTimeout(timeout);
-    }
-    timeout = setTimeout(function () {
-        scrollToClosestSection();
-    }, 500);
-});
-
-function scrollToClosestSection() {
-    var distanceToAbout = Math.abs($('#about').offset().top - $(document).scrollTop());
-    var distanceToSkills = Math.abs($('#skills').offset().top - $(document).scrollTop());
-    var distanceToProjects = Math.abs($('#projects').offset().top - $(document).scrollTop());
-    var closestSection;
-
-    if(distanceToAbout > distanceToSkills) {
-        closestSection = '#skills';
-        if(distanceToSkills > distanceToProjects) {
-            closestSection = '#projects';
-        }
-    } else if(distanceToSkills > distanceToAbout) {
-        closestSection = '#about';
-        if(distanceToAbout > distanceToProjects) {
-            closestSection = '#projects';
-        }
-    }
-
-    $('body').animate({scrollTop: $(closestSection).offset().top - 50}, '800', 'swing');
-}
-
-*/
-
 var activeProject = 1;
 function nextProject() {
     var currentProject = '#project-' + activeProject;
@@ -94,8 +25,6 @@ function previousProject() {
     $(currentProject).css('position', 'absolute');
     $(nextProject).css('position', 'inherit');
     activeProject--;
-
-
 }
 
 function toggleOverlay(carouselId) {
@@ -104,15 +33,18 @@ function toggleOverlay(carouselId) {
         overlay.removeClass('open');
         overlay.addClass('closed');
 
+        var activeCarousel = $('.active-carousel');
+        activeCarousel.find('.active').removeClass('active');
+        activeCarousel.find('.item').first().addClass('active');
+        activeCarousel.css('display', 'none');
+        activeCarousel.removeClass('active-carousel');
         $('body').css('overflow-y', 'scroll');
-        $('.active-carousel').css('display', 'none');
     } else {
         overlay.removeClass('closed');
         overlay.addClass('open');
         $(carouselId).addClass('active-carousel');
         $('body').css('overflow-y', 'hidden');
         showLargePicture(carouselId);
-
     }
 }
 
@@ -147,52 +79,11 @@ function showLargePicture(carouselId) {
     $(carouselId).css('display', 'block');
 
 
-    /*$('.project-image-large img').css('width', newWidth);
-    $('.project-image-large img').css('height', newHeight);
-    $('.project-image-large img').css('margin-top', marginTop);
-    $('.project-image-large img').css('margin-left', marginLeft);*/
-    //if(naturalWidth > naturalHeight) {
-        /*console.log('Leveämpi');
-        var newWidth;
-        var newHeight;
-
-        if(naturalWidth > (viewportWidth - 200)) {
-            console.log('joo');
-            newWidth = viewportWidth - 100;
-        }
-
-        if(naturalHeight > viewportHeight) {
-            newHeight = viewportHeight - 100;
-        }
-
-
-
-        console.log(newWidth + ' \n' +  newHeight);*/
-
-        // leveydestä kiinni (original height / original width) x new width = new height
-
-    /*} else {
-        console.log('korkeampi');
-
-        // leveydestä kiinni (original height / original width) x new height = new width
-    }*/
-
-
     $('.overlay').css('display', 'inline');
     //$('.image-carousel img').attr('src', imageSrc);
     //$('.image-carousel').animate({opacity: 1}, 200);
     $('.project-image-large img').attr('src', activeImage.src);
     $('.project-image-large').animate({opacity: 1}, 200);
-
-
-    //setTimeout(function () {
-    /*    $('.overlay').on('click', function () {
-            $('.overlay').off('click');
-            $('.project-image-large').animate({opacity: 0}, 200, function () {
-                $('.overlay').css('display', 'none');
-            });
-        });
-    }, 100);*/
 }
 
 function stopPropagation(event) {

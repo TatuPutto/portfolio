@@ -2,13 +2,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css"></link>
     <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css"></link>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Tatu Putto, Full Stack Developer</title>
+    <title>Tatu Putto, Web Developer</title>
 </head>
 <body>
     <!-- Show image carousel for selected project-->
@@ -24,7 +20,7 @@
                     <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
                 </div>
                 <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-front-mobile.png">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-middle-mobile.png">
                 </div>
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-front-bottom-mobile.png">
@@ -39,7 +35,6 @@
                     <img class="d-block img-fluid" src="./images/food-diary-login.png">
                 </div>
             </div>
-
 
             <div class="carousel-controls">
                 <a href="#food-diary-img-carousel" data-slide="prev">
@@ -60,7 +55,6 @@
                 <li data-target="#food-diary-img-carousel" data-slide-to="6"></li>
             </ol>
         </div>
-
 
         <!--Gist management app image carousel-->
         <div id="gist-management-app-img-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -146,7 +140,7 @@
                         I am looking for full time employment as a front-end developer.
                         <!--Then moving onto
                         more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
-                        then from there gradually moving to more challenging avenues of work with an ultimate goal of  becoming a full-fledged full-stack developer.
+                        Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
                         <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
                         While both of those projects included alot of back-end work aswell
                         My skillset leans towards front-end development-->
@@ -164,7 +158,6 @@
                     </div>
                 </div>
             </div>
-            </div>
         </section>
 
         <section id="projects">
@@ -176,15 +169,23 @@
                         </div>
                         <img class="d-block img-fluid" src="./images/food-diary-front.png">
                     </div>
-                    <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #0064b1;">
-                            <a target="_blank" href="http://www.fooddiary.tputto.com">Food diary</a>
+                    <div class="project-details col-xs-10 col-xs-offset-1">
+                        <h3>
+                            <a target="_blank" href="https://fooddiary.tputto.com">Food diary</a>
                             <a href="https://github.com/TatuPutto/food_diary">
                                 <button class="to-github-repo">
                                     <i class="fa fa-github"></i> GitHub Repo
                                 </button>
                             </a>
                         </h3>
+                        <p>
+                            Food diary application for tracking macronutrient and energy consumption.
+
+                            splits into two parts, client side app which requests information from the server with AJAX and a server side application written with node, which exposes REST API.
+                            Nutritional information provided by Fineli's open data initiative.
+
+                            provides a little cookie fallback to allow basic usage without logging in.
+                        </p>
                         <div class="project-tags">
                             <span>JavaScript</span>
                             <span>React</span>
@@ -211,9 +212,9 @@
                         </div>
                         <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
                     </div>
-                    <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #0064b1;">
-                            <a href="https://floating-basin-70375.herokuapp.com">Code Snippet Management App</a>
+                    <div class="project-details col-xs-10 col-xs-offset-1">
+                        <h3>
+                            <a href="https://opinnaytetyo.tputto.com">Code Snippet Management App</a>
                             <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react">
                                 <button class="to-github-repo">
                                     <i class="fa fa-github"></i> GitHub repo
@@ -251,8 +252,8 @@
                         <!--<p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen"></p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>-->
                     </div>
-                    <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                        <h3 style="padding: 10px 0 20px 0; color: #616060;">
+                    <div class="project-details col-xs-10 col-xs-offset-1">
+                        <h3>
                             <a href="http://codepen.io/TatuPutto/full/NjWEOM">Game of Life</a>
                             <a href="https://github.com/TatuPutto/conway-game-of-life">
                                 <button class="to-github-repo">
@@ -274,35 +275,43 @@
             </div>
 
 
-        <div id="project-4">
-            <div class="row">
-                <div class="thumbnail-container col-xs-10 col-xs-offset-1">
-                    <div class="thumbnail-overlay"><i class="icon-zoom-in"></i></div>
-                    <img class="d-block img-fluid" src="./images/t-idea-landing.png">
-                </div>
-                <div class="col-xs-10 col-xs-offset-1" style="margin-top: 20px;">
-                    <h3 style="padding: 10px 0 20px 0; color: #616060;">T-idea
-                        <a href="https://github.com/TatuPutto/PHP-works">
-                            <button class="to-github-repo">
-                                <i class="fa fa-github"></i> GitHub Repo
-                            </button>
-                        </a>
-                    </h3>
-                    <p>
-                        Idea / concept sharing platform. Old project from the second year of my studies and this
-                        idea sharing platform was our assignment for the course. Worked as part of 6 man team,
-                        filling in where more work force was needed. Mostly focused on back-end and database layer.
-                    </p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>jQuery</span>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>PHP</span>
-                        <span>MySQL</span>
+            <div id="project-4">
+                <div class="row">
+                    <div class="thumbnail-container col-xs-10 col-xs-offset-1">
+                        <div class="thumbnail-overlay" onclick="toggleOverlay('#t-idea-img-carousel')">
+                            <i class="icon-zoom-in"></i>
+                        </div>
+                        <img class="d-block img-fluid" src="./images/t-idea-landing.png">
+                    </div>
+                    <div class="project-details col-xs-10 col-xs-offset-1">
+                        <h3 style="color: #616060;">T-idea
+                            <a href="https://github.com/TatuPutto/PHP-works">
+                                <button class="to-github-repo">
+                                    <i class="fa fa-github"></i> GitHub Repo
+                                </button>
+                            </a>
+                        </h3>
+                        <p>
+                            Idea / concept sharing platform. Old project from the second year of my studies and this
+                            idea sharing platform was our assignment for the course. Worked as part of 6 man team,
+                            filling in where more work force was needed. Mostly focused on back-end and database layer.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
-    </section>
-    <script src="/tatuputto.github.io/scripts.js"></script>
+        </section>
+    </div>
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/tatuputto.github.io/scripts.js"></script>
+    </footer>
 </body>
