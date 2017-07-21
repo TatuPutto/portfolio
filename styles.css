@@ -1,19 +1,10 @@
-html {
-    /*height: 100%;*/
-    /*background: linear-gradient(#0d1315, #272727);*/
-}
-
 body {
     background: none;
-    /*color: #616060;*/
     margin-top: 50px;
     min-width: 650px;
-    /*background-image: url('./images/background-bright-squares-white.png');*/
 }
 
 section {
-    /*margin-top: 20px;*/
-    /*padding-bottom: 40px;*/
     border-bottom: 2px solid white;
     padding: 40px 0;
 }
@@ -53,8 +44,6 @@ p {
 
 img {
     margin: 0 auto;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
 }
 
@@ -92,6 +81,7 @@ img {
 .nav-menu ul {
     list-style-type: none;
     -webkit-padding-start: 0;
+    -moz-padding-start: 0;
 }
 
 .nav-menu li {
@@ -169,18 +159,10 @@ img {
 
 .about-text {
     margin-top: 20px;
-    /*line-height: 130%;
-    font-size: 16px;
-    text-align: justify;*/
 }
 
 .project {
-    /*margin-top: 30px;*/
     height: 100%;
-}
-
-.thumbnail-row {
-    /*border-bottom: 1px solid #a7a7a7;*/
 }
 
 .thumbnail-container {
@@ -200,22 +182,22 @@ img {
     border-radius: 4px;
 }
 
-.carousel-inner {
-    /*border: 5px solid #e4e4e4;
-    border-radius: 5px;*/
-    /*height: 100%;*/
-}
-
 .thumbnail-overlay {
-    height: calc(100% - 10px);
-    width: calc(100% - 40px);
+    height: 99%;
+    width: 96%;
+    height: calc(100% - 9px);
+    width: calc(100% - 38px);
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 5px;
-    left: 20px;
+    left: 19px;
     z-index: 1;
     opacity: 0;
     transition: opacity 0.2s ease-out;
+    -ms-transition: opacity 0.2s ease-out;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
 }
 
 .thumbnail-overlay:hover {
@@ -226,11 +208,15 @@ img {
     display: block;
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
     content: "\f00e";
     font-family: FontAwesome;
     font-size: 50px;
     color: white;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 
 .to-github-repo {
@@ -262,35 +248,39 @@ img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(100% + 140px);
-    margin-left: -70px;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    /*width: 114%;*/
+    /*width: calc(100% + 140px);*/
+    width: 112%;
     height: 100%;
+    margin-left: -6%;
+}
+
+.carousel-controls a {
+    color: #fff;
+    text-align: center;
+    width: 5%;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
 }
 
 .carousel-controls a:first-child {
     float: left;
-    /*color: #616060;*/
-    color: #fff;
-    padding: 25px;
-    /*border: 5px solid transparent;
-    border-radius: 5px;*/
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    height: calc(100% + 3px);
-    transition: all 0.2s ease-out;
 }
 
 .carousel-controls a:last-child {
     float: right;
-    /*color: #616060;*/
-    color: #fff;
-    padding: 25px;
-    /*border: 5px solid transparent;
-    border-radius: 5px;*/
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: calc(100% + 3px);
-    transition: all 0.2s ease-out;
 }
 
 .carousel-controls a:hover {
@@ -504,14 +494,27 @@ div[id^="project-"] .row {
     background: linear-gradient(#1f1f1f, #252525);
     z-index: 2;
     transition: transform 0.4s ease-out;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 
 .overlay.open {
     transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
 }
 
 .overlay.closed {
     transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
 }
 
 .toggle-overlay {
