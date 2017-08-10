@@ -252,8 +252,6 @@ img {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-    /*width: 114%;*/
-    /*width: calc(100% + 140px);*/
     width: 112%;
     height: 100%;
     margin-left: -6%;
@@ -309,19 +307,16 @@ img {
 
 
 .carousel-indicators {
-    /*position: relative;
-    display: inline;
-    top: 20px;
-    left: 0;
-    margin-left: 0;
-    z-index: 0;
-    left: 50%;*/
     position: absolute;
     bottom: -50px;
     left: 0;
     margin-left: 0;
     left: 50%;
     transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .carousel-indicators li {
@@ -480,10 +475,6 @@ div[id^="project-"] .row {
     height: 100%;
 }
 
-#projects {
-    /*background: #f9f9f9;*/
-}
-
 .overlay {
     position: fixed;
     top: 0;
@@ -494,6 +485,10 @@ div[id^="project-"] .row {
     background: linear-gradient(#1f1f1f, #252525);
     z-index: 2;
     transition: transform 0.4s ease-out;
+    -ms-transition: transform 0.4s ease-out;
+    -webkit-transition: transform 0.4s ease-out;
+    -moz-transition: transform 0.4s ease-out;
+    -o-transition: transform 0.4s ease-out;
     transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -523,16 +518,6 @@ div[id^="project-"] .row {
     margin-top: 20px;
     font-size: 30px;
     color: white;
-}
-
-.image-carousel {
-    /*position: fixed;
-    top: 100px;
-    left: 100px;
-    right: 100px;
-    bottom: 100px;
-    background: whitesmoke;
-    opacity: 0;*/
 }
 
 .image-carousel:after {
