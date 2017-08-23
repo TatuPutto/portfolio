@@ -1,4 +1,5 @@
 var activeProject = 1;
+
 function nextProject() {
     var currentProject = '#project-' + activeProject;
     var nextProject = '#project-' + (activeProject + 1);
@@ -51,7 +52,7 @@ function toggleOverlay(carouselId) {
 function showLargePicture(carouselId) {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    if(viewportWidth < 992) return;
+    //if(viewportWidth < 992) return;
 
     var activeImage = $(carouselId + ' .carousel-inner').find('.active img')[0];
 
@@ -60,7 +61,7 @@ function showLargePicture(carouselId) {
     var aspectRatio = naturalWidth / naturalHeight;
 
     var newWidth;
-    var newHeight = viewportHeight - 200;
+    var newHeight = viewportHeight - 100;
     newWidth = (naturalWidth / naturalHeight) * newHeight;
 
     if(newWidth > (viewportWidth - 200)) {
@@ -89,6 +90,30 @@ function showLargePicture(carouselId) {
 function stopPropagation(event) {
     event.stopPropagation();
 }
+
+$(document).ready(() => {
+    if($(document).scrollTop() > 440) toggleHeaderPosition();
+    $(document).on('scroll', () => toggleHeaderPosition());
+});
+
+function toggleHeaderPosition() {
+    var _document = $(document);
+    var header = $('.sticky-header');
+    var placeholder = $('.placeholder');
+
+    if(_document.scrollTop() > 440 && !header.hasClass('fixed')) {
+        header.addClass('fixed');
+        if(placeholder.length === 0) {
+            $('#about').append('<div class="placeholder" style="height: 107px;"></div>');
+        }
+    } else if(_document.scrollTop() < 440) {
+        header.removeClass('fixed');
+        if(placeholder.length !== 0) {
+            placeholder.remove();
+        }
+    }
+}
+
 
 function scrollToSection(section) {
     var sectionSelector = '#' + section;
