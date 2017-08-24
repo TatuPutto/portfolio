@@ -3,19 +3,23 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-    if($(document).scrollTop() > 440) toggleHeaderPosition();
+    var navPosition = $('.navigation').offset();
+    if($(document).scrollTop() > (navPosition.top)) toggleHeaderPosition();
     $(document).on('scroll', () => toggleHeaderPosition());
 });
 
 function toggleHeaderPosition() {
-    var navPosition = $('.navigation').position();
-    var projectsSectionPosition = $('#projects').position();
+    var navPosition = $('.navigation').offset();
+    var projectsSectionPosition = $('#projects').offset();
+    var skillsSectionPosition = $('#skills').offset();
     var _document = $(document);
     var header = $('.header');
+    var overlay = $('.overlay');
 
-    if(_document.scrollTop() > (navPosition.top + 45) && !header.hasClass('fixed')) {
+    if(_document.scrollTop() > (navPosition.top) &&
+       !header.hasClass('fixed') && overlay.hasClass('closed')) {
         header.addClass('fixed');
-    } else if(_document.scrollTop() < navPosition.top) {
+    } else if(_document.scrollTop() <= navPosition.top || overlay.hasClass('open')) {
         header.removeClass('fixed');
     }
 
@@ -25,6 +29,8 @@ function toggleHeaderPosition() {
         $('.nav-menu > li:first-child').addClass('active');
     } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {
         $('.nav-menu > li:nth-child(2)').addClass('active');
+    } else if(_document.scrollTop() >= skillsSectionPosition.top - 50) {
+        $('.nav-menu > li:nth-child(3)').addClass('active');
     }
 }
 
@@ -71,9 +77,12 @@ function previousProject() {
 
 function toggleOverlay(carouselId) {
     var overlay = $('.overlay');
+    var header = $('.header');
+
     if(overlay.hasClass('open')) {
         overlay.removeClass('open');
         overlay.addClass('closed');
+        toggleHeaderPosition();
 
         var activeCarousel = $('.active-carousel');
         activeCarousel.find('.active').removeClass('active');
@@ -82,6 +91,7 @@ function toggleOverlay(carouselId) {
         activeCarousel.removeClass('active-carousel');
         $('body').css('overflow-y', 'scroll');
     } else {
+        header.removeClass('fixed');
         overlay.removeClass('closed');
         overlay.addClass('open');
         $(carouselId).addClass('active-carousel');
