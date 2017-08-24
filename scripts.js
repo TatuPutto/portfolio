@@ -1,3 +1,44 @@
+$(document).ready(() => {
+    $('#home').css('height', window.innerHeight);
+});
+
+$(document).ready(() => {
+    if($(document).scrollTop() > 440) toggleHeaderPosition();
+    $(document).on('scroll', () => toggleHeaderPosition());
+});
+
+function toggleHeaderPosition() {
+    var navPosition = $('.navigation').position();
+    var projectsSectionPosition = $('#projects').position();
+    var _document = $(document);
+    var header = $('.header');
+
+    if(_document.scrollTop() > (navPosition.top + 45) && !header.hasClass('fixed')) {
+        header.addClass('fixed');
+    } else if(_document.scrollTop() < navPosition.top) {
+        header.removeClass('fixed');
+    }
+
+    //
+    $('.nav-menu > li.active').removeClass('active');
+    if(_document.scrollTop() < projectsSectionPosition.top - 50) {
+        $('.nav-menu > li:first-child').addClass('active');
+    } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {
+        $('.nav-menu > li:nth-child(2)').addClass('active');
+    }
+}
+
+function scrollToSection(section) {
+    $('body').animate(
+        {scrollTop: $('section:nth-child(' + section + ')').offset().top - 50},
+        500
+    );
+}
+
+function stopPropagation(event) {
+    event.stopPropagation();
+}
+
 var activeProject = 1;
 
 function nextProject() {
@@ -79,43 +120,7 @@ function showLargePicture(carouselId) {
     $(carouselId).css('margin-left', marginLeft);
     $(carouselId).css('display', 'block');
 
-
     $('.overlay').css('display', 'inline');
-    //$('.image-carousel img').attr('src', imageSrc);
-    //$('.image-carousel').animate({opacity: 1}, 200);
     $('.project-image-large img').attr('src', activeImage.src);
     $('.project-image-large').animate({opacity: 1}, 200);
-}
-
-function stopPropagation(event) {
-    event.stopPropagation();
-}
-
-$(document).ready(() => {
-    if($(document).scrollTop() > 440) toggleHeaderPosition();
-    $(document).on('scroll', () => toggleHeaderPosition());
-});
-
-function toggleHeaderPosition() {
-    var _document = $(document);
-    var header = $('.sticky-header');
-    var placeholder = $('.placeholder');
-
-    if(_document.scrollTop() > 440 && !header.hasClass('fixed')) {
-        header.addClass('fixed');
-        if(placeholder.length === 0) {
-            $('#about').append('<div class="placeholder" style="height: 107px;"></div>');
-        }
-    } else if(_document.scrollTop() < 440) {
-        header.removeClass('fixed');
-        if(placeholder.length !== 0) {
-            placeholder.remove();
-        }
-    }
-}
-
-
-function scrollToSection(section) {
-    var sectionSelector = '#' + section;
-    $('body').animate({scrollTop: $(sectionSelector).offset().top - 50}, '500', 'swing');
 }

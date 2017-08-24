@@ -10,13 +10,10 @@ body {
 }
 
 section {
-    border-bottom: 2px solid white;
-    padding: 40px 0;
+    /*border-bottom: 2px solid white;
+    padding: 40px 0;*/
 }
 
-section:last-child {
-    border-bottom: none;
-}
 
 ul {
     margin: 0;
@@ -33,7 +30,7 @@ hr {
 }
 
 button {
-    font-size: 16px !important;
+    /*font-size: 16px !important;*/
     margin-right: 6px;
 }
 
@@ -50,6 +47,7 @@ p {
     font-size: 16px;
     line-height: 30px;
     color: #484848;
+    margin: 0;
 }
 
 img {
@@ -58,85 +56,98 @@ img {
 }
 
 .container-fluid {
-    float: none;
-    /*max-width: 1400px;*/
     padding: 0;
     margin: 0;
-    /*margin-top: 50px;*/
 }
 
 .row {
     margin: 0;
 }
 
-.sticky-header {
-    width: 30%;
-    height: 45px;
-    border-top: 2px solid #c3c3c3;
-    padding-top: 5px;
-    margin: 25px auto 0 auto;
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 50px;
+    background: #525252;
     transform: translateY(-100%);
-    transition: transform 0.2s ease-out;
-    position: relative;
-    top: 45px;
+    transition: transform 0.3s ease-out;
 }
 
-.sticky-header ul {
+.header.fixed {
+    transform: translateY(0%);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu {
     list-style-type: none;
-    /*display: flex;
-    justify-content: center;*/
     font-size: 18px;
     text-align: center;
     top: -100px;
     right: 200px;
-    /*transition: all 0.2s ease-out;*/
 }
 
-.sticky-header ul li {
-    padding: 20px;
+.nav-menu li {
+    padding: 6px 12px;
     display: inline-block;
+    color: #046dca;
+    font-size: 20px;
 }
 
-.sticky-header.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9999;
-    background: #fff;
-    border-top: none;
-    border-bottom: 1px solid #cacaca;
-    box-shadow: 0px 0px 4px #c5c5c5;
-    padding: 0;
-    margin: 0;
-    transform: translateY(0%);
+.nav-menu li.active {
+    border-bottom: 2px solid #046dca;
 }
 
-.sticky-header.fixed ul {
-    /*justify-content: flex-end;*/
-    /*position: absolute;
-    top: 0;
-    right: 0;*/
+.header .nav-menu {
     text-align: right;
+    margin-top: 8px;
 }
 
-.sticky-header.fixed li {
-    padding: 10px 20px;
+.header .nav-menu li.active {
+    border-bottom: 2px solid #fff;
 }
 
-.header {
+.header .nav-menu li {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.2s ease-out;
+}
+
+.header .nav-menu li:hover {
+    color: #b3b3b3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.scroll-to-projects {
+    position: absolute;
+    bottom: 20px;
     width: 100%;
-    height: 50px;
-    background: #676767;
-    position: fixed;
-    top: 0;
-    z-index: 1;
+    text-align: center;
 }
 
-.header-content {
-    max-width: 1100px;
-    margin: auto;
+.scroll-to-projects button {
+    background: transparent;
+    border: none;
+    color: #757575;
+    font-size: 18px;
 }
 
+.scroll-to-projects button:focus,
+.scroll-to-projects button:active {
+    outline: none;
+}
+
+.scroll-to-projects i {
+    font-size: 35px;
+}
+
+/*
 .nav-menu {
     margin-top: 14px;
     display: inline;
@@ -167,7 +178,7 @@ img {
 .nav-menu li:hover {
     text-decoration: underline;
 }
-
+*/
 .to-github-account {
     width: 100%;
     border: 1px solid #b5b2b2;
@@ -195,6 +206,18 @@ img {
 #skills .section-head {
     top: 12%;
 }*/
+
+#home {
+    position: relative;
+    color: rgb(117, 117, 117);
+    box-shadow: 0px 0px 4px #bbbbbb;
+}
+
+#projects {
+    background: #fbfbfb;
+    padding: 100px 15px;
+}
+
 
 .about {
     /*margin-top: 40px;*/
@@ -232,6 +255,14 @@ img {
 .thumbnail-container {
     text-align: center;
     color: transparent;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .thumbnail-container {
+        padding-right: 0px;
+        margin-bottom: 15px;
+    }
 }
 
 .thumbnail-container img:hover {
@@ -250,13 +281,10 @@ img {
 
 .thumbnail-overlay {
     height: 100%;
-    width: 97%;
-    /*height: calc(100% - 9px);
-    width: calc(100% - 38px);*/
+    width: 98%;
+    width: calc(100% - 15px);
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    /*top: 5px;
-    left: 19px;*/
     z-index: 1;
     opacity: 0;
     transition: opacity 0.2s ease-out;
@@ -284,6 +312,13 @@ img {
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
 }
+
+@media screen and (max-width: 991px) {
+    .thumbnail-overlay {
+        width: 100%;
+    }
+}
+
 
 .to-github-repo {
     float: right;
@@ -399,9 +434,8 @@ img {
 
 div[id^="project-"] {
     color: #7d7d7d;
-    border-top: 1px solid #eaeaea;
-    padding-bottom: 50px;
-    padding-top:60px;
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
 }
 
 div[id^="project-"] .row {
@@ -410,7 +444,11 @@ div[id^="project-"] .row {
 }
 
 .project-details {
-    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 2px;
+    /* box-shadow: 0 0 4px #b3b3b3; */
+    box-shadow: 0px 0px 4px #d4d4d4;
 }
 
 .project-details h3 {
@@ -455,43 +493,35 @@ div[id^="project-"] .row {
 }
 */
 
-.project-description {
-    text-align: justify;
-    /*padding-left: 15px;
-    padding-right: 15px;*/
-    margin-top: 30px;
-    padding-bottom: 20px;
-    font-size: 14px;
-}
-
 .project-description p {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .project-tags {
-    padding-top: 5px;
+    margin-top: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dedede;
 }
 
 .project-tags span {
     display: inline-block;
-    padding: 2px 6px;
+    padding: 1px 5px;
     margin-bottom: 4px;
-    /*background: #0064b1;
-    border: 3px solid #81a8ff;
-    border-radius: 5px;
-    color: white;*/
-    font-size: 14px;
-    /*
-    */
-    /*background: #1a93b9;
-    border: 1px solid #1a93b9;
-    border-radius: 5px;*/
+    font-size: 12px;
     background: #0064b1;
     border: 1px solid #0064b1;
     border-radius: 3px;
     color: #fff;
 }
 
+.call-to-action {
+    background: #52b152;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
 
 .project-links {
     text-align: center;
