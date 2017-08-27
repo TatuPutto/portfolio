@@ -27,10 +27,10 @@ function toggleHeaderPosition() {
     $('.nav-menu > li.active').removeClass('active');
     if(_document.scrollTop() < projectsSectionPosition.top - 50) {
         $('.nav-menu > li:first-child').addClass('active');
-    } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {
-        $('.nav-menu > li:nth-child(2)').addClass('active');
     } else if(_document.scrollTop() >= skillsSectionPosition.top - 50) {
         $('.nav-menu > li:nth-child(3)').addClass('active');
+    } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {
+        $('.nav-menu > li:nth-child(2)').addClass('active');
     }
 }
 
