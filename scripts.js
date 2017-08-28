@@ -113,17 +113,12 @@ function toggleOverlay(carouselId) {
 function showLargePicture(carouselId) {
     var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    //if(viewportWidth < 992) return;
-
     var activeImage = $(carouselId + ' .carousel-inner').find('.active img')[0];
-
     var naturalWidth = activeImage.naturalWidth;
     var naturalHeight = activeImage.naturalHeight;
     var aspectRatio = naturalWidth / naturalHeight;
-
-    var newWidth;
-    var newHeight = viewportHeight - 100;
-    newWidth = (naturalWidth / naturalHeight) * newHeight;
+    var newHeight = viewportHeight - 130;
+    var newWidth = (naturalWidth / naturalHeight) * newHeight;
 
     if(newWidth > (viewportWidth - 200)) {
         var exceedingWidth = newWidth - (viewportWidth - 200);
@@ -143,4 +138,26 @@ function showLargePicture(carouselId) {
     $('.overlay').css('display', 'inline');
     $('.project-image-large img').attr('src', activeImage.src);
     $('.project-image-large').animate({opacity: 1}, 200);
+}
+
+function toggleGif() {
+    var thumbnailContainer = $('#project-4 .thumbnail-container');
+    var thumbnailOverlay = $('#project-4 .thumbnail-overlay');
+    var gifWrapper = $('#project-4 .gif-wrapper');
+    var image = $('#project-4 img');
+
+    if($(thumbnailContainer).hasClass('gif-playing')) {
+        $(thumbnailOverlay).removeClass('stop-gif');
+        $(thumbnailOverlay).addClass('play-gif');
+        $(thumbnailContainer).removeClass('gif-playing');
+        $(gifWrapper).removeClass('gif-playing');
+        $(image).attr('src', './images/game-of-life-showcase-large.png');
+    } else {
+        $(thumbnailOverlay).removeClass('play-gif');
+        $(thumbnailOverlay).addClass('stop-gif');
+        $(thumbnailContainer).addClass('gif-playing');
+        $(gifWrapper).addClass('gif-playing');
+        $(image).attr('src', './images/game-of-life-showcase-large.gif');
+    }
+
 }
