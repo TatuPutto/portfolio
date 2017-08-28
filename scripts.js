@@ -5,7 +5,17 @@ $(document).ready(() => {
 $(document).ready(() => {
     var navPosition = $('.navigation').offset();
     if($(document).scrollTop() > (navPosition.top)) toggleHeaderPosition();
-    $(document).on('scroll', () => toggleHeaderPosition());
+
+    var scrollTimeout = null;
+    $(document).on('scroll', () => {
+        if(scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+
+        scrollTimeout = setTimeout(() => {
+            toggleHeaderPosition();
+        }, 50);
+    });
 });
 
 function toggleHeaderPosition() {
