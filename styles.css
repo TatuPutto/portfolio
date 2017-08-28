@@ -84,6 +84,7 @@ img {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .nav-menu {
@@ -517,15 +518,6 @@ div[id^="project-"] .row {
     color: #fff;
 }
 
-.call-to-action {
-    background: #52b152;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
 .project-links {
     text-align: center;
     margin-top: 15px;
@@ -629,6 +621,30 @@ div[id^="project-"] .row {
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
+}
+
+.visit-website {
+    vertical-align: middle;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.visit-website:hover {
+    text-decoration: none;
+}
+
+.call-to-action {
+    background: #52b152;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s ease-out;
+}
+
+.call-to-action:hover {
+    background: #047104;
 }
 
 /*
@@ -745,9 +761,9 @@ div[id^="project-"] .row {
 }
 
 .bar.jquery {
-    background: linear-gradient(to bottom, #b18c72, #8B4513);
-    border: 1px solid #98633d;
-    height: 198px;
+    background: linear-gradient(to bottom, #b0b4ea, #777bb4);
+    border: 1px solid #989cce;
+    height: 235px;
 }
 
 .bar.ux-ui-design {
@@ -757,15 +773,9 @@ div[id^="project-"] .row {
 }
 
 .bar.php-java {
-    background: linear-gradient(to bottom, #b0b4ea, #777bb4);
-    border: 1px solid #989cce;
-    height: 215px;
-}
-
-.bar.nodejs {
-    background: linear-gradient(to bottom, #add0a2, #74ac63);
-    border: 1px solid #8cbd7d;
-    height: 167px;
+    background: linear-gradient(to bottom, #d0a0d0, #b530b5);
+    border: 1px solid #b95db9;
+    height: 230px;
 }
 
 .bar.mysql {
@@ -774,6 +784,11 @@ div[id^="project-"] .row {
     height: 198px;
 }
 
+.bar.nodejs {
+    background: linear-gradient(to bottom, #add0a2, #74ac63);
+    border: 1px solid #8cbd7d;
+    height: 167px;
+}
 .bar-label {
     position: relative;
     top: 100%;
