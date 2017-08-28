@@ -219,6 +219,7 @@ img {
 #projects {
     background: #fbfbfb;
     padding: 100px 15px;
+    border-bottom: 1px solid #dadada;
 }
 
 
@@ -663,14 +664,19 @@ div[id^="project-"] .row {
     margin-top: 10px;
 }
 
+.chart-container {
+    max-width: 900px;
+    padding-top: 140px;
+}
 
 .skills-chart {
     background: url("./images/chart-axis.png") repeat-x;
     height: 400px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #bdbdbd;
     font-size: 16px;
+    color: #333333;
     max-width: 900px;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -686,7 +692,7 @@ div[id^="project-"] .row {
     display: inline-block;
     position: relative;
     bottom: 10px;
-    border-right: 2px solid black;
+    border-right: 2px solid #bdbdbd;
     background: #fff;
     text-align: right;
     padding-right: 15px;
