@@ -10,7 +10,7 @@
     <div class="header">
         <div class="header-content">
             <div class="logo" style='display: inline-block; margin-top: 5px;'>
-                <img src="http://via.placeholder.com/40x40" style="vertical-align: -webkit-baseline-middle;">
+                <img src="./images/logo.png" style="vertical-align: -webkit-baseline-middle;">
                 <span style="font-size: 24px; color: #fff; font-weight: bold; vertical-align: -webkit-baseline-middle;">Tatuputto.com</span>
             </div>
             <ul class="nav-menu">
@@ -187,51 +187,6 @@
             </div>
         </section>
 
-        <!--<section id="about">
-            <div class="row">
-                <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1">
-                    <h3 class="text-center">Tatu Putto, Aspiring Web Developer</h3>
-                    <p class="about-text">
-                        Hi there! My name is Tatu Putto, I am a 24 years old web developer from Joensuu, Finland.
-                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's
-                        degree in Business Information Technology. I do all sorts of web development projects
-                        with a number of different programming languages and technologies. I mainly use JavaScript,
-                        React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
-                        in UI and UX design, but I rather focus on the implementation than design.
-                        </br></br>
-                        Since my projects have been quite front-end development heavy during the later part of my studies,
-                        I am looking for full time employment as a front-end developer.
-                        <!--Then moving onto
-                        more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
-                        <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
-                        <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
-                        While both of those projects included alot of back-end work aswell
-                        My skillset leans towards front-end development-->
-                    <!--</p>
-                </div>
-                <div class="col-sm-2 col-xs-4 col-sm-offset-0 col-xs-offset-4 text-center profile-image">
-                    <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="margin-top: 10px; margin-bottom: 10px; height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
-                    <div class="contact-info">
-                        <a href="https://github.com/TatuPutto">
-                            <button class="to-github-account">
-                                <i class="fa fa-github"></i> GitHub
-                            </button>
-                        </a>
-                        tatuputto@gmail.com
-                    </div>
-                </div>
-            </div>
-            <div class="sticky-header">
-                <div class="header-content">
-                    <ul>
-                        <li><a>About</a></li>
-                        <li><a>Showcase</a></li>
-                        <li><a>Skills</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    -->
         <section id="projects">
             <div id="project-1">
                 <div class="row">
@@ -246,9 +201,17 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <p>
-                                    Food diary application for tracking macronutrient and energy consumption. My latest solo project and the first decently sized venture with Node.js.
+                                    <!--Food diary application for tracking macronutrient and energy consumption. My latest solo project and the first decently sized venture with Node.js.
                                     This project consists of two separate applications: client-side React app and Node.js server app.
-                                    Server app exposes REST API, which the client app consumes.
+                                    Server app exposes REST API, which the client app consumes.-->
+                                    Food diary application for tracking macronutrient and energy consumption.
+                                    My latest solo project and the first decently sized venture into wonderful world of Node.js development.
+                                    This project consists of three separate units:
+                                    <ul style="list-style-type: disc; margin-left: 30px;">
+                                        <li>Node.js / MySQL back-end which exposes REST API</li>
+                                        <li>UI written with React, which in turn consumes the exposed API</li>
+                                        <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
+                                    </ul>
                                 </p>
                             </div>
                             <div class="project-tags">
@@ -264,6 +227,8 @@
                                 <span>Responsive design</span>
                                 <span>Node.js</span>
                                 <span>MySQL</span>
+                                <span>REST</span>
+                                <span>JSON</span>
                             </div>
                             <div style="margin-top: 15px;">
                                 <a class="visit-website" href="https://fooddiary.tputto.com" target="_blank">
@@ -341,7 +306,7 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <p>
-                                    Idea sharing platform. Old project from the second year of my studies and this
+                                    Idea / concept sharing platform. Old project from the second year of my studies and this
                                     idea sharing platform was our assignment for the course. Worked as part of 6 man team,
                                     filling in where more work force was needed. Mostly focused on back-end and database layer.
                                 </p>
@@ -401,29 +366,93 @@
             </div>
         </section>
 
-        <section id='skills' style='background: #fff; height: 2000px;'>
-            <div class="chart-container col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-                <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
-                <!--<h5>* - This list is not exhaustive and as such should be taken with a grain of salt.</h5>
-                -->
-                <ul class="skills-chart">
-                    <li class="y-axis">
-                        <ol>
-                            <li>Master</li>
-                            <li>Expert</li>
-                            <li>Intermediate</li>
-                            <li>Basics</li>
-                        </ol>
-                    </li>
-                    <li class="bar ux-ui-design"><div class="bar-label">UI / UX design<div></li>
-                    <li class="bar html-css"><div class="bar-label">HTML / CSS<div></li>
-                    <li class="bar javascript"><div class="bar-label">JavaScript<div></li>
-                    <li class="bar react"><div class="bar-label">React / ES6<div></li>
-                    <li class="bar jquery"><div class="bar-label">jQuery<div></li>
-                    <li class="bar php-java"><div class="bar-label">PHP / Java<div></li>
-                    <li class="bar mysql"><div class="bar-label">MySQL<div></li>
-                    <li class="bar nodejs"><div class="bar-label">Node.js<div></li>
-                </ul>
+        <section id='skills' style='background: #fff;'>
+            <div class="row">
+                <div class="chart-container col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
+                    <ul class="skills-chart">
+                        <li class="y-axis">
+                            <ol>
+                                <li>Master</li>
+                                <li>Expert</li>
+                                <li>Intermediate</li>
+                                <li>Basics</li>
+                            </ol>
+                        </li>
+                        <li class="bar ux-ui-design deflated"><div class="bar-label">UI / UX design<div></li>
+                        <li class="bar html-css deflated"><div class="bar-label">HTML / CSS<div></li>
+                        <li class="bar javascript deflated"><div class="bar-label">JavaScript<div></li>
+                        <li class="bar react deflated"><div class="bar-label">React / ES6<div></li>
+                        <li class="bar jquery deflated"><div class="bar-label">jQuery<div></li>
+                        <li class="bar php-java deflated"><div class="bar-label">PHP / Java<div></li>
+                        <li class="bar mysql deflated"><div class="bar-label">MySQL<div></li>
+                        <li class="bar nodejs deflated"><div class="bar-label">Node.js<div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="padding-top: 60px; padding-bottom: 300px; border-top: 1px solid #c7c7c7;">
+            <div class="row" style="max-width: 1200px; margin: 0 auto;">
+                <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="border-right: 5px solid black;">
+                    <h2 style="margin-bottom: 40px;">About Me</h2>
+                    <p class="about-text">
+                        Hi there! My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be a web developer someday.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.<br><br>
+
+
+
+
+                        I do all sorts of web development projects with a number of different programming languages and technologies.
+                        I consider myself to be a jack-of-all-trades kind a guy when it comes to programming, and as such, I am always happy to learn new things and pick up new techologies/frameworks etc.
+                        I mainly use JavaScript,
+                        React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
+                        in UI and UX design, but I rather focus on the implementation than design.
+                        </br></br>
+                        Since my projects have been quite front-end development heavy during the later part of my studies,
+                        I am looking for full time employment as a front-end developer.
+                    </p>
+                    <div class="pros-and-cons row">
+                        <div class="pros col-xs-6">
+                            <h4>Why you should consider hiring me</h4>
+                            <ul class="pros-list">
+                                <li>Flexible</li>
+                                <li>Persistent</li>
+                                <li>Learning oriented</li>
+                                <li>Team player</li>
+                                <li>Easy to work with</li>
+                                <li>Problem solver</li>
+                            </ul>
+                        </div>
+                        <div class="cons col-xs-6">
+                            <h4>Although I'm not perfect</h4>
+                            <ul class="cons-list">
+                                <li>Fresh off the bench</li>
+                                <li>Maybe too much of a generalist</li>
+                                <li>Not the most talkative person</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <!--Then moving onto
+                        more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
+                        <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
+                        <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
+                        While both of those projects included alot of back-end work aswell
+                        My skillset leans towards front-end development-->
+                    <!--</p>-->
+                </div>
+                <div class="col-sm-2 col-xs-4 col-sm-offset-0 col-xs-offset-4 text-center profile-image">
+                    <img alt="Tatu Putto profile picture" src="http://www.wallstreetotc.com/wp-content/uploads/2014/10/facebook-anonymous-app.jpg" style="margin-top: 10px; margin-bottom: 10px; height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <a href="https://github.com/TatuPutto">
+                            <button class="to-github-account">
+                                <i class="fa fa-github"></i> GitHub
+                            </button>
+                        </a>
+                        tatuputto@gmail.com
+                    </div>
+                </div>
             </div>
         </section>
     </div>

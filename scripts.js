@@ -42,6 +42,10 @@ function toggleHeaderPosition() {
     } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {
         $('.nav-menu > li:nth-child(2)').addClass('active');
     }
+
+    if(_document.scrollTop() >= skillsSectionPosition.top - 300) {
+        inflateBars();
+    }
 }
 
 function scrollToSection(section) {
@@ -63,19 +67,7 @@ function nextProject() {
     $(currentProject).css('position', 'absolute');
     $(nextProject).css('position', 'inherit');
     activeProject++;
-
-    if(nextProject == '#project-3') {
-        $('#project-3 .embed-container').html('<p data-height="100%" data-theme-id="0" data-slug-hash="NjWEOM" data-default-tab="result" data-user="TatuPutto" data-embed-version="2" data-pen-title="Game-of-life" class="codepen"></p>');
-
-        var script = document.createElement('script');
-        script.setAttribute('src', 'https://production-assets.codepen.io/assets/embed/ei.js');
-        document.head.appendChild(script);
-        $('.cp_embed_wrapper').css('height', '100%');
-    } else if(currentProject == '#project-3') {
-        $('#project-3 .embed-container').html('');
-    }
 }
-
 
 function previousProject() {
     var currentProject = '#project-' + activeProject;
@@ -159,5 +151,8 @@ function toggleGif() {
         $(gifWrapper).addClass('gif-playing');
         $(image).attr('src', './images/game-of-life-showcase-large.gif');
     }
+}
 
+function inflateBars() {
+    $('.bar').removeClass('deflated');
 }

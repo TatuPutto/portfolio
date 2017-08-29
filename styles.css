@@ -62,7 +62,7 @@ img {
 }
 
 .row {
-    margin: 0;
+    margin: 0 auto;
 }
 
 .header {
@@ -82,7 +82,7 @@ img {
 }
 
 .header-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -693,6 +693,7 @@ div[id^="project-"] .row {
 .chart-container {
     max-width: 900px;
     padding-top: 140px;
+    margin-bottom: 300px;
 }
 
 .skills-chart {
@@ -747,15 +748,13 @@ div[id^="project-"] .row {
 .bar {
     display: inline-block;
     vertical-align: bottom;
-    /*width: 80px;*/
     box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     position: relative;
-    /*top: 82px;
-    margin-left: 25px;*/
     bottom: 12px;
     white-space: nowrap;
+    transition: height 1s;
 }
 
 .bar.html-css {
@@ -805,6 +804,7 @@ div[id^="project-"] .row {
     border: 1px solid #8cbd7d;
     height: 167px;
 }
+
 .bar-label {
     position: relative;
     top: 100%;
@@ -812,6 +812,64 @@ div[id^="project-"] .row {
     margin-left: 14px;
     transform: rotate(45deg);
 }
+
+.bar.deflated {
+    height: 0;
+}
+
+.pros-and-cons {
+    text-align: center;
+    margin-top: 40px;
+    background: #2d87d6;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #4fadff;
+}
+
+.pros {
+    border-right: 2px solid #fff;
+    padding: 0;
+}
+
+.pros h4 {
+    color: #64ff64;
+    padding: 15px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.cons {
+    padding: 0;
+}
+
+.cons h4 {
+    color: #ffacac;
+    padding: 15px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.pros-list, .cons-list {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pros-list li, .cons-list li {
+    font-size: 16px;
+    text-align: left;
+}
+
+.pros-list li::before {
+    content: "+\00a0";
+    color: #64ff64;
+    font-size: 18px;
+}
+
+.cons-list li::before {
+    content: "-\00a0";
+    color: #ffacac;
+    font-size: 18px;
+}
+
 
 @media screen and (max-width: 991px) {
     .skills-chart {
