@@ -22,6 +22,7 @@ function toggleHeaderPosition() {
     var navPosition = $('.navigation').offset();
     var projectsSectionPosition = $('#projects').offset();
     var skillsSectionPosition = $('#skills').offset();
+    var aboutSectionPosition = $('#about').offset();
     var _document = $(document);
     var header = $('.header');
     var overlay = $('.overlay');
@@ -37,6 +38,8 @@ function toggleHeaderPosition() {
     $('.nav-menu > li.active').removeClass('active');
     if(_document.scrollTop() < projectsSectionPosition.top - 50) {
         $('.nav-menu > li:first-child').addClass('active');
+    } else if(_document.scrollTop() >= aboutSectionPosition.top - 50) {
+        $('.nav-menu > li:nth-child(4)').addClass('active');
     } else if(_document.scrollTop() >= skillsSectionPosition.top - 50) {
         $('.nav-menu > li:nth-child(3)').addClass('active');
     } else if(_document.scrollTop() >= projectsSectionPosition.top - 50) {

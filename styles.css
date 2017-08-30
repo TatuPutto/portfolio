@@ -7,6 +7,7 @@ body {
     background: none;
     /*margin-top: 50px;*/
     min-width: 650px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 section {
@@ -100,6 +101,13 @@ img {
     display: inline-block;
     color: #046dca;
     font-size: 20px;
+    transition: transform 0.2s ease-out;
+}
+
+.nav-menu li:hover {
+    transform: translateY(-10%);
+    cursor: pointer;
+    color: #046dca;
 }
 
 .nav-menu li.active {
@@ -125,7 +133,7 @@ img {
 .header .nav-menu li:hover {
     color: #b3b3b3;
     text-decoration: none;
-    cursor: pointer;
+    transform: translateY(0%);
 }
 
 .scroll-to-projects {
@@ -522,8 +530,8 @@ div[id^="project-"] .row {
     padding: 1px 5px;
     margin-bottom: 4px;
     font-size: 12px;
-    background: #0064b1;
-    border: 1px solid #0064b1;
+    background: #0183e6;
+    border: 1px solid #0183e6;
     border-radius: 3px;
     color: #fff;
 }
@@ -648,7 +656,7 @@ div[id^="project-"] .row {
     background: #52b152;
     border: none;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 25px;
     border-radius: 4px;
     font-weight: bold;
     transition: background 0.2s ease-out;
@@ -758,13 +766,13 @@ div[id^="project-"] .row {
 }
 
 .bar.html-css {
-    background: linear-gradient(to bottom, #ff9b6f, #f16528);
+    background: linear-gradient(to bottom, #e0b19d, #f16528);
     border: 1px solid #ff8b59;
     height: 250px;
 }
 
 .bar.javascript {
-    background: linear-gradient(to bottom, #ffd07a, orange);
+    background: linear-gradient(to bottom, #ffe1a9, orange);
     border: 1px solid #fbb941;
     height: 300px;
 }
@@ -788,14 +796,14 @@ div[id^="project-"] .row {
 }
 
 .bar.php-java {
-    background: linear-gradient(to bottom, #d0a0d0, #b530b5);
-    border: 1px solid #b95db9;
+    background: linear-gradient(to bottom, #e2c6e2, #b530b5);
+    border: 1px solid #d08ed0;
     height: 230px;
 }
 
 .bar.mysql {
-    background: linear-gradient(to bottom, #b18c72, #8B4513);
-    border: 1px solid #98633d;
+    background: linear-gradient(to bottom, #c7ad9b, #8B4513);
+    border: 1px solid #b17e5a;
     height: 198px;
 }
 
@@ -820,21 +828,20 @@ div[id^="project-"] .row {
 .pros-and-cons {
     text-align: center;
     margin-top: 40px;
-    background: #2d87d6;
-    color: #fff;
+    background: #fbfbfb;
+    color: #505050;
     border-radius: 4px;
-    border: 1px solid #4fadff;
 }
 
 .pros {
-    border-right: 2px solid #fff;
+    border-right: 1px solid #dcdcdc;
     padding: 0;
 }
 
 .pros h4 {
-    color: #64ff64;
+    color: #12a912;
     padding: 15px 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .cons {
@@ -842,9 +849,9 @@ div[id^="project-"] .row {
 }
 
 .cons h4 {
-    color: #ffacac;
+    color: #fb8c8c;
     padding: 15px 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .pros-list, .cons-list {
@@ -860,14 +867,19 @@ div[id^="project-"] .row {
 
 .pros-list li::before {
     content: "+\00a0";
-    color: #64ff64;
+    color: #12a912;
     font-size: 18px;
 }
 
 .cons-list li::before {
     content: "-\00a0";
-    color: #ffacac;
+    color: #fb8c8c;
     font-size: 18px;
+}
+
+.contact-info {
+    padding-top: 30px;
+    border-top: 2px solid #dadada;
 }
 
 
