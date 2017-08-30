@@ -159,3 +159,13 @@ function toggleGif() {
 function inflateBars() {
     $('.bar').removeClass('deflated');
 }
+
+function showAdditionalDetails(project) {
+    if($('.project-additional-info').hasClass('open')) {
+        $('.project-additional-info').removeClass('open');
+        $('.toggle-technical-details > i').removeClass('open');
+    } else {
+        $('.project-additional-info').addClass('open');
+        $('.toggle-technical-details > i').addClass('open');
+    }
+}

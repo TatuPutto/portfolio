@@ -207,37 +207,74 @@
                                     This project consists of two separate applications: client-side React app and Node.js server app.
                                     Server app exposes REST API, which the client app consumes.-->
                                     Food diary application for tracking macronutrient and energy consumption.
-                                    My latest solo project and the first decently sized venture into wonderful world of Node.js development.
-                                    This project consists of three separate units:
-                                    <ul style="list-style-type: disc; margin-left: 30px;">
+                                    This is my latest solo project and the first venture into wonderful world of Node.js development.
+                                    My goal was create a free, easy way to track macronutrient and energy consumption and provide comprehensive coverage of finnish food products and ingredients by combining Fineli's database with web scraped content.
+
+                                    <!--<ul style="list-style-type: disc; margin-left: 30px;">
                                         <li>Node.js / MySQL back-end which exposes REST API</li>
                                         <li>UI written with React, which in turn consumes the exposed API</li>
                                         <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
-                                    </ul>
+                                    </ul>-->
                                 </p>
                             </div>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>React</span>
-                                <span>React Router</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>LESS</span>
-                                <span>Bootstrap</span>
-                                <span>Webpack</span>
-                                <span>Single-page application</span>
-                                <span>Responsive design</span>
-                                <span>Node.js</span>
-                                <span>MySQL</span>
-                                <span>REST</span>
-                                <span>JSON</span>
+
+                            <div class="project-additional-info">
+                                <div class="project-technical-details">
+                                    <h4>Techical Details</h4>
+                                    <ul style="list-style-type: disc; margin-top: 15px; margin-left: 30px; line-height: 1.5;">
+                                        <li>Node.js / MySQL back-end (exposes resources via RESTful API)</li>
+                                        <li>UI written in React (consumes the API)</li>
+                                        <li>Client-side routing with React Router for SPA experience</li>
+                                        <li>Bootstrap 3 in combination with custom css for responsiveness to accomodate viewports down to 320px</li>
+                                        <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-keywords">
+                                    <h4>Keywords</h4>
+                                    <div class="project-keyword-labels">
+                                        <span class="keyword-label">JavaScript</span>
+                                        <span class="keyword-label">React</span>
+                                        <span class="keyword-label">React Router</span>
+                                        <span class="keyword-label">HTML5</span>
+                                        <span class="keyword-label">CSS3</span>
+                                        <span class="keyword-label">LESS</span>
+                                        <span class="keyword-label">Bootstrap</span>
+                                        <span class="keyword-label">Webpack</span>
+                                        <span class="keyword-label">Single-page application</span>
+                                        <span class="keyword-label">Responsive design</span>
+                                        <span class="keyword-label">Node.js</span>
+                                        <span class="keyword-label">MySQL</span>
+                                        <span class="keyword-label">REST</span>
+                                        <span class="keyword-label">JSON</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="margin-top: 15px;">
+
+
+                            <div style="    position: relative;height: 20px;
+    text-align: center;
+    border-bottom: 1px solid #dedede;">
+                                <button class="toggle-technical-details" style="    padding: 0 20px;
+    height: 40px;
+    /* top: 50%; */
+    /* top: 69px; */
+    /* left: 43%; */
+    color: #0064b1;
+    background: #fff;
+    border: none;" onclick="showAdditionalDetails(1);"><i class="fa fa-chevron-down"></i> Techical Details</button>
+                            </div>
+
+
+
+
+
+
+                            <div style="margin-top: 20px;">
                                 <a class="visit-website" href="https://fooddiary.tputto.com" target="_blank">
                                     <button class="call-to-action">Try it Out</button>
                                 </a>
                                 <a style="vertical-align: middle; font-size: 14px;" href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
-                                <span style="float: right; margin-top: 5px;">
+                                <span style="float: right; line-height: 40px;">
                                     <a style="vertical-align: middle; font-size: 14px;" onclick="toggleOverlay('#food-diary-img-carousel')">Gallery (8)</a>
                                 </span>
                             </div>
