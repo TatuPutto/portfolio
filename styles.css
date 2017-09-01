@@ -5,16 +5,9 @@
 
 body {
     background: none;
-    /*margin-top: 50px;*/
     min-width: 650px;
     font-family: 'Montserrat', sans-serif;
 }
-
-section {
-    /*border-bottom: 2px solid white;
-    padding: 40px 0;*/
-}
-
 
 ul, ol {
     margin: 0;
@@ -32,7 +25,6 @@ hr {
 }
 
 button {
-    /*font-size: 16px !important;*/
     margin-right: 6px;
 }
 
@@ -61,6 +53,13 @@ img {
 .container-fluid {
     padding: 0;
     margin: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.8s ease-out;
+    transition: opacity 0.8s ease-out;
+}
+
+.ready {
+    opacity: 1;
 }
 
 .row {
@@ -75,12 +74,17 @@ img {
     height: 50px;
     /*background: #525252;*/
     background: #3a3a3a;
+    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .header.fixed {
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
 }
 
 .header-content {
@@ -99,16 +103,21 @@ img {
 
 .nav-menu li {
     padding: 6px 12px;
+    vertical-align: middle;
     display: inline-block;
     color: #046dca;
     font-size: 20px;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 .nav-menu li:hover {
-    transform: translateY(-10%);
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
     cursor: pointer;
-    color: #046dca;
 }
 
 .nav-menu li.active {
@@ -128,13 +137,15 @@ img {
 .header .nav-menu li {
     color: #fff;
     font-size: 16px;
+    -webkit-transition: color 0.2s ease-out;
     transition: color 0.2s ease-out;
 }
 
 .header .nav-menu li:hover {
     color: #b3b3b3;
     text-decoration: none;
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
 }
 
 .scroll-to-projects {
@@ -163,6 +174,7 @@ img {
 .to-github-account {
     width: 100%;
     border: 1px solid #b5b2b2;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafbfc), color-stop(90%, #eff3f6));
     background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
     border-radius: 3px;
     font-size: 18px;
@@ -180,7 +192,8 @@ img {
 #home {
     position: relative;
     color: rgb(117, 117, 117);
-    box-shadow: 0px 0px 4px #bbbbbb;
+    -webkit-box-shadow: 0px 0px 4px #bbbbbb;
+            box-shadow: 0px 0px 4px #bbbbbb;
 }
 
 #projects {
@@ -201,16 +214,25 @@ img {
 
 @media(max-width: 768px) {
     .about {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .about div first-child {
-        order: 2;
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
     }
 
     .about div last-child {
-        order: 1;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
     }
 }
 
@@ -236,7 +258,9 @@ img {
     height: 350px;
     overflow-y: hidden;
     margin-bottom: 30px;
-    box-shadow: 0px 1px 4px #969696;
+    -webkit-box-shadow: 0px 1px 4px #969696;
+            box-shadow: 0px 1px 4px #969696;
+    -webkit-transition: height 0.2s ease-in;
     transition: height 0.2s ease-in;
 }
 
@@ -251,6 +275,7 @@ img {
 .gif-wrapper {
     margin: 0 auto;
     width: 100%;
+    -webkit-transition: width 0.2s ease-in;
     transition: width 0.2s ease-in;
 }
 
@@ -263,7 +288,8 @@ img {
     padding: 15px 15px 20px 15px;
     border-radius: 2px;
     /* box-shadow: 0 0 4px #b3b3b3; */
-    box-shadow: 0px 0px 4px #d4d4d4;
+    -webkit-box-shadow: 0px 0px 4px #d4d4d4;
+            box-shadow: 0px 0px 4px #d4d4d4;
 }
 
 .project-details h3 {
@@ -354,7 +380,7 @@ img {
     }
 }
 
-
+/*
 .to-github-repo {
     float: right;
     border: 1px solid #b5b2b2;
@@ -366,19 +392,7 @@ img {
     margin-right: 0;
     vertical-align: middle;
 }
-
-
-.embed-container {
-    height: 750px;
-    overflow-y: hidden;
-    margin-bottom: -50px;
-}
-
-.embed-container div {
-    height: 100%;
-    margin-top: -50px;
-}
-
+*/
 .carousel-controls {
     font-size: 20px;
     position: absolute;
@@ -398,11 +412,8 @@ img {
     text-align: center;
     width: 5%;
     height: 100%;
-    transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .carousel-controls a:first-child {
@@ -426,7 +437,8 @@ img {
 .carousel-controls i {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
 .carousel-controls li {
@@ -578,28 +590,37 @@ div[id^="project-"] .row {
     height: 100%;
 }
 
-.overlay {
+.image-carousel-overlay {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: #484848;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1f1f1f), to(#252525));
     background: linear-gradient(#1f1f1f, #252525);
     z-index: 2;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: -webkit-transform 0.4s ease-out;
     transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
     -ms-transition: transform 0.4s ease-out;
     -webkit-transition: transform 0.4s ease-out;
     -moz-transition: transform 0.4s ease-out;
     -o-transition: transform 0.4s ease-out;
-    transform: translateY(-50%);
+    /*transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
+    -o-transform: translateY(-50%);*/
+    transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
 }
 
-.overlay.open {
+.image-carousel-overlay.open {
     transform: translateY(0%);
     -ms-transform: translateY(0%);
     -webkit-transform: translateY(0%);
@@ -607,12 +628,8 @@ div[id^="project-"] .row {
     -o-transform: translateY(0%);
 }
 
-.overlay.closed {
-    transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
+.image-carousel-overlay.closed {
+
 }
 
 .toggle-overlay {
@@ -652,6 +669,7 @@ div[id^="project-"] .row {
     padding: 10px 25px;
     border-radius: 4px;
     font-weight: bold;
+    -webkit-transition: background 0.2s ease-out;
     transition: background 0.2s ease-out;
 }
 
@@ -741,7 +759,8 @@ div[id^="project-"] .row {
 
 .x-axis li {
     display: inline-block;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
     width: 105px;
     font-size: 16px;
 }
@@ -749,58 +768,68 @@ div[id^="project-"] .row {
 .bar {
     display: inline-block;
     vertical-align: bottom;
-    box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
+    -webkit-box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
+            box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     position: relative;
     bottom: 12px;
     white-space: nowrap;
+    -webkit-transition: height 1s;
     transition: height 1s;
 }
 
 .bar.html-css {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e0b19d), to(#f16528));
     background: linear-gradient(to bottom, #e0b19d, #f16528);
     border: 1px solid #ff8b59;
     height: 250px;
 }
 
 .bar.javascript {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffe1a9), to(orange));
     background: linear-gradient(to bottom, #ffe1a9, orange);
     border: 1px solid #fbb941;
     height: 300px;
 }
 
 .bar.react {
+    background: -webkit-gradient(linear, left top, left bottom, from(lightblue), to(#39bde8));
     background: linear-gradient(to bottom, lightblue, #39bde8);
     border: 1px solid #45c1e8;
     height: 280px;
 }
 
 .bar.jquery {
+    background: -webkit-gradient(linear, left top, left bottom, from(#b0b4ea), to(#777bb4));
     background: linear-gradient(to bottom, #b0b4ea, #777bb4);
     border: 1px solid #989cce;
     height: 235px;
 }
 
 .bar.ux-ui-design {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdd4db), to(#ffaebc));
     background: linear-gradient(to bottom, #fdd4db, #ffaebc);
     border: 1px solid #ffc6cf;
     height: 120px;
 }
 
 .bar.php-java {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e2c6e2), to(#b530b5));
     background: linear-gradient(to bottom, #e2c6e2, #b530b5);
     border: 1px solid #d08ed0;
     height: 230px;
 }
 
 .bar.mysql {
+    background: -webkit-gradient(linear, left top, left bottom, from(#c7ad9b), to(#8B4513));
     background: linear-gradient(to bottom, #c7ad9b, #8B4513);
     border: 1px solid #b17e5a;
     height: 198px;
 }
 
 .bar.nodejs {
+    background: -webkit-gradient(linear, left top, left bottom, from(#add0a2), to(#74ac63));
     background: linear-gradient(to bottom, #add0a2, #74ac63);
     border: 1px solid #8cbd7d;
     height: 167px;
@@ -811,7 +840,8 @@ div[id^="project-"] .row {
     top: 100%;
     margin-top: 25px;
     margin-left: 14px;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .bar.deflated {
@@ -892,11 +922,34 @@ div[id^="project-"] .row {
     }
 }
 
+.project-content-divider {
+    position: relative;
+    height: 20px;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+}
+
+.project-actions {
+    margin-top: 20px;
+}
+
+.project-actions span {
+    float: right;
+    line-height: 40px;
+}
+
+.project-actions a {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+
 .project-additional-info {
     border-top: 1px solid #dedede;
     visibility: hidden;
     opacity: 0;
     max-height: 0;
+    -webkit-transition: margin 0.6s, padding 0.6s, max-height 0.6s ease-out, opacity 0.3s ease-in 0.35s;
     transition: margin 0.6s, padding 0.6s, max-height 0.6s ease-out, opacity 0.3s ease-in 0.35s;
 }
 
@@ -908,17 +961,28 @@ div[id^="project-"] .row {
     opacity: 1;
 }
 
+.toggle-additional-details-view {
+    padding: 0 20px;
+    height: 40px;
+    color: #0064b1;
+    background: #fff;
+    border: none;
+}
 
-.toggle-technical-details:focus, .toggle-technical-details:active {
+.toggle-additional-details-view:focus, .toggle-additional-details-view:active {
     outline: none;
 }
 
-.toggle-technical-details i {
+.toggle-additional-details-view i {
+    -webkit-transition: -webkit-transform 0.2s linear;
+    transition: -webkit-transform 0.2s linear;
     transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }
 
-.toggle-technical-details i.open {
-    transform: rotate(180deg);
+.toggle-additional-details-view i.open {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 .project-keywords {
