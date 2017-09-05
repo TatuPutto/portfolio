@@ -14,7 +14,7 @@
                 <img src="./images/logo.png" style="vertical-align: -webkit-baseline-middle;">
                 <span style="font-size: 24px; color: #fff; font-weight: bold; vertical-align: -webkit-baseline-middle;">Tatuputto.com</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="header-nav-menu">
                 <li onclick="scrollToSection(1)">Home</li>
                 <li onclick="scrollToSection(2)">Projects</li>
                 <li onclick="scrollToSection(3)">Skills</li>
@@ -149,33 +149,53 @@
     </div>
 
     <div class="container-fluid">
-        <section id="home" style="color: #757575; height: 960px; position: relative;">
-            <div style="position: relative; top: 40%; transform: translateY(-50%);">
-
-                <div class="summary" style="margin-bottom: 35px; margin-left: auto; margin-right: auto; max-width: 1200px;">
-                    <div class="profile row">
-                        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                            <h1 style="color: #484848;">Tatu Putto</h1>
-                            <h2 style="padding-bottom: 40px; border-bottom: 2px solid #757575;">Aspiring Web Developer</h2>
+        <section id="home" style="color: #6b6b6b; height: 960px; position: relative;">
+            <div class="row centering-container">
+                <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1">
+                    <div class="summary" style="margin-bottom: 35px; margin-left: auto; margin-right: auto; max-width: 1200px;">
+                        <div class="profile row">
+                            <div>
+                                <h1 style="color: #fff">Tatu Putto</h1>
+                                <h2 style="padding-bottom: 40px; border-bottom: 2px solid #757575;">Aspiring Web Developer</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="about-short row">
-                        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-                            <p style="color: #757575; font-size: 22px; line-height: 1.3; margin-top: 35px;">
-                                I design and implement beautiful, efficient, mobile-friendly web applications.
-                                Currently looking for full-time employment as a front, back or full-stack developer.
-                            </p>
+                        <div class="about-short row">
+                            <div>
+                                <p style="color: #757575; font-size: 22px; line-height: 1.3; margin-top: 35px;">
+                                    I design and implement beautiful, efficient, mobile-friendly web applications.
+                                    Currently looking for full-time employment as a front, back or full-stack developer.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="navigation">
+                <div class="col-md-3 col-md-offset-1 col-xs-12 navigation">
                     <ul class="nav-menu">
-                        <li class="active" onclick="scrollToSection(1)">Home</li>
-                        <li onclick="scrollToSection(2)"><span style="display: block;overflow:hidden;">Projects</span></li>
-                        <li onclick="scrollToSection(3)">Skills</li>
-                        <li onclick="scrollToSection(4)">About</li>
-                        <li onclick="scrollToSection(4)">Contact</li>
+                        <li class="active hidden-right" onclick="scrollToSection(1)">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-home"></i> Home</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
+                        <li class="hidden-right" onclick="scrollToSection(2)" class="left-bound-hexagon">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-flask"></i> Projects</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
+                        <li class="hidden-right" onclick="scrollToSection(3)">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-bar-chart"></i> Skills</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
+                        <li class="hidden-right" onclick="scrollToSection(4)">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-info-circle"></i> About</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
+                        <li class="hidden-right" onclick="scrollToSection(4)">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-vcard-o"></i> Contact</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -412,22 +432,18 @@
         <section id="about" style="padding-top: 100px; padding-bottom: 150px; border-bottom: 1px solid #dadada; box-shadow: 0 10px 30px #ececec inset;">
             <div class="row" style="max-width: 1200px; margin: 0 auto;">
 
-                <div>
+
                     <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="border-right: 2px solid #cccccc;">
                         <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
                         <div style="float: left; margin-right: 20px;">
                         <img alt="Tatu Putto profile picture" src="http://pelayanan.jakarta.go.id/download/dok_perizinan/syaratizin3020150723102654.jpg" style="height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
                     </div>
-                    <div>
-                        <p>
-                            My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
-                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
-                        </p>
-                    </div>
+
                     <p class="about-text">
                         <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
                         I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
-
+                        My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
 
                         <br><br>
                         I do all sorts of web development projects with a number of different programming languages and technologies.

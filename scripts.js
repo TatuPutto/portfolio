@@ -7,6 +7,17 @@ var activeProject = 1;
 $(document).ready(function () {
     $('#home').css('height', window.innerHeight);
     $('.container-fluid').addClass('ready');
+
+    var i = 1;
+    setTimeout(function () {
+        setInterval(function () {
+            $('.nav-menu > li:nth-child(' + i + ')').removeClass('hidden-right');
+            i++;
+        }, 200);
+    }, 1000)
+
+
+
 });
 
 $(document).ready(function () {
@@ -48,15 +59,15 @@ function setActiveNavMenuIndex() {
     var skillsSectionPosition = $('#skills').offset();
     var aboutSectionPosition = $('#about').offset();
 
-    $('.nav-menu > li.active').removeClass('active');
+    $('.header-nav-menu > li.active-section').removeClass('active-section');
     if($document.scrollTop() < projectsSectionPosition.top - 50) {
-        $('.nav-menu > li:first-child').addClass('active');
+        $('.header-nav-menu > li:first-child').addClass('active-section');
     } else if($document.scrollTop() >= aboutSectionPosition.top - 50) {
-        $('.nav-menu > li:nth-child(4)').addClass('active');
+        $('.header-nav-menu > li:nth-child(4)').addClass('active-section');
     } else if($document.scrollTop() >= skillsSectionPosition.top - 50) {
-        $('.nav-menu > li:nth-child(3)').addClass('active');
+        $('.header-nav-menu > li:nth-child(3)').addClass('active-section');
     } else if($document.scrollTop() >= projectsSectionPosition.top - 50) {
-        $('.nav-menu > li:nth-child(2)').addClass('active');
+        $('.header-nav-menu > li:nth-child(2)').addClass('active-section');
     }
 
     if($document.scrollTop() >= skillsSectionPosition.top - 300) inflateBars();
