@@ -9,6 +9,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+section {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 ul, ol {
     margin: 0;
     padding: 0;
@@ -54,8 +59,8 @@ img {
     padding: 0;
     margin: 0;
     opacity: 0;
-    -webkit-transition: opacity 0.8s ease-out;
-    transition: opacity 0.8s ease-out;
+    -webkit-transition: opacity 1.2s linear;
+    transition: opacity 1.2s linear;
 }
 
 .ready {
@@ -901,8 +906,7 @@ div[id^="project-"] .row {
 }
 
 .contact-info {
-    padding-top: 30px;
-    border-top: 2px solid #dadada;
+    margin-top: 10px;
 }
 
 
@@ -945,6 +949,7 @@ div[id^="project-"] .row {
 
 
 .project-additional-info {
+    color: #484848;
     border-top: 1px solid #dedede;
     visibility: hidden;
     opacity: 0;

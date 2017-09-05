@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css"></link>
     <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
     <title>Tatu Putto, Web Developer</title>
 </head>
 <body>
@@ -206,7 +206,7 @@
                                     This project consists of two separate applications: client-side React app and Node.js server app.
                                     Server app exposes REST API, which the client app consumes.-->
                                     Food diary application for tracking macronutrient and energy consumption.
-                                    This is my latest solo project and the first venture into wonderful world of Node.js development.
+                                    This is my latest solo project and the first venture into the wonderful world of Node.js development.
                                     My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive coverage of finnish food products and ingredients by combining <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
 
                                     <!--<ul style="list-style-type: disc; margin-left: 30px;">
@@ -224,7 +224,7 @@
                                         <li>UI written in React (consumes the API)</li>
                                         <li>Client-side routing with React Router for SPA experience</li>
                                         <li>Bootstrap 3 in combination with custom css for responsiveness to accomodate even the smallest viewports</li>
-                                        <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
+                                        <li>Web scraping algorithm with Node.js and Cheerio</li>
                                     </ul>
                                 </div>
                                 <div class="project-keywords">
@@ -271,7 +271,7 @@
                     <div class="col-xs-12">
                         <div class="project-headline">
                             <h3>
-                                <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Management App</a>
+                                <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Manager</a>
                             </h3>
                         </div>
                         <div class="thumbnail-container">
@@ -283,15 +283,23 @@
                                 <p>
                                     Web application for managing code snippets (gists). This project is by a wide margin,
                                     my largest solo project to date. It constitutes as the practical part of my thesis for my
-                                    Bachelor’s degree and also the stepping stone to learning modern web development techniques
-                                    and modern JavaScript. The goal of this project was to provide an alternative UI for GitHub Gists.
-                                    In essence this project consists of two separate applications. Client app implemented with React / Redux.
+                                    Bachelor's degree <a href="https://theseus.fi/handle/10024/123534" target="_blank">(you can find theoretical part here)</a>. and also the stepping stone to learning modern web development techniques
+                                    and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.
                                 </p>
                             </div>
 
                             <div class="project-additional-info">
                                 <div class="project-technical-details">
                                     <h4>Techical Details</h4>
+                                    <ul style="list-style-type: disc; margin-top: 15px; margin-left: 30px; line-height: 1.5;">
+                                        <li>Java / Spring back-end (authentication)</li>
+                                        <li>UI written in React (consumes Gist API)</li>
+                                        <li>Flux architechture implemented on the client-side with Redux</li>
+                                        <li>Client-side routing with React Router for SPA experience</li>
+                                    </ul>
+                                </div>
+                                <div class="project-keywords">
+                                    <h4>Keywords</h4>
                                     <div class="project-keyword-labels">
                                         <span class="keyword-label">JavaScript</span>
                                         <span class="keyword-label">React</span>
@@ -401,62 +409,67 @@
             </div>
         </section>
 
-        <section id='skills' style='background: #fff;'>
-            <div class="row">
-                <div class="chart-container col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-                    <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
-                    <ul class="skills-chart">
-                        <li class="y-axis">
-                            <ol>
-                                <li>Master</li>
-                                <li>Expert</li>
-                                <li>Intermediate</li>
-                                <li>Basics</li>
-                            </ol>
-                        </li>
-                        <li class="bar ux-ui-design deflated"><div class="bar-label">UI / UX design<div></li>
-                        <li class="bar html-css deflated"><div class="bar-label">HTML / CSS<div></li>
-                        <li class="bar javascript deflated"><div class="bar-label">JavaScript<div></li>
-                        <li class="bar react deflated"><div class="bar-label">React / ES6<div></li>
-                        <li class="bar jquery deflated"><div class="bar-label">jQuery<div></li>
-                        <li class="bar php-java deflated"><div class="bar-label">PHP / Java<div></li>
-                        <li class="bar mysql deflated"><div class="bar-label">MySQL<div></li>
-                        <li class="bar nodejs deflated"><div class="bar-label">Node.js<div></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" style="padding-top: 100px; padding-bottom: 300px; border-top: 1px solid #c7c7c7;">
+        <section id="about" style="padding-top: 100px; padding-bottom: 150px; border-bottom: 1px solid #dadada; box-shadow: 0 10px 30px #ececec inset;">
             <div class="row" style="max-width: 1200px; margin: 0 auto;">
-                <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="border-right: 3px solid #c3c3c3;">
-                    <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
+
+                <div>
+                    <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="border-right: 2px solid #cccccc;">
+                        <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
+                        <div style="float: left; margin-right: 20px;">
+                        <img alt="Tatu Putto profile picture" src="http://pelayanan.jakarta.go.id/download/dok_perizinan/syaratizin3020150723102654.jpg" style="height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
+                    </div>
+                    <div>
+                        <p>
+                            My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
+                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
+                        </p>
+                    </div>
                     <p class="about-text">
-                        My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
-                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
+                        <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
+
+
                         <br><br>
                         I do all sorts of web development projects with a number of different programming languages and technologies.
                         I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, and as such, I am always happy to learn new things and pick up new techologies when needed.
 
 
-                        One of the perks being a jack-of-all-trades type of web developer is the ability to be very flexible and i think that makes me a great asset.
+                        One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
                         While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I excel at.
 
 
                         <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
 
                         </br></br>
-                        Recently I've ground quite fond of JavaScript development and especially React.
+                        <!--most recent addition to my toolbox was Node.js.
+                        After getting into Node.js development I've been using JavaScript almost excusively and it has definitely become my go to language on both server and client side.
+
+
+                        recently getting into Node.js as well
+
+                        recently i've been using JavaScript almost exclusively, node.js, which is my new go to server side technology to use.
+
+
+                        Recently I've ground quite fond of JavaScript and especially React. So to get a chance to use these in a professional setting
 
                         I mainly use JavaScript,
                         React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
                         in UI and UX design, but I rather focus on the implementation than design.
                         </br></br>
+                    -->
+                        My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
+                        Ideal role would be either Front-end or full-stack developer.
+                        Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
+
+
+                        <!--Since my projects have been quite front-end development heavy during the later part of my studies,
+                        I am looking for full time employment as a front-end developer.-->
 
 
 
-                        Since my projects have been quite front-end development heavy during the later part of my studies,
-                        I am looking for full time employment as a front-end developer.
+
+                        put that skill to use in a professional setting.
+
                     </p>
                     <div class="pros-and-cons row">
                         <div class="pros col-xs-6">
@@ -488,7 +501,6 @@
                     <!--</p>-->
                 </div>
                 <div class="col-sm-2 col-xs-4 col-sm-offset-0 col-xs-offset-4 text-center profile-image">
-                    <img alt="Tatu Putto profile picture" src="./images/headshot.jpg" style="margin-top: 10px; margin-bottom: 10px; height: 110px; width: auto; display: inline-block; border-radius: 50%;" />
                     <div class="contact-info">
                         <h3 style="color: #6d6d6d; margin-bottom: 30px;">Get in Touch</h3>
                         <!--<a href="https://github.com/TatuPutto">
@@ -527,15 +539,41 @@
                 </div>
             </div>
         </section>
-        <div class="footer">
 
-        </div>
+        <section id='skills' style='background: #fff; padding-right: 15px; padding-left: 15px;     box-shadow: 0 10px 30px #ececec inset;'>
+            <div class="row" style="max-width: 900px;">
+                <div class="chart-container col-xs-12">
+                    <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
+                    <ul class="skills-chart">
+                        <li class="y-axis">
+                            <ol>
+                                <li>Master</li>
+                                <li>Expert</li>
+                                <li>Intermediate</li>
+                                <li>Basics</li>
+                            </ol>
+                        </li>
+                        <li class="bar ux-ui-design deflated"><div class="bar-label">UI / UX design<div></li>
+                        <li class="bar html-css deflated"><div class="bar-label">HTML / CSS<div></li>
+                        <li class="bar javascript deflated"><div class="bar-label">JavaScript<div></li>
+                        <li class="bar react deflated"><div class="bar-label">React / ES6<div></li>
+                        <li class="bar jquery deflated"><div class="bar-label">jQuery<div></li>
+                        <li class="bar php-java deflated"><div class="bar-label">PHP / Java<div></li>
+                        <li class="bar mysql deflated"><div class="bar-label">MySQL<div></li>
+                        <li class="bar nodejs deflated"><div class="bar-label">Node.js<div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
     </div>
     <footer style="height: 100px;
     background: linear-gradient(to bottom, #212121, #1d1d1d); text-align: center;">
-        <span style="line-height: 100px;">2017 @ Created by me!</span>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="/tatuputto.github.io/scripts.js"></script>
+        <span style="line-height: 100px; color: #fff;">Tatu Putto @ 2017</span>
+
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/tatuputto.github.io/scripts.js"></script>
 </body>
