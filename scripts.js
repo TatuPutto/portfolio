@@ -15,9 +15,6 @@ $(document).ready(function () {
             i++;
         }, 200);
     }, 1000)
-
-
-
 });
 
 $(document).ready(function () {
@@ -38,18 +35,23 @@ $(document).ready(function () {
     });
 });
 
+$(window).on('resize', function () {
+    $('#home').css('height', window.innerHeight);
+})
+
 function handleScroll() {
     toggleHeaderPosition();
     setActiveNavMenuIndex();
 }
 
 function toggleHeaderPosition() {
-    var navPosition = $('.navigation').offset();
+    var projectsSectionOffsetTop = $('#projects').offset().top - 50;
 
-    if($document.scrollTop() > (navPosition.top) &&
+    if($document.scrollTop() > projectsSectionOffsetTop &&
        !$header.hasClass('fixed') && !$overlay.hasClass('open')) {
         $header.addClass('fixed');
-    } else if($document.scrollTop() <= navPosition.top || $overlay.hasClass('open')) {
+    } else if($document.scrollTop() <= projectsSectionOffsetTop ||
+              $overlay.hasClass('open')) {
         $header.removeClass('fixed');
     }
 }
