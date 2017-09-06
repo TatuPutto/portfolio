@@ -62,15 +62,15 @@ function setActiveNavMenuIndex() {
     $('.header-nav-menu > li.active-section').removeClass('active-section');
     if($document.scrollTop() < projectsSectionPosition.top - 50) {
         $('.header-nav-menu > li:first-child').addClass('active-section');
-    } else if($document.scrollTop() >= aboutSectionPosition.top - 50) {
-        $('.header-nav-menu > li:nth-child(4)').addClass('active-section');
     } else if($document.scrollTop() >= skillsSectionPosition.top - 50) {
+        $('.header-nav-menu > li:nth-child(4)').addClass('active-section');
+    } else if($document.scrollTop() >= aboutSectionPosition.top - 50) {
         $('.header-nav-menu > li:nth-child(3)').addClass('active-section');
     } else if($document.scrollTop() >= projectsSectionPosition.top - 50) {
         $('.header-nav-menu > li:nth-child(2)').addClass('active-section');
     }
 
-    if($document.scrollTop() >= skillsSectionPosition.top - 300) inflateBars();
+    if($document.scrollTop() >= skillsSectionPosition.top - 350) inflateBars();
 }
 
 function scrollToSection(section) {

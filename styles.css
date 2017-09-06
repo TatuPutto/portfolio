@@ -258,7 +258,13 @@ img {
     }
 }
 
-
+/*
+@keyframes pulsate {
+    to {
+        text-shadow: 0 0 10px #fff;
+    }
+}
+*/
 
 .scroll-to-projects {
     position: absolute;
@@ -273,6 +279,8 @@ img {
     color: #757575;
     color: #fff;
     font-size: 18px;
+    /*text-shadow: 0 0 0 #fff;
+    animation: pulsate 1.5s infinite alternate;*/
 }
 
 .scroll-to-projects button:focus,
@@ -791,6 +799,30 @@ div[id^="project-"] .row {
 .call-to-action:hover {
     background: #047104;
 }
+
+.call-to-action--email {
+    font-size: 12px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.call-to-action--linkedin {
+    color: #fff;
+    width: 100%;
+    background: #4fa0f7;
+    border: none;
+    padding: 6px 0;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.call-to-action--linkedin:hover {
+    background: #047104;
+}
+
+
+
 
 /*
 .project:after {
