@@ -9,17 +9,19 @@
 </head>
 <body>
     <div class="header">
-        <div class="header-content">
-            <div class="logo" style='display: inline-block; margin-top: 5px;'>
+        <div class="row restricted-width-medium">
+            <div class="col-xs-4 logo" style='display: inline-block; margin-top: 5px;'>
                 <img src="./images/logo.png" style="vertical-align: -webkit-baseline-middle;">
                 <span style="font-size: 24px; color: #fff; font-weight: bold; vertical-align: -webkit-baseline-middle;">Tatuputto.com</span>
             </div>
-            <ul class="header-nav-menu">
-                <li onclick="scrollToSection(1)">Home</li>
-                <li onclick="scrollToSection(2)">Projects</li>
-                <li onclick="scrollToSection(3)">About</li>
-                <li onclick="scrollToSection(4)">Skills</li>
-            </ul>
+            <div class="col-xs-8">
+                <ul class="header-nav-menu">
+                    <li onclick="scrollToSection(1)">Home</li>
+                    <li onclick="scrollToSection(2)">Projects</li>
+                    <li onclick="scrollToSection(3)">About</li>
+                    <li onclick="scrollToSection(4)">Skills</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -149,8 +151,8 @@
     </div>
 
     <div class="container-fluid">
-        <section id="home" style="color: #6b6b6b;">
-            <div class="row" style="height: 100%;">
+        <section id="home" style="color: #6b6b6b; height: 960px; position: relative;">
+            <div class="row restricted-width-wide">
                 <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 about-container">
                     <div class="summary">
                         <div class="profile row">
@@ -274,7 +276,7 @@
                             </div>
                             <div class="project-actions">
                                 <a class="visit-website" href="https://fooddiary.tputto.com" target="_blank">
-                                    <button class="call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
+                                    <button class="btn call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
                                 </a>
                                 <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
                                 <span>
@@ -344,7 +346,7 @@
                             </div>
                             <div class="project-actions">
                                 <a class="visit-website" href="https://opinnaytetyo.tputto.com" target="_blank">
-                                    <button class="call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
+                                    <button class="btn call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
                                 </a>
                                 <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react" target="_blank">GitHub</a>
                                 <span>
@@ -369,23 +371,25 @@
                         <div class="project-details">
                             <div class="project-description">
                                 <p>
-                                    Idea / concept sharing platform. Old project from the second year of my studies and this
-                                    idea sharing platform was our assignment for the course. Worked as part of 6 man team,
+                                    Idea / concept sharing platform. This one is an old project from the second year of my studies. Worked as a part of 5 man team,
                                     filling in where more work force was needed. Mostly focused on back-end and database layer.
                                 </p>
                             </div>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>jQuery</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>PHP</span>
-                                <span>MySQL</span>
+                            <div class="project-keywords no-margin">
+                                <div class="project-keyword-labels">
+                                    <span class="keyword-label">JavaScript</span>
+                                    <span class="keyword-label">jQuery</span>
+                                    <span class="keyword-label">HTML5</span>
+                                    <span class="keyword-label">CSS3</span>
+                                    <span class="keyword-label">PHP</span>
+                                    <span class="keyword-label">MySQL</span>
+                                </div>
                             </div>
-                            <div style="margin-top: 15px;">
-                                <a style="vertical-align: middle; font-size: 14px;" href="https://github.com/TatuPutto/PHP-works" target="_blank">GitHub</a>
-                                <span style="float: right;">
-                                    <a style="vertical-align: middle; font-size: 14px;" onclick="openImageCarouselOverlay('#t-idea-img-carousel')">Gallery (4)</a>
+                            <div class="project-content-divider"></div>
+                            <div class="project-actions">
+                                <a href="https://github.com/TatuPutto/PHP-works" target="_blank">GitHub</a>
+                                <span style="line-height: 21px;">
+                                    <a onclick="openImageCarouselOverlay('#t-idea-img-carousel')">Gallery (4)</a>
                                 </span>
                             </div>
                         </div>
@@ -411,17 +415,20 @@
                                     Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
                                 </p>
                             </div>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>React</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
+                            <div class="project-keywords no-margin">
+                                <div class="project-keyword-labels">
+                                    <span class="keyword-label">JavaScript</span>
+                                    <span class="keyword-label">React</span>
+                                    <span class="keyword-label">HTML5</span>
+                                    <span class="keyword-label">CSS3</span>
+                                </div>
                             </div>
-                            <div style="margin-top: 15px;">
+                            <div class="project-content-divider"></div>
+                            <div class="project-actions">
                                 <a class="visit-website" href="https://codepen.io/TatuPutto/full/NjWEOM/" target="_blank">
-                                    <button class="call-to-action">Try it Out</button>
+                                    <button class="btn call-to-action">Try it Out</button>
                                 </a>
-                                <a style="vertical-align: middle; font-size: 14px;" href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
+                                <a href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -429,64 +436,62 @@
             </div>
         </section>
 
-        <section id="about" style="padding-top: 100px; padding-bottom: 150px; border-bottom: 1px solid #dadada; box-shadow: 0 10px 30px #ececec inset;">
-            <div class="row" style="max-width: 1200px; margin: 0 auto;">
-
-
-                    <div class="col-sm-8 col-xs-10 col-sm-offset-1 col-xs-offset-1" style="border-right: 2px solid #cccccc;">
+        <section id="about" class="section-light">
+            <div class="row restricted-width-wide">
+                    <div class="col-lg-8 col-sm-10 col-xs-10 col-lg-offset-0 col-sm-offset-1 col-xs-offset-1" style="border-right: 2px solid #cccccc;">
                         <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
-                        <div style="float: left; margin-right: 20px;">
-                        <img alt="Tatu Putto profile picture" src="./images/headshot.png" style="height: 265px; width: auto; display: inline-block; border-radius: 6px;" />
-                    </div>
+                        <div class="profile-picture-container">
+                            <img alt="Tatu Putto profile picture" src="./images/headshot.png" class="profile-picture">
+                        </div>
 
-                    <p class="about-text">
-                        <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
-                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
-                        My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
-                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
+                        <p>
+                            <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
+                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
+                            My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
+                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
 
-                        <br><br>
-                        I do all sorts of web development projects with a number of different programming languages and technologies.
-                        I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, and as such, I am always happy to learn new things and pick up new techologies when needed.
-
-
-                        One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
-                        While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I excel at.
+                            <br><br>
+                            I do all sorts of web development projects with a number of different programming languages and technologies.
+                            I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, and as such, I am always happy to learn new things and pick up new techologies when needed.
 
 
-                        <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
-
-                        </br></br>
-                        <!--most recent addition to my toolbox was Node.js.
-                        After getting into Node.js development I've been using JavaScript almost excusively and it has definitely become my go to language on both server and client side.
+                            One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
+                            While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I excel at.
 
 
-                        recently getting into Node.js as well
+                            <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
 
-                        recently i've been using JavaScript almost exclusively, node.js, which is my new go to server side technology to use.
-
-
-                        Recently I've ground quite fond of JavaScript and especially React. So to get a chance to use these in a professional setting
-
-                        I mainly use JavaScript,
-                        React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
-                        in UI and UX design, but I rather focus on the implementation than design.
-                        </br></br>
-                    -->
-                        My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
-                        Ideal role would be either Front-end or full-stack developer.
-                        Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
+                            </br></br>
+                            <!--most recent addition to my toolbox was Node.js.
+                            After getting into Node.js development I've been using JavaScript almost excusively and it has definitely become my go to language on both server and client side.
 
 
-                        <!--Since my projects have been quite front-end development heavy during the later part of my studies,
-                        I am looking for full time employment as a front-end developer.-->
+                            recently getting into Node.js as well
+
+                            recently i've been using JavaScript almost exclusively, node.js, which is my new go to server side technology to use.
+
+
+                            Recently I've ground quite fond of JavaScript and especially React. So to get a chance to use these in a professional setting
+
+                            I mainly use JavaScript,
+                            React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
+                            in UI and UX design, but I rather focus on the implementation than design.
+                            </br></br>
+                        -->
+                            My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
+                            Ideal role would be either Front-end or full-stack developer.
+                            Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
+
+
+                            <!--Since my projects have been quite front-end development heavy during the later part of my studies,
+                            I am looking for full time employment as a front-end developer.-->
 
 
 
 
-                        put that skill to use in a professional setting.
+                            put that skill to use in a professional setting.
 
-                    </p>
+                        </p>
                     <div class="pros-and-cons row">
                         <div class="pros col-xs-6">
                             <h4>Why you should consider hiring me</h4>
@@ -525,27 +530,15 @@
                             </button>
                         </a>-->
                         <a href="mailto:tatuputto@gmail.com">
-                            <button class="call-to-action call-to-action--email">tatuputto@gmail.com</button>
+                            <button class="btn call-to-action call-to-action--email">tatuputto@gmail.com</button>
                         </a>
                         <a href="">
-                            <button style="    color: #fff;width: 100%;
-                                background: #4fa0f7;
-                                border: none;
-                                padding: 6px 0;
-                                border-radius: 4px;
-                                margin-top: 15px;
-                                font-size: 20px;">
+                            <button class="btn linkedin">
                                 <i class="fa fa-linkedin"></i>
                             </button>
                         </a>
                         <a href="">
-                            <button style="    color: #fff;width: 100%;
-                                background: #444444;
-                                border: none;
-                                padding: 6px 0;
-                                border-radius: 4px;
-                                margin-top: 15px;
-                                font-size: 20px;">
+                            <button class="btn github">
                                 <i class="fa fa-github"></i>
                             </button>
                         </a>
@@ -556,8 +549,8 @@
             </div>
         </section>
 
-        <section id='skills' style='background: #fff; padding-right: 15px; padding-left: 15px;     box-shadow: 0 10px 30px #ececec inset;'>
-            <div class="row" style="max-width: 900px;">
+        <section id='skills' class="section-light">
+            <div class="row restricted-width-narrow">
                 <div class="chart-container col-xs-12">
                     <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
                     <ul class="skills-chart">
