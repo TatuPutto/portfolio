@@ -41,6 +41,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.no-underline:hover {
+    text-decoration: none;
+}
+
 p {
     font-size: 16px;
     /*line-height: 30px;*/
@@ -77,7 +81,10 @@ img {
     margin: 0 auto;
 }
 
-
+.highlight {
+    background: #00a7de !important;
+    box-shadow: 0 2px 10px #0fc3ff !important;
+}
 
 .container-fluid {
     padding: 0;
@@ -916,7 +923,6 @@ div[id^="project-"] .row {
 .btn {
     border: none;
     color: #fff;
-    padding: 6px 0;
     border-radius: 4px;
     -webkit-transition: background 0.2s ease-out;
     transition: background 0.2s ease-out;
@@ -934,17 +940,13 @@ div[id^="project-"] .row {
 }
 
 .call-to-action--email {
-    font-size: 12px;
-    padding: 10px 0;
-    width: 100%;
+    font-size: 14px;
 }
 
 .linkedin {
     color: #fff;
-    width: 100%;
     background: #4fa0f7;
     border-radius: 4px;
-    margin-top: 15px;
     font-size: 20px;
 }
 
@@ -955,15 +957,13 @@ div[id^="project-"] .row {
 
 .github {
     color: #fff;
-    width: 100%;
     background: #444;
-    margin-top: 15px;
     font-size: 20px;
 }
 
 .github:hover {
     color: #fff;
-    background: #000;
+    background: #272727;
 }
 
 .call-to-action--linkedin {
@@ -996,12 +996,12 @@ div[id^="project-"] .row {
 */
 
 .chart-container {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .skills-chart {
-    background: url("./images/chart-axis.png") repeat-x;
-    height: 400px;
+    background: url("./images/chart-axis-3.png") repeat-x;
+    height: 300px;
     border-bottom: 2px solid #bdbdbd;
     font-size: 16px;
     color: #333333;
@@ -1181,8 +1181,14 @@ div[id^="project-"] .row {
     font-size: 18px;
 }
 
-.contact-info {
-    margin-top: 10px;
+#contact-info {
+    border-top: 1px solid #dedede;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #fff;
+    box-shadow: none;
+    transition: all 400ms ease-out;
 }
 
 

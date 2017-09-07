@@ -16,9 +16,10 @@
             </div>
             <div class="col-xs-8">
                 <ul class="header-nav-menu">
-                    <li onclick="scrollToSection(1)">Home</li>
-                    <li onclick="scrollToSection(2)">Projects</li>
-                    <li onclick="scrollToSection(3)">About</li>
+                    <li onclick="scrollToSection(0)">Home</li>
+                    <li onclick="scrollToSection(1)">Projects</li>
+                    <li onclick="scrollToSection(2)">About</li>
+                    <li onclick="scrollToSection(3)">Contact</li>
                     <li onclick="scrollToSection(4)">Skills</li>
                 </ul>
             </div>
@@ -173,29 +174,29 @@
                 </div>
                 <div class="col-md-3 col-md-offset-1 col-xs-12 navigation">
                     <ul class="nav-menu">
-                        <li class="active hidden-right" onclick="scrollToSection(1)">
+                        <li class="active hidden-right" onclick="scrollToSection(0)">
                             <div class="hexagon-top"></div>
                             <div class="hexagon-middle"><i class="fa fa-home"></i> Home</div>
                             <div class="hexagon-bottom"></div>
                         </li>
-                        <li class="hidden-right" onclick="scrollToSection(2)" class="left-bound-hexagon">
+                        <li class="hidden-right" onclick="scrollToSection(1)">
                             <div class="hexagon-top"></div>
                             <div class="hexagon-middle"><i class="fa fa-flask"></i> Projects</div>
                             <div class="hexagon-bottom"></div>
                         </li>
-                        <li class="hidden-right" onclick="scrollToSection(3)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-bar-chart"></i> Skills</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                        <li class="hidden-right" onclick="scrollToSection(4)">
+                        <li class="hidden-right" onclick="scrollToSection(2)">
                             <div class="hexagon-top"></div>
                             <div class="hexagon-middle"><i class="fa fa-info-circle"></i> About</div>
                             <div class="hexagon-bottom"></div>
                         </li>
-                        <li class="hidden-right" onclick="scrollToSection(4)">
+                        <li class="hidden-right" onclick="scrollToSection(3)">
                             <div class="hexagon-top"></div>
                             <div class="hexagon-middle"><i class="fa fa-vcard-o"></i> Contact</div>
+                            <div class="hexagon-bottom"></div>
+                        </li>
+                        <li class="hidden-right" onclick="scrollToSection(4)">
+                            <div class="hexagon-top"></div>
+                            <div class="hexagon-middle"><i class="fa fa-bar-chart"></i> Skills</div>
                             <div class="hexagon-bottom"></div>
                         </li>
                     </ul>
@@ -203,7 +204,7 @@
             </div>
 
             <div class="scroll-to-projects">
-                <button onclick="scrollToSection(2)">
+                <button onclick="scrollToSection(1)">
                     Check out my projects<br>
                     <i class="fa fa-angle-double-down"></i>
                 </button>
@@ -438,7 +439,7 @@
 
         <section id="about" class="section-light">
             <div class="row restricted-width-wide">
-                    <div class="col-lg-8 col-sm-10 col-xs-10 col-lg-offset-0 col-sm-offset-1 col-xs-offset-1" style="border-right: 2px solid #cccccc;">
+                    <div class="col-xs-10 col-xs-offset-1">
                         <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
                         <div class="profile-picture-container">
                             <img alt="Tatu Putto profile picture" src="./images/headshot.png" class="profile-picture">
@@ -452,12 +453,19 @@
 
                             <br><br>
                             I do all sorts of web development projects with a number of different programming languages and technologies.
-                            I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, and as such, I am always happy to learn new things and pick up new techologies when needed.
+                            <!--I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, -->
 
+                            When it comes to web development, I consider myself to be a jack-of-all-trades kind a guy.
+
+                            Keeping that in mind, I'm not the best at any given area, but I make up for it with flebility, versatility and a strong can-do attitude.
+                            These traits have served me well in the past and I think they will make me a great asset for whoever I'll working for in the future.
+                            <!--
+
+                            and as such, I am always happy to learn new things and pick up new techologies when needed.
 
                             One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
-                            While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I excel at.
-
+                            While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I currently excel at.
+                        -->
 
                             <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
 
@@ -492,12 +500,12 @@
                             put that skill to use in a professional setting.
 
                         </p>
-                    <div class="pros-and-cons row">
+                    <!--<div class="pros-and-cons row">
                         <div class="pros col-xs-6">
                             <h4>Why you should consider hiring me</h4>
                             <ul class="pros-list">
                                 <li>Flexible</li>
-                                <li>Persistent</li>
+                                <li>Versatile</li>
                                 <li>Learning oriented</li>
                                 <li>Team player</li>
                                 <li>Easy to work with</li>
@@ -505,14 +513,15 @@
                             </ul>
                         </div>
                         <div class="cons col-xs-6">
-                            <h4>although I'm not perfect</h4>
+                            <h4>My signature skills</h4>
                             <ul class="cons-list">
-                                <li>Fresh off the bench</li>
-                                <li>Maybe too much of a generalist</li>
-                                <li>Not the most talkative person</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                         <!--Then moving onto
                         more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
                         <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
@@ -521,30 +530,23 @@
                         My skillset leans towards front-end development-->
                     <!--</p>-->
                 </div>
-                <div class="col-sm-2 col-xs-4 col-sm-offset-0 col-xs-offset-4 text-center profile-image">
-                    <div class="contact-info">
-                        <h3 style="color: #6d6d6d; margin-bottom: 30px;">Get in Touch</h3>
-                        <!--<a href="https://github.com/TatuPutto">
-                            <button class="to-github-account">
-                                <i class="fa fa-github"></i> GitHub
-                            </button>
-                        </a>-->
-                        <a href="mailto:tatuputto@gmail.com">
+                <div class="col-xs-10 col-xs-offset-1 text-center profile-image">
+                    <section id="contact-info">
+                        <a class="no-underline" href="mailto:tatuputto@gmail.com">
                             <button class="btn call-to-action call-to-action--email">tatuputto@gmail.com</button>
                         </a>
-                        <a href="">
+                        <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/">
                             <button class="btn linkedin">
                                 <i class="fa fa-linkedin"></i>
                             </button>
                         </a>
-                        <a href="">
+                        <a class="no-underline" href="https://github.com/tatuputto">
                             <button class="btn github">
                                 <i class="fa fa-github"></i>
                             </button>
                         </a>
-                        <div style="margin-top: 20px;
-    font-size: 18px;">+358 50 407 3445</div>
-                    </div>
+                        <span style="display: inline-block; line-height: 30px; margin-left: 10px; padding-left: 16px; border-left: 1px solid #dedede;">+358 50 407 3445</span>
+                    </section>
                 </div>
             </div>
         </section>
@@ -556,8 +558,7 @@
                     <ul class="skills-chart">
                         <li class="y-axis">
                             <ol>
-                                <li>Master</li>
-                                <li>Expert</li>
+                                <li>Proficient</li>
                                 <li>Intermediate</li>
                                 <li>Basics</li>
                             </ol>
@@ -565,7 +566,7 @@
                         <li class="bar ux-ui-design deflated"><div class="bar-label">UI / UX design<div></li>
                         <li class="bar html-css deflated"><div class="bar-label">HTML / CSS<div></li>
                         <li class="bar javascript deflated"><div class="bar-label">JavaScript<div></li>
-                        <li class="bar react deflated"><div class="bar-label">React / ES6<div></li>
+                        <li class="bar react deflated"><div class="bar-label">React<div></li>
                         <li class="bar jquery deflated"><div class="bar-label">jQuery<div></li>
                         <li class="bar php-java deflated"><div class="bar-label">PHP / Java<div></li>
                         <li class="bar mysql deflated"><div class="bar-label">MySQL<div></li>
