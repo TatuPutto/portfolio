@@ -63,7 +63,7 @@ img {
     padding-bottom: 150px;
     border-bottom: 1px solid #dadada;
     background: #ffF;
-    box-shadow: 0 10px 30px #ececec inset;
+    box-shadow: 0 10px 20px #ececec inset;
 }
 
 .restricted-width-wide {
@@ -508,7 +508,7 @@ img {
 }
 
 #projects {
-    background: #fbfbfb;
+    background: #f9f9f9;
     padding: 100px 15px;
     border-bottom: 1px solid #dadada;
 }
