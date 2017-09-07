@@ -5,7 +5,12 @@ var $overlay = $('.image-carousel-overlay');
 var activeProject = 1;
 
 $(document).ready(function () {
-    $('#home').css('height', window.innerHeight);
+    console.log(window.innerHeight);
+    if(window.innerHeight > 700) {
+        console.log('täällä');
+        $('#home').css('height', window.innerHeight);
+    }
+
     $('.container-fluid').addClass('ready');
 
     var i = 1;
@@ -45,7 +50,7 @@ function handleScroll() {
 }
 
 function toggleHeaderPosition() {
-    var projectsSectionOffsetTop = $('#projects').offset().top - 50;
+    var projectsSectionOffsetTop = $('#projects').offset().top - 55;
 
     if($document.scrollTop() > projectsSectionOffsetTop &&
        !$header.hasClass('fixed') && !$overlay.hasClass('open')) {
