@@ -8,29 +8,32 @@
     <title>Tatu Putto, Web Developer</title>
 </head>
 <body>
-    <div class="header">
-        <div class="row restricted-width-medium">
-            <div class="col-xs-4 logo" style='display: inline-block; margin-top: 5px;'>
+    <header>
+        <!--<div class="row restricted-width-medium">
+            <!--<div class="col-xs-4 header__logo" style='display: inline-block; margin-top: 5px;'>
                 <img src="./images/logo.png" style="vertical-align: -webkit-baseline-middle;">
                 <span style="font-size: 24px; color: #fff; font-weight: bold; vertical-align: -webkit-baseline-middle;">Tatuputto.com</span>
-            </div>
-            <div class="col-xs-8">
-                <ul class="header-nav-menu">
+            </div>-->
+        <div class="restricted-width-medium">
+            <nav class="header__nav-menu">
+                <ul>
                     <li onclick="scrollToSection(0)">Home</li>
                     <li onclick="scrollToSection(1)">Projects</li>
                     <li onclick="scrollToSection(2)">About</li>
                     <li onclick="scrollToSection(3)">Contact</li>
                     <li onclick="scrollToSection(4)">Skills</li>
                 </ul>
-            </div>
+            </nav>
         </div>
-    </div>
-
+        <!--</div>-->
+    </header>
     <!-- Show image carousel for selected project-->
-    <div class="image-carousel-overlay">
-        <i class="toggle-overlay fa fa-close" onclick="closeImageCarouselOverlay();"></i>
+    <div class="carousel-overlay">
+        <button class="toggle-overlay" onclick="closeCarouselOverlay();">
+            <i class="fa fa-close"></i>
+        </button>
         <!--Food diary image carousel-->
-        <div id="food-diary-img-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
+        <div id="food-diary-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <img class="d-block img-fluid" src="./images/food-diary-front.png">
@@ -59,28 +62,28 @@
             </div>
 
             <div class="carousel-controls">
-                <a href="#food-diary-img-carousel" data-slide="prev">
+                <a href="#food-diary-carousel" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                 </a>
-                <a href="#food-diary-img-carousel" data-slide="next">
+                <a href="#food-diary-carousel" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
 
             <ol class="carousel-indicators">
-                <li data-target="#food-diary-img-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="1"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="2"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="3"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="4"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="5"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="6"></li>
-                <li data-target="#food-diary-img-carousel" data-slide-to="7"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="1"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="2"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="3"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="4"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="5"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="6"></li>
+                <li data-target="#food-diary-carousel" data-slide-to="7"></li>
             </ol>
         </div>
 
         <!--Gist management app image carousel-->
-        <div id="gist-management-app-img-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="gist-manager-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
@@ -106,15 +109,15 @@
             </div>
 
             <ol class="carousel-indicators">
-                <li data-target="#gist-management-app-img-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#gist-management-app-img-carousel" data-slide-to="1"></li>
-                <li data-target="#gist-management-app-img-carousel" data-slide-to="2"></li>
-                <li data-target="#gist-management-app-img-carousel" data-slide-to="3"></li>
+                <li data-target="#gist-manager-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#gist-manager-carousel" data-slide-to="1"></li>
+                <li data-target="#gist-manager-carousel" data-slide-to="2"></li>
+                <li data-target="#gist-manager-carousel" data-slide-to="3"></li>
             </ol>
         </div>
 
         <!--T-idea image carousel-->
-        <div id="t-idea-img-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="t-idea-carousel" style="display: none;" class="carousel slide" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <img class="d-block img-fluid" src="./images/t-idea-landing.png">
@@ -134,19 +137,19 @@
             </div>
 
             <div class="carousel-controls">
-                <a href="#t-idea-img-carousel" data-slide="prev">
+                <a href="#t-idea-carousel" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                 </a>
-                <a href="#t-idea-img-carousel" data-slide="next">
+                <a href="#t-idea-carousel" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
 
             <ol class="carousel-indicators">
-                <li data-target="#t-idea-img-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#t-idea-img-carousel" data-slide-to="1"></li>
-                <li data-target="#t-idea-img-carousel" data-slide-to="2"></li>
-                <li data-target="#t-idea-img-carousel" data-slide-to="3"></li>
+                <li data-target="#t-idea-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#t-idea-carousel" data-slide-to="1"></li>
+                <li data-target="#t-idea-carousel" data-slide-to="2"></li>
+                <li data-target="#t-idea-carousel" data-slide-to="3"></li>
             </ol>
         </div>
     </div>
@@ -211,378 +214,345 @@
             </div>
         </section>
 
-        <section id="projects">
-            <div id="project-1">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="project-headline">
-                            <h3><a target="_blank" href="https://fooddiary.tputto.com">Food diary</a></h3>
-                        </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail-overlay" onclick="openImageCarouselOverlay('#food-diary-img-carousel')"></div>
-                            <img class="d-block img-fluid" src="./images/food-diary-front-showcase-large.png">
-                        </div>
-                        <div class="project-details">
-                            <div class="project-description">
-                                <p>
-                                    <!--Food diary application for tracking macronutrient and energy consumption. My latest solo project and the first decently sized venture with Node.js.
-                                    This project consists of two separate applications: client-side React app and Node.js server app.
-                                    Server app exposes REST API, which the client app consumes.-->
-                                    Food diary application for tracking macronutrient and energy consumption.
-                                    This is my latest solo project and the first venture into the wonderful world of Node.js development.
-                                    My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive coverage of finnish food products and ingredients by combining <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
+        <section id="projects" class="section-dark">
+            <div id="project-1" class="project">
+                <h3 class="project__title">
+                    <a target="_blank" href="https://fooddiary.tputto.com">Food diary</a>
+                </h3>
+                <div class="project__thumbnail-container" onclick="openImageCarouselOverlay('#food-diary-carousel')">
+                    <img class="project__thumbnail" src="./images/food-diary-front-showcase-large.png">
+                </div>
+                <div class="project__details">
+                    <div class="project__description">
+                        <p>
+                            <!--Food diary application for tracking macronutrient and energy consumption. My latest solo project and the first decently sized venture with Node.js.
+                            This project consists of two separate applications: client-side React app and Node.js server app.
+                            Server app exposes REST API, which the client app consumes.-->
+                            Food diary application for tracking macronutrient and energy consumption.
+                            This is my latest solo project and the first venture into the wonderful world of Node.js development.
+                            My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive coverage of finnish food products and ingredients by combining <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
 
-                                    <!--<ul style="list-style-type: disc; margin-left: 30px;">
-                                        <li>Node.js / MySQL back-end which exposes REST API</li>
-                                        <li>UI written with React, which in turn consumes the exposed API</li>
-                                        <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
-                                    </ul>-->
-                                </p>
-                            </div>
-                            <div class="project-additional-info">
-                                <div class="project-technical-details">
-                                    <h4>Techical Details</h4>
-                                    <ul style="list-style-type: disc; margin-top: 15px; margin-left: 30px; line-height: 1.5;">
-                                        <li>Node.js / MySQL back-end (exposes resources via RESTful API)</li>
-                                        <li>UI written in React (consumes the API)</li>
-                                        <li>Client-side routing with React Router for SPA experience</li>
-                                        <li>Bootstrap 3 in combination with custom css for responsiveness to accomodate even the smallest viewports</li>
-                                        <li>Web scraping algorithm with Node.js and Cheerio</li>
-                                    </ul>
-                                </div>
-                                <div class="project-keywords">
-                                    <h4>Keywords</h4>
-                                    <div class="project-keyword-labels">
-                                        <span class="keyword-label">JavaScript</span>
-                                        <span class="keyword-label">React</span>
-                                        <span class="keyword-label">React Router</span>
-                                        <span class="keyword-label">HTML5</span>
-                                        <span class="keyword-label">CSS3</span>
-                                        <span class="keyword-label">LESS</span>
-                                        <span class="keyword-label">Bootstrap</span>
-                                        <span class="keyword-label">Webpack</span>
-                                        <span class="keyword-label">Single-page application</span>
-                                        <span class="keyword-label">Responsive design</span>
-                                        <span class="keyword-label">Node.js</span>
-                                        <span class="keyword-label">MySQL</span>
-                                        <span class="keyword-label">REST</span>
-                                        <span class="keyword-label">JSON</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content-divider">
-                                <button class="toggle-additional-details-view" onclick="showAdditionalDetails(1);">
-                                    <i class="fa fa-chevron-down"></i> Techical Details
-                                </button>
-                            </div>
-                            <div class="project-actions">
-                                <a class="visit-website" href="https://fooddiary.tputto.com" target="_blank">
-                                    <button class="btn call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
-                                </a>
-                                <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
-                                <span>
-                                    <a onclick="openImageCarouselOverlay('#food-diary-img-carousel');">Gallery (8)</a>
-                                </span>
+                            <!--<ul style="list-style-type: disc; margin-left: 30px;">
+                                <li>Node.js / MySQL back-end which exposes REST API</li>
+                                <li>UI written with React, which in turn consumes the exposed API</li>
+                                <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
+                            </ul>-->
+                        </p>
+                    </div>
+                    <div class="project__additional-info">
+                        <div class="project__technical-details">
+                            <h4>Techical Details</h4>
+                            <ul>
+                                <li>Node.js / MySQL back-end (exposes resources via RESTful API)</li>
+                                <li>UI written in React (consumes the API)</li>
+                                <li>Client-side routing with React Router for SPA experience</li>
+                                <li>Bootstrap 3 in combination with custom css for responsiveness to accomodate even the smallest viewports</li>
+                                <li>Web scraping algorithm with Node.js and Cheerio</li>
+                            </ul>
+                        </div>
+                        <div class="project__keywords">
+                            <h4>Keywords</h4>
+                            <div class="project__keyword-labels">
+                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>React Router</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>LESS</span>
+                                <span>Bootstrap</span>
+                                <span>Webpack</span>
+                                <span>Single-page application</span>
+                                <span>Responsive design</span>
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                                <span>REST</span>
+                                <span>JSON</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="project__content-divider">
+                        <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(1);">
+                            <i class="fa fa-chevron-down"></i> Techical Details
+                        </button>
+                    </div>
+                    <div class="project__actions">
+                        <a class="no-underline" href="https://fooddiary.tputto.com" target="_blank">
+                            <button class="btn btn--call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
+                        </a>
+                        <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
+                        <span>
+                            <a onclick="openImageCarouselOverlay('#food-diary-carousel');">Gallery (8)</a>
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <div id="project-2">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="project-headline">
-                            <h3>
-                                <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Manager</a>
-                            </h3>
-                        </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail-overlay" onclick="openImageCarouselOverlay('#gist-management-app-img-carousel')"></div>
-                            <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
-                        </div>
-                        <div class="project-details">
-                            <div class="project-description">
-                                <p>
-                                    Web application for managing code snippets (gists). This project is by a wide margin,
-                                    my largest solo project to date. It constitutes as the practical part of my thesis for my
-                                    Bachelor's degree <a href="https://theseus.fi/handle/10024/123534" target="_blank">(you can find theoretical part here)</a>. and also the stepping stone to learning modern web development techniques
-                                    and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.
-                                </p>
-                            </div>
+            <div id="project-2" class="project">
+                <h3 class="project__title">
+                    <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Manager</a>
+                </h3>
+                <div class="project__thumbnail-container" onclick="openImageCarouselOverlay('#gist-manager-carousel')">
+                    <img class="project__thumbnail" src="./images/gist-management-app-discover.png">
+                </div>
+                <div class="project__details">
+                    <div class="project__description">
+                        <p>
+                            Web application for managing code snippets (gists). This project is by a wide margin,
+                            my largest solo project to date. It constitutes as the practical part of my thesis for my
+                            Bachelor's degree <a href="https://theseus.fi/handle/10024/123534" target="_blank">(you can find theoretical part here)</a>. and also the stepping stone to learning modern web development techniques
+                            and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.
+                        </p>
+                    </div>
 
-                            <div class="project-additional-info">
-                                <div class="project-technical-details">
-                                    <h4>Techical Details</h4>
-                                    <ul style="list-style-type: disc; margin-top: 15px; margin-left: 30px; line-height: 1.5;">
-                                        <li>Java / Spring back-end (authentication)</li>
-                                        <li>UI written in React (consumes Gist API)</li>
-                                        <li>Flux architechture implemented on the client-side with Redux</li>
-                                        <li>Client-side routing with React Router for SPA experience</li>
-                                    </ul>
-                                </div>
-                                <div class="project-keywords">
-                                    <h4>Keywords</h4>
-                                    <div class="project-keyword-labels">
-                                        <span class="keyword-label">JavaScript</span>
-                                        <span class="keyword-label">React</span>
-                                        <span class="keyword-label">React Router</span>
-                                        <span class="keyword-label">Redux</span>
-                                        <span class="keyword-label">HTML5</span>
-                                        <span class="keyword-label">CSS3</span>
-                                        <span class="keyword-label">LESS</span>
-                                        <span class="keyword-label">Webpack</span>
-                                        <span class="keyword-label">Single-page application</span>
-                                        <span class="keyword-label">Java</span>
-                                        <span class="keyword-label">Spring MVC</span>
-                                        <span class="keyword-label">REST</span>
-                                        <span class="keyword-label">JSON</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content-divider">
-                                <button class="toggle-additional-details-view" onclick="showAdditionalDetails(2);">
-                                    <i class="fa fa-chevron-down"></i> Techical Details
-                                </button>
-                            </div>
-                            <div class="project-actions">
-                                <a class="visit-website" href="https://opinnaytetyo.tputto.com" target="_blank">
-                                    <button class="btn call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
-                                </a>
-                                <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react" target="_blank">GitHub</a>
-                                <span>
-                                    <a onclick="openImageCarouselOverlay('#gist-management-app-img-carousel')">Gallery (4)</a>
-                                </span>
+                    <div class="project__additional-info">
+                        <div class="project__technical-details">
+                            <h4>Techical Details</h4>
+                            <ul>
+                                <li>Java / Spring back-end (authentication)</li>
+                                <li>UI written in React (consumes Gist API)</li>
+                                <li>Flux architechture implemented on the client-side with Redux</li>
+                                <li>Client-side routing with React Router for SPA experience</li>
+                            </ul>
+                        </div>
+                        <div class="project__keywords">
+                            <h4>Keywords</h4>
+                            <div class="project__keyword-labels">
+                                <span>JavaScript</span>
+                                <span>React</span>
+                                <span>React Router</span>
+                                <span>Redux</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>LESS</span>
+                                <span>Webpack</span>
+                                <span>Single-page application</span>
+                                <span>Java</span>
+                                <span>Spring MVC</span>
+                                <span>REST</span>
+                                <span>JSON</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="project__content-divider">
+                        <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(2);">
+                            <i class="fa fa-chevron-down"></i> Techical Details
+                        </button>
+                    </div>
+                    <div class="project__actions">
+                        <a class="no-underline" href="https://opinnaytetyo.tputto.com" target="_blank">
+                            <button class="btn btn--call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
+                        </a>
+                        <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react" target="_blank">GitHub</a>
+                        <span>
+                            <a onclick="openImageCarouselOverlay('#gist-manager-carousel')">Gallery (4)</a>
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <div id="project-3">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="project-headline">
-                            <h3>T-idea</h3>
+            <div id="project-3" class="project">
+                <h3 class="project__title">T-idea</h3>
+                <div class="project__thumbnail-container" onclick="openImageCarouselOverlay('#t-idea-carousel')">
+                    <img class="project__thumbnail" src="./images/t-idea-front-showcase-large.png">
+                </div>
+                <div class="project__details">
+                    <div class="project__description">
+                        <p>
+                            Idea / concept sharing platform. This one is an old project from the second year of my studies. Worked as a part of 5 man team,
+                            filling in where more work force was needed. Mostly focused on back-end and database layer.
+                        </p>
+                    </div>
+                    <div class="project__keywords no-margin">
+                        <div class="project__keyword-labels">
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
                         </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail-overlay" onclick="openImageCarouselOverlay('#t-idea-img-carousel')"></div>
-                            <img class="d-block img-fluid" src="./images/t-idea-front-showcase-large.png">
-                        </div>
-                        <div class="project-details">
-                            <div class="project-description">
-                                <p>
-                                    Idea / concept sharing platform. This one is an old project from the second year of my studies. Worked as a part of 5 man team,
-                                    filling in where more work force was needed. Mostly focused on back-end and database layer.
-                                </p>
-                            </div>
-                            <div class="project-keywords no-margin">
-                                <div class="project-keyword-labels">
-                                    <span class="keyword-label">JavaScript</span>
-                                    <span class="keyword-label">jQuery</span>
-                                    <span class="keyword-label">HTML5</span>
-                                    <span class="keyword-label">CSS3</span>
-                                    <span class="keyword-label">PHP</span>
-                                    <span class="keyword-label">MySQL</span>
-                                </div>
-                            </div>
-                            <div class="project-content-divider"></div>
-                            <div class="project-actions">
-                                <a href="https://github.com/TatuPutto/PHP-works" target="_blank">GitHub</a>
-                                <span style="line-height: 21px;">
-                                    <a onclick="openImageCarouselOverlay('#t-idea-img-carousel')">Gallery (4)</a>
-                                </span>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="project__content-divider"></div>
+                    <div class="project__actions">
+                        <a href="https://github.com/TatuPutto/PHP-works" target="_blank">GitHub</a>
+                        <span style="line-height: 21px;">
+                            <a onclick="openImageCarouselOverlay('#t-idea-carousel')">Gallery (4)</a>
+                        </span>
                     </div>
                 </div>
             </div>
 
-            <div id="project-4">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="project-headline">
-                            <h3>Game of Life</h3>
+            <div id="project-4" class="project">
+                <h3 class="project__title">Game of Life</h3>
+                <div class="project__thumbnail-container project__thumbnail-container--dark play-gif" onclick="toggleGif();">
+                    <div class="gif-wrapper">
+                        <img class="project__thumbnail" src="./images/game-of-life-showcase-large.png">
+                    </div>
+                </div>
+                <div class="project__details">
+                    <div class="project__description">
+                        <p>
+                            Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
+                        </p>
+                    </div>
+                    <div class="project__keywords no-margin">
+                        <div class="project__keyword-labels">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
                         </div>
-                        <div class="thumbnail-container">
-                            <div class="thumbnail-overlay play-gif" onclick="toggleGif();"></div>
-                            <div class="gif-wrapper">
-                                <img class="d-block img-fluid" src="./images/game-of-life-showcase-large.png">
-                            </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-description">
-                                <p>
-                                    Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
-                                </p>
-                            </div>
-                            <div class="project-keywords no-margin">
-                                <div class="project-keyword-labels">
-                                    <span class="keyword-label">JavaScript</span>
-                                    <span class="keyword-label">React</span>
-                                    <span class="keyword-label">HTML5</span>
-                                    <span class="keyword-label">CSS3</span>
-                                </div>
-                            </div>
-                            <div class="project-content-divider"></div>
-                            <div class="project-actions">
-                                <a class="visit-website" href="https://codepen.io/TatuPutto/full/NjWEOM/" target="_blank">
-                                    <button class="btn call-to-action">Try it Out</button>
-                                </a>
-                                <a href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="project__content-divider"></div>
+                    <div class="project__actions">
+                        <a class="no-underline" href="https://codepen.io/TatuPutto/full/NjWEOM/" target="_blank">
+                            <button class="btn btn--call-to-action">Try it Out</button>
+                        </a>
+                        <a href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section-light">
-            <div class="row restricted-width-wide">
-                    <div class="col-xs-10 col-xs-offset-1">
-                        <h2 style="margin-bottom: 40px; color: #6d6d6d;">About Me</h2>
-                        <div class="profile-picture-container">
-                            <img alt="Tatu Putto profile picture" src="./images/headshot.png" class="profile-picture">
-                        </div>
-
-                        <p>
-                            <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
-                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
-                            My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
-                            I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
-
-                            <br><br>
-                            I do all sorts of web development projects with a number of different programming languages and technologies.
-                            <!--I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, -->
-
-                            When it comes to web development, I consider myself to be a jack-of-all-trades kind a guy.
-
-                            Keeping that in mind, I'm not the best at any given area, but I make up for it with flebility, versatility and a strong can-do attitude.
-                            These traits have served me well in the past and I think they will make me a great asset for whoever I'll working for in the future.
-                            <!--
-
-                            and as such, I am always happy to learn new things and pick up new techologies when needed.
-
-                            One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
-                            While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I currently excel at.
-                        -->
-
-                            <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
-
-                            </br></br>
-                            <!--most recent addition to my toolbox was Node.js.
-                            After getting into Node.js development I've been using JavaScript almost excusively and it has definitely become my go to language on both server and client side.
-
-
-                            recently getting into Node.js as well
-
-                            recently i've been using JavaScript almost exclusively, node.js, which is my new go to server side technology to use.
-
-
-                            Recently I've ground quite fond of JavaScript and especially React. So to get a chance to use these in a professional setting
-
-                            I mainly use JavaScript,
-                            React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
-                            in UI and UX design, but I rather focus on the implementation than design.
-                            </br></br>
-                        -->
-                            My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
-                            Ideal role would be either Front-end or full-stack developer.
-                            Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
-
-
-                            <!--Since my projects have been quite front-end development heavy during the later part of my studies,
-                            I am looking for full time employment as a front-end developer.-->
-
-
-
-
-                            put that skill to use in a professional setting.
-
-                        </p>
-                    <!--<div class="pros-and-cons row">
-                        <div class="pros col-xs-6">
-                            <h4>Why you should consider hiring me</h4>
-                            <ul class="pros-list">
-                                <li>Flexible</li>
-                                <li>Versatile</li>
-                                <li>Learning oriented</li>
-                                <li>Team player</li>
-                                <li>Easy to work with</li>
-                                <li>Problem solver</li>
-                            </ul>
-                        </div>
-                        <div class="cons col-xs-6">
-                            <h4>My signature skills</h4>
-                            <ul class="cons-list">
-                                <li>JavaScript</li>
-                                <li>React</li>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                            </ul>
-                        </div>
-                    </div>-->
-                        <!--Then moving onto
-                        more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
-                        <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
-                        <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
-                        While both of those projects included alot of back-end work aswell
-                        My skillset leans towards front-end development-->
-                    <!--</p>-->
+            <div class="about__container restricted-width-medium">
+                <h2 class="about__title">About Me</h2>
+                <div class="about__profile-picture-container">
+                    <img class="profile-picture" alt="Tatu Putto profile picture" src="./images/headshot.png">
                 </div>
-                <div class="col-xs-10 col-xs-offset-1 text-center profile-image">
-                    <section id="contact-info">
-                        <a class="no-underline" href="mailto:tatuputto@gmail.com">
-                            <button class="btn call-to-action call-to-action--email">tatuputto@gmail.com</button>
-                        </a>
-                        <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/">
-                            <button class="btn linkedin">
-                                <i class="fa fa-linkedin"></i>
-                            </button>
-                        </a>
-                        <a class="no-underline" href="https://github.com/tatuputto">
-                            <button class="btn github">
-                                <i class="fa fa-github"></i>
-                            </button>
-                        </a>
-                        <span style="display: inline-block; line-height: 30px; margin-left: 10px; padding-left: 16px; border-left: 1px solid #dedede;">+358 50 407 3445</span>
-                    </section>
+                <div class="about__text-container">
+                    <p class="about__text">
+                        <!--My name is Tatu Putto. I am a 24 years old fresh graduate from Joensuu, Finland and I'm aspiring to be an awesome web developer someday.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.-->
+                        My name is Tatu Putto. I am a fresh graduate and an aspiring web developer from Joensuu, Finland.
+                        I graduated in March, 2017 from Karelia University of Applied Sciences with a bachelor's degree in Business Information Technology.
+
+                        <br><br>
+                        I do all sorts of web development projects with a number of different programming languages and technologies.
+                        <!--I consider myself to be a jack-of-all-trades kind a guy when it comes to web development, -->
+
+                        When it comes to web development, I consider myself to be a jack-of-all-trades kind a guy.
+
+                        Keeping that in mind, I'm not the best at any given area, but I make up for it with flebility, versatility and a strong can-do attitude.
+                        These traits have served me well in the past and I think they will make me a great asset for whoever I'll working for in the future.
+                        <!--
+
+                        and as such, I am always happy to learn new things and pick up new techologies when needed.
+
+                        One of the perks of being a generalist type is the ability to be very flexible, which I think is my greatest strength and what makes me a great asset.
+                        While i'm capable of working at any layer of the web development stack, I do have a slight preference for front-end development and that is where I currently excel at.
+                    -->
+
+                        <!--i'm always on the lookout for learning oportunities, be it as different approach to a problem or picking up a new-->
+
+                        </br></br>
+                        <!--most recent addition to my toolbox was Node.js.
+                        After getting into Node.js development I've been using JavaScript almost excusively and it has definitely become my go to language on both server and client side.
+
+
+                        recently getting into Node.js as well
+
+                        recently i've been using JavaScript almost exclusively, node.js, which is my new go to server side technology to use.
+
+
+                        Recently I've ground quite fond of JavaScript and especially React. So to get a chance to use these in a professional setting
+
+                        I mainly use JavaScript,
+                        React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
+                        in UI and UX design, but I rather focus on the implementation than design.
+                        </br></br>
+                    -->
+                        My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
+                        Ideal role would be either Front-end or full-stack developer.
+                        Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
+
+
+                        <!--Since my projects have been quite front-end development heavy during the later part of my studies,
+                        I am looking for full time employment as a front-end developer.-->
+
+
+
+
+                        put that skill to use in a professional setting.
+
+                    </p>
                 </div>
+                <!--<div class="pros-and-cons row">
+                    <div class="pros col-xs-6">
+                        <h4>Why you should consider hiring me</h4>
+                        <ul class="pros-list">
+                            <li>Flexible</li>
+                            <li>Versatile</li>
+                            <li>Learning oriented</li>
+                            <li>Team player</li>
+                            <li>Easy to work with</li>
+                            <li>Problem solver</li>
+                        </ul>
+                    </div>
+                    <div class="cons col-xs-6">
+                        <h4>My signature skills</h4>
+                        <ul class="cons-list">
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
+                </div>-->
+                    <!--Then moving onto
+                    more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
+                    <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
+                    <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
+                    While both of those projects included alot of back-end work aswell
+                    My skillset leans towards front-end development-->
+                <!--</p>-->
+                <section id="contact-info" class="about__contact-info">
+                    <a class="no-underline" href="mailto:tatuputto@gmail.com">
+                        <button class="btn btn--call-to-action btn--email">tatuputto@gmail.com</button>
+                    </a>
+                    <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/">
+                        <button class="btn btn--linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </button>
+                    </a>
+                    <a class="no-underline" href="https://github.com/tatuputto">
+                        <button class="btn btn--github">
+                            <i class="fa fa-github"></i>
+                        </button>
+                    </a>
+                    <span class="about__phone-number">+358 50 407 3445</span>
+                </section>
             </div>
         </section>
 
         <section id='skills' class="section-light">
-            <div class="row restricted-width-narrow">
-                <div class="chart-container col-xs-12">
-                    <h2 class="text-right" style="color: #6d6d6d;">My Technical Skills</h2>
-                    <ul class="skills-chart">
-                        <li class="y-axis">
-                            <ol>
-                                <li>Proficient</li>
-                                <li>Intermediate</li>
-                                <li>Basics</li>
-                            </ol>
-                        </li>
-                        <li class="bar ux-ui-design deflated"><div class="bar-label">UI / UX design<div></li>
-                        <li class="bar html-css deflated"><div class="bar-label">HTML / CSS<div></li>
-                        <li class="bar javascript deflated"><div class="bar-label">JavaScript<div></li>
-                        <li class="bar react deflated"><div class="bar-label">React<div></li>
-                        <li class="bar jquery deflated"><div class="bar-label">jQuery<div></li>
-                        <li class="bar php-java deflated"><div class="bar-label">PHP / Java<div></li>
-                        <li class="bar mysql deflated"><div class="bar-label">MySQL<div></li>
-                        <li class="bar nodejs deflated"><div class="bar-label">Node.js<div></li>
-                    </ul>
-                </div>
+            <div class="skills__container restricted-width-narrow">
+                <h2 class="skills__title" style="color: #6d6d6d;">My Technical Skills</h2>
+                <ul class="skills__chart">
+                    <li class="skills__proficiency-labels">
+                        <ol>
+                            <li>Proficient</li>
+                            <li>Intermediate</li>
+                            <li>Basics</li>
+                        </ol>
+                    </li>
+                    <li class="skills__bar ux-ui-design deflated"><div>UI / UX design</div></li>
+                    <li class="skills__bar html-css deflated"><div>HTML / CSS</div></li>
+                    <li class="skills__bar javascript deflated"><div>JavaScript</div></li>
+                    <li class="skills__bar react deflated"><div>React</div></li>
+                    <li class="skills__bar jquery deflated"><div>jQuery</div></li>
+                    <li class="skills__bar php-java deflated"><div>PHP / Java</div></li>
+                    <li class="skills__bar mysql deflated"><div>MySQL</div></li>
+                    <li class="skills__bar nodejs deflated"><div>Node.js</div></li>
+                </ul>
             </div>
         </section>
-
-
     </div>
-    <footer style="height: 100px;
-    background: linear-gradient(to bottom, #212121, #1d1d1d); text-align: center;">
-        <span style="line-height: 100px; color: #fff;">Tatu Putto @ 2017</span>
 
+    <footer>
+        <span>Tatu Putto @ 2017</span>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/tatuputto.github.io/scripts.js"></script>

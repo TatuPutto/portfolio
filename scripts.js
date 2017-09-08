@@ -1,8 +1,8 @@
 var viewportHeight = window.innerHeight;
 var $document = $(document);
 var $body = $('body');
-var $header = $('.header');
-var $overlay = $('.image-carousel-overlay');
+var $header = $('header');
+var $overlay = $('.carousel-overlay');
 var activeProject = 1;
 
 $(document).ready(function () {
@@ -106,22 +106,22 @@ function scrollToSection(section) {
 }
 
 function inflateBars() {
-    $('.bar').removeClass('deflated');
+    $('.skills__bar').removeClass('deflated');
 }
 
 function showAdditionalDetails(projectNum) {
     var projectIdSelector = '#project-' + projectNum;
     var $additionalInfoContainer = $(projectIdSelector +
-            ' .project-additional-info');
+            ' .project__additional-info');
     var $additionalInfoVisibilityIndicator = $(projectIdSelector +
-            ' .toggle-additional-details-view > i');
+            ' .project__toggle-additional-info > i');
 
     if($additionalInfoContainer.hasClass('open')) {
         $additionalInfoContainer.removeClass('open');
-         $additionalInfoVisibilityIndicator.removeClass('open');
+        $additionalInfoVisibilityIndicator.removeClass('open');
     } else {
         $additionalInfoContainer.addClass('open');
-         $additionalInfoVisibilityIndicator.addClass('open');
+        $additionalInfoVisibilityIndicator.addClass('open');
     }
 }
 
@@ -133,7 +133,7 @@ function openImageCarouselOverlay(carouselId) {
     fitImageCarousel(carouselId);
 }
 
-function closeImageCarouselOverlay() {
+function closeCarouselOverlay() {
     var $activeCarousel = $overlay.find('.active-carousel');
 
     $header.addClass('fixed');
@@ -179,22 +179,19 @@ function fitImageCarousel(carouselId) {
 }
 
 function toggleGif() {
-    var $thumbnailContainer = $('#project-4 .thumbnail-container');
-    var $thumbnailOverlay = $('#project-4 .thumbnail-overlay');
+    var $thumbnailContainer = $('#project-4 .project__thumbnail-container');
     var $gifWrapper = $('#project-4 .gif-wrapper');
     var $image = $('#project-4 img');
 
-    if($($thumbnailContainer).hasClass('gif-playing')) {
-        $thumbnailOverlay.removeClass('stop-gif');
-        $thumbnailOverlay.addClass('play-gif');
-        $thumbnailContainer.removeClass('gif-playing');
-        $gifWrapper.removeClass('gif-playing');
-        $image.attr('src', './images/game-of-life-showcase-large.png');
-    } else {
-        $thumbnailOverlay.removeClass('play-gif');
-        $thumbnailOverlay.addClass('stop-gif');
-        $thumbnailContainer.addClass('gif-playing');
+    if($($thumbnailContainer).hasClass('play-gif')) {
+        $thumbnailContainer.removeClass('play-gif');
+        $thumbnailContainer.addClass('stop-gif');
         $gifWrapper.addClass('gif-playing');
         $image.attr('src', './images/game-of-life-showcase-large.gif');
+    } else {
+        $thumbnailContainer.removeClass('stop-gif');
+        $thumbnailContainer.addClass('play-gif');
+        $gifWrapper.removeClass('gif-playing');
+        $image.attr('src', './images/game-of-life-showcase-large.png');
     }
 }
