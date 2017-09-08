@@ -1,8 +1,9 @@
-var viewportHeight = window.innerHeight;
 var $document = $(document);
 var $body = $('body');
 var $header = $('header');
 var $overlay = $('.carousel-overlay');
+var viewportHeight = window.innerHeight;
+var scrollPosition;
 var activeProject = 1;
 
 $(document).ready(function () {
@@ -55,7 +56,7 @@ function handleScroll() {
 }
 
 function toggleHeaderPosition() {
-    var projectsSectionOffsetTop = $('#projects').offset().top - 55;
+    var projectsSectionOffsetTop = $('#projects').offset().top - 5;
 
     if($document.scrollTop() > projectsSectionOffsetTop &&
        !$header.hasClass('fixed') && !$overlay.hasClass('open')) {
@@ -70,20 +71,20 @@ function setActiveNavMenuIndex() {
     var halfway = $document.scrollTop() + (viewportHeight / 3);
     var projectsSectionOffset = $('#projects').offset().top;
     var aboutSectionOffset = $('#about').offset().top;
-    var contactSectionOffset = $('#contact-info').offset().top;
+    var contactSectionOffset = $('#contact-info').offset().top - 150;
     var skillsSectionOffset = $('#skills').offset().top;
 
-    $('.header-nav-menu > li.active-section').removeClass('active-section');
+    $('.header__nav-menu > ul > li.active-section').removeClass('active-section');
     if(halfway < projectsSectionOffset) {
-        $('.header-nav-menu > li:first-child').addClass('active-section');
+        $('.header__nav-menu > ul > li:first-child').addClass('active-section');
     } else if(halfway >= skillsSectionOffset) {
-        $('.header-nav-menu > li:nth-child(5)').addClass('active-section');
+        $('.header__nav-menu > ul > li:nth-child(5)').addClass('active-section');
     } else if(halfway >= contactSectionOffset) {
-        $('.header-nav-menu > li:nth-child(4)').addClass('active-section');
+        $('.header__nav-menu > ul > li:nth-child(4)').addClass('active-section');
     } else if(halfway >= aboutSectionOffset) {
-        $('.header-nav-menu > li:nth-child(3)').addClass('active-section');
+        $('.header__nav-menu > ul > li:nth-child(3)').addClass('active-section');
     } else if(halfway >= projectsSectionOffset) {
-        $('.header-nav-menu > li:nth-child(2)').addClass('active-section');
+        $('.header__nav-menu > ul > li:nth-child(2)').addClass('active-section');
     }
 
     if($document.scrollTop() >= skillsSectionOffset - 500) inflateBars();
@@ -91,7 +92,7 @@ function setActiveNavMenuIndex() {
 
 function scrollToSection(section) {
     var sections = $('section');
-    var offset = (section === 3 ? viewportHeight / 3 : 50);
+    var offset = (section === 3 ? viewportHeight / 3 : 0);
     var scrollTo = $(sections[section]).offset().top - offset;
 
     $body.animate({scrollTop: scrollTo}, 500, function() {

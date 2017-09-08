@@ -105,13 +105,17 @@ img {
 
 header {
     position: fixed;
-    top: 0;
+    top: 10%;
     z-index: 9999;
-    width: 100%;
-    height: 50px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    /*width: 100%;
+    height: 50px;*/
+    width: 40px;
+    height: 250px;
     background: #3a3a3a;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
     -webkit-transition: -webkit-transform 0.3s ease-out;
     transition: -webkit-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
@@ -119,8 +123,8 @@ header {
 }
 
 .fixed {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
 }
 
 footer {
@@ -138,22 +142,34 @@ footer {
 }
 
 .header__nav-menu > ul {
-    text-align: right;
+    text-align: center;
     line-height: 50px;
 }
 
-.active-section {
-    border-bottom: 2px solid #fff;
-}
-
 .header__nav-menu > ul > li {
-    display: inline;
-    padding: 6px 12px;
+    /*display: inline;
+    padding: 6px 12px;*/
     color: #fff;
-    font-size: 16px;
+    /*font-size: 16px;*/
+    font-size: 18px;
     cursor: pointer;
     -webkit-transition: color 0.2s ease-out;
     transition: color 0.2s ease-out;
+    z-index: 1;
+    background: #3a3a3a;
+    box-shadow: 0 1px 1px #585858 inset, -2px 0px 3px #1f1f1f;
+}
+
+
+.header__nav-menu > ul > li:first-child {
+    border-top-right-radius: 6px;
+    box-shadow: -2px 0px 3px #1f1f1f;
+}
+
+.header__nav-menu > ul > li:last-child {
+    border-bottom-right-radius: 6px;
+    border-bottom: none;
+    /*box-shadow: 0 1px 1px #585858 inset;*/
 }
 
 .header-nav-menu li:hover {
@@ -162,6 +178,87 @@ footer {
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
 }
+
+.header__nav-menu > ul > li::after {
+    content: attr(data-section-name);
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-100%);
+    z-index: -1;
+    font-size: 15px;
+    padding: 0 10px;
+    visibility: hidden;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: inherit;
+    transition: transform 0.2s ease-out;
+}
+
+.header__nav-menu > ul > li:hover::after {
+    transform: translateX(6px);
+    visibility: visible;
+}
+
+.active-section {
+    border-left: 4px solid #fff;
+}
+
+@media (max-width: 1100px) {
+    header {
+        min-width: 650px;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        border-radius: 0;
+        -webkit-transform: translatey(-100%);
+        transform: translatey(-100%);
+    }
+
+    .fixed {
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+    }
+
+    .active-section {
+        border-left: none;
+        border-bottom: 2px solid #fff;
+    }
+
+    .header__nav-menu > ul {
+        line-height: 42px;
+        margin-top: 4px;
+    }
+
+    .header__nav-menu > ul > li {
+        display: inline;
+        padding: 6px 12px;
+        color: #fff;
+        width: 50px;
+        font-size: 18px;
+        z-index: 1;
+        background: inherit;
+        box-shadow: none !important;
+        -webkit-transition: color 0.2s ease-out;
+        transition: color 0.2s ease-out;
+    }
+
+    .header__nav-menu > ul > li:hover {
+        color: #a2a2a2;
+    }
+
+    .header__nav-menu > ul > li::after {
+        position: relative;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .header__nav-menu > ul > li:hover::after {
+        color: #dadada;
+        transform: translateX(0);
+    }
+}
+
+
 
 .navigation {
     position: relative;
@@ -560,7 +657,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    line-height: 300px;
+    line-height: 350px;
     opacity: 0;
     -ms-transition: opacity 0.2s ease-out;
     -webkit-transition: opacity 0.2s ease-out;
@@ -705,8 +802,10 @@ footer {
 }
 
 @media screen and (max-width: 991px) {
-    .project__thumbnail-container {
+    .project__thumbnail-container,
+    .project__thumbnail-container::before {
         height: 300px;
+        line-height: 300px;
     }
 }
 
@@ -754,7 +853,7 @@ footer {
 /* ==========================================================================
  * Skills section
  * ========================================================================== */
- .skills__chart-container {
+ .skills__container {
     margin-bottom: 100px;
  }
 
