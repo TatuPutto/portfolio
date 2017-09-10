@@ -128,13 +128,19 @@ header {
 }
 
 footer {
-    height: 100px;
+    /*height: 100px;*/
     line-height: 100px;
     color: #fff;
     background: linear-gradient(to bottom, #212121, #1d1d1d);
     text-align: center;
 }
 
+.anchor-image {
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+    vertical-align: text-bottom;
+}
 
 .navigation {
     position: relative;
