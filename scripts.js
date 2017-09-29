@@ -1,20 +1,48 @@
+var viewportWidth = window.innerWidth;
+var viewportHeight = window.innerHeight;
 var $document = $(document);
 var $body = $('body');
 var $header = $('header');
 var $overlay = $('.carousel-overlay');
-var viewportHeight = window.innerHeight;
 var scrollPosition;
+var scrollTimeout = null;
 var activeProject = 1;
 
 $(document).ready(function () {
-    if(viewportHeight > 700) {
-        $('#home').css('height', viewportHeight);
+    setLandingPageHeight();
+    $body.addClass('ready');
+
+    // make header fixed onload if scrolled beyond landing page
+    if($document.scrollTop() > ($('.home__navigation').offset().top)) {
+        handleScroll();
     }
 
-    $('.container-fluid').addClass('ready');
+    shouldAnimateLandingPageNavigation();
+});
 
-    var i = 1;
+
+function setLandingPageHeight() {
+    //console.log($('.about-container').height());
+    viewportWidth = window.innerWidth;
+    viewportHeight = window.innerHeight;
+
+    /*if(viewportHeight > 700 && viewportWidth > 576) {
+        $('#home').css('height', viewportHeight);
+    }*/
+}
+
+function shouldAnimateLandingPageNavigation() {
+    if($document.scrollTop() < $('#home').height()) {
+        animateLandingPageNavigation();
+    } else {
+        showLandingPageNavigationWithoutAnimation();
+    }
+}
+
+function animateLandingPageNavigation() {
+    var i = 0;
     var animationInterval;
+
     setTimeout(function () {
         animationInterval = setInterval(function () {
             if(i <= 5) {
@@ -25,29 +53,22 @@ $(document).ready(function () {
             }
         }, 200);
     }, 1000)
-});
+}
 
-$(document).ready(function () {
-    var scrollTimeout = null;
-    var navPosition = $('.navigation').offset();
+function showLandingPageNavigationWithoutAnimation() {
+    $('.nav-menu > li').removeClass('hidden-right');
+}
 
-    // make header fixed onload if scrolled beyond landing page
-    if($(document).scrollTop() > (navPosition.top)) {
+// check for scroll, but only react after user has stopped scrolling (50 ms)
+$(document).on('scroll', function () {
+    if(scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function () {
         handleScroll();
-    }
-
-    // check for scroll, but only react after user has stopped scrolling (50 ms)
-    $(document).on('scroll', function () {
-        if(scrollTimeout) clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function () {
-            handleScroll();
-        }, 50);
-    });
+    }, 50);
 });
 
 $(window).on('resize', function () {
-    viewportHeight = window.innerHeight;
-    $('#home').css('height', viewportHeight);
+    setLandingPageHeight();
 })
 
 function handleScroll() {
@@ -61,9 +82,11 @@ function toggleHeaderPosition() {
     if($document.scrollTop() > projectsSectionOffsetTop &&
        !$header.hasClass('fixed') && !$overlay.hasClass('open')) {
         $header.addClass('fixed');
+        //$header.removeClass('faded-out');
     } else if($document.scrollTop() <= projectsSectionOffsetTop ||
               $overlay.hasClass('open')) {
         $header.removeClass('fixed');
+        //$header.addClass('faded-out');
     }
 }
 
@@ -95,7 +118,7 @@ function scrollToSection(section) {
     var offset = (section === 3 ? viewportHeight / 3 : 0);
     var scrollTo = $(sections[section]).offset().top - offset;
 
-    $body.animate({scrollTop: scrollTo}, 500, function() {
+    $('html, body').animate({scrollTop: scrollTo}, 800, function() {
         if(section === 3) {
             $('#contact-info').addClass('highlight');
             setTimeout(function () {
@@ -145,14 +168,6 @@ function closeCarouselOverlay() {
 }
 
 function fitImageCarousel(carouselId) {
-    var viewportWidth = Math.max(
-        document.documentElement.clientWidth,
-        window.innerWidth || 0
-    );
-    var viewportHeight = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0
-    );
     var $activeCarousel = $(carouselId);
     var $activeImage = $(carouselId + ' .carousel-inner').find('.active img')[0];
     var naturalWidth = $activeImage.naturalWidth;
@@ -196,3 +211,20 @@ function toggleGif() {
         $image.attr('src', './images/game-of-life-showcase-large.png');
     }
 }
+
+
+
+$('.header__nav-menu, .home__nav-menu').on('touchstart click', function (e) {
+    var target = e.target;
+    var data;
+
+    if(target && target.nodeName == 'LI' || target.nodeName == 'I' ||
+       target.nodeName == 'DIV') {
+        if(target.nodeName == 'I' || target.nodeName == 'DIV'){
+            target = target.parentElement;
+        }
+
+        data = $(target).data('scroll-to');
+        return scrollToSection(data);
+    }
+});

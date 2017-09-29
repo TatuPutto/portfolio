@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="/tatuputto.github.io/styles.css"></link>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
+    <link rel="stylesheet" type="text/css" href="styles.css?cache-bust-12312343243"></link>
     <title>Tatu Putto, Web Developer</title>
 </head>
 <body>
     <header>
-        <!--<div class="row restricted-width-medium">
-            <!--<div class="col-xs-4 header__logo" style='display: inline-block; margin-top: 5px;'>
-                <img src="./images/logo.png" style="vertical-align: -webkit-baseline-middle;">
-                <span style="font-size: 24px; color: #fff; font-weight: bold; vertical-align: -webkit-baseline-middle;">Tatuputto.com</span>
-            </div>-->
         <div class="restricted-width-medium">
             <nav class="header__nav-menu">
                 <ul>
-                    <li data-section-name="Home" onclick="scrollToSection(0)"><i class="fa fa-home"></i></li>
-                    <li data-section-name="Projects" onclick="scrollToSection(1)"><i class="fa fa-flask"></i></li>
-                    <li data-section-name="About" onclick="scrollToSection(2)"><i class="fa fa-info-circle"></i></li>
-                    <li data-section-name="Contact" onclick="scrollToSection(3)"><i class="fa fa-vcard-o"></i></li>
-                    <li data-section-name="Skills" onclick="scrollToSection(4)"><i class="fa fa-bar-chart"></i></li>
+                    <li data-scroll-to="0" data-section-name="Home"><i class="fa fa-home"></i></li>
+                    <li data-scroll-to="1" data-section-name="Projects"><i class="fa fa-flask"></i></li>
+                    <li data-scroll-to="2" data-section-name="About Me"><i class="fa fa-info-circle"></i></li>
+                    <li data-scroll-to="3" data-section-name="Contact"><i class="fa fa-vcard-o"></i></li>
+                    <li data-scroll-to="4" data-section-name="Skills"><i class="fa fa-bar-chart"></i></li>
                 </ul>
             </nav>
         </div>
-        <!--</div>-->
     </header>
     <!-- Show image carousel for selected project-->
     <div class="carousel-overlay">
@@ -35,26 +29,32 @@
         <!--Food diary image carousel-->
         <div id="food-diary-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                <!--<div class="item active">
                     <img class="d-block img-fluid" src="./images/food-diary-front.png">
+                </div>-->
+                <div class="item active">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-top.png">
                 </div>
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
                 </div>
                 <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-food-selection-mobile.png">
+                </div>
+                <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-front-middle-mobile.png">
                 </div>
                 <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-front-bottom-mobile.png">
+                    <img class="d-block img-fluid" src="./images/food-diary-week-view.png">
                 </div>
                 <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-diary-view.png">
+                    <img class="d-block img-fluid" src="./images/food-diary-week-view-mobile.png">
                 </div>
                 <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-diary-view-mobile-top.png">
+                    <img class="d-block img-fluid" src="./images/food-diary-day-view-top.png">
                 </div>
                 <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-diary-view-mobile-middle.png">
+                    <img class="d-block img-fluid" src="./images/food-diary-day-view-middle.png">
                 </div>
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-login.png">
@@ -100,10 +100,10 @@
             </div>
 
             <div class="carousel-controls">
-                <a href="#gist-management-app-img-carousel" data-slide="prev">
+                <a href="#gist-manager-carousel" data-slide="prev">
                     <i class="fa fa-chevron-left"></i>
                 </a>
-                <a href="#gist-management-app-img-carousel" data-slide="next">
+                <a href="#gist-manager-carousel" data-slide="next">
                     <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -154,55 +154,41 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <section id="home" style="color: #6b6b6b; height: 960px; position: relative;">
-            <div class="row restricted-width-wide">
-                <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 about-container">
-                    <div class="summary">
-                        <div class="profile row">
-                            <div>
-                                <h1 style="color: #fff">Tatu Putto</h1>
-                                <h2 style="padding-bottom: 40px; border-bottom: 2px solid #fff;">Aspiring Web Developer</h2>
-                            </div>
-                        </div>
-                        <div class="about-short row">
-                            <div>
-                                <p style="color: #6b6b6b; font-size: 22px; line-height: 1.3; margin-top: 35px;">
-                                    I design and implement beautiful, efficient, mobile-friendly web applications.
-                                    Currently looking for a chance to put my web development skills into use in a professional setting.
-                                </p>
-                            </div>
-                        </div>
+    <div class="container-fluid match-viewport-height">
+        <section id="home" class="row home">
+            <div class="restricted-width-wide match-viewport-height">
+                <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 home__intro">
+                    <div class="home__title-container">
+                        <h1 class="home__title">Tatu Putto</h1>
+                        <h2 class="home__secondary-title">Aspiring Web Developer</h2>
+                    </div>
+                    <div class="home__feature-container">
+                        <p class="home__feature">
+                            I design and implement beautiful, efficient, mobile-friendly web applications.
+                            Currently looking for a chance to put my web development skills into use in a professional setting.
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-3 col-md-offset-1 col-xs-12 navigation">
-                    <ul class="nav-menu">
-                        <li class="active hidden-right" onclick="scrollToSection(0)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-home"></i> Home</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                        <li class="hidden-right" onclick="scrollToSection(1)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-flask"></i> Projects</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                        <li class="hidden-right" onclick="scrollToSection(2)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-info-circle"></i> About</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                        <li class="hidden-right" onclick="scrollToSection(3)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-vcard-o"></i> Contact</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                        <li class="hidden-right" onclick="scrollToSection(4)">
-                            <div class="hexagon-top"></div>
-                            <div class="hexagon-middle"><i class="fa fa-bar-chart"></i> Skills</div>
-                            <div class="hexagon-bottom"></div>
-                        </li>
-                    </ul>
+                <div class="col-md-3 col-md-offset-1 col-xs-12 home__navigation-container">
+                    <nav class="home__nav-menu">
+                        <ul>
+                            <li class="active hidden-right" data-scroll-to="0">
+                                <div class="hexagon"><span><i class="fa fa-home"></i> Home</span></div>
+                            </li>
+                            <li class="active hidden-right" data-scroll-to="1">
+                                <div class="hexagon"><i class="fa fa-flask"></i> Projects</div>
+                            </li>
+                            <li class="active hidden-right" data-scroll-to="2">
+                                <div class="hexagon"><i class="fa fa-info-circle"></i> About</div>
+                            </li>
+                            <li class="active hidden-right" data-scroll-to="3">
+                                <div class="hexagon"><i class="fa fa-vcard-o"></i> Contact</div>
+                            </li>
+                            <li class="active hidden-right" data-scroll-to="4">
+                                <div class="hexagon"><i class="fa fa-bar-chart"></i> Skills</div>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 
@@ -213,7 +199,9 @@
                 </button>
             </div>
         </section>
+    </div>
 
+    <div class="container-fluid">
         <section id="projects" class="section-dark">
             <div id="project-1" class="project">
                 <h3 class="project__title">
@@ -225,29 +213,22 @@
                 <div class="project__details">
                     <div class="project__description">
                         <p>
-                            <!--Food diary application for tracking macronutrient and energy consumption. My latest solo project and the first decently sized venture with Node.js.
-                            This project consists of two separate applications: client-side React app and Node.js server app.
-                            Server app exposes REST API, which the client app consumes.-->
                             Food diary application for tracking macronutrient and energy consumption.
                             This is my latest solo project and the first venture into the wonderful world of Node.js development.
-                            My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive coverage of finnish food products and ingredients by combining <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
-
-                            <!--<ul style="list-style-type: disc; margin-left: 30px;">
-                                <li>Node.js / MySQL back-end which exposes REST API</li>
-                                <li>UI written with React, which in turn consumes the exposed API</li>
-                                <li>Web scraping algorithm used in conjunction with data provided by Fineli to get best possible coverage of different finnish food products and ingredients.</li>
-                            </ul>-->
+                            My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive
+                            coverage of finnish food products and ingredients by combining
+                            <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
                         </p>
                     </div>
                     <div class="project__additional-info">
                         <div class="project__technical-details">
                             <h4>Techical Details</h4>
                             <ul>
-                                <li>Node.js / MySQL back-end (exposes resources via RESTful API)</li>
-                                <li>UI written in React (consumes the API)</li>
-                                <li>Client-side routing with React Router for SPA experience</li>
-                                <li>Bootstrap 3 in combination with custom css for responsiveness to accomodate even the smallest viewports</li>
-                                <li>Web scraping algorithm with Node.js and Cheerio</li>
+                                <li>Node.js / MySQL back-end (exposes resources via RESTful API).</li>
+                                <li>UI written in React (consumes the API).</li>
+                                <li>Client-side routing with React Router for SPA experience.</li>
+                                <li>Responsiveness with Bootstrap 3 and custom CSS.</li>
+                                <li>Web scraping algorithm with Node.js and Cheerio.</li>
                             </ul>
                         </div>
                         <div class="project__keywords">
@@ -267,6 +248,8 @@
                                 <span>MySQL</span>
                                 <span>REST</span>
                                 <span>JSON</span>
+                                <span>Web scraping</span>
+                                <span>Cheerio</span>
                             </div>
                         </div>
                     </div>
@@ -297,10 +280,12 @@
                 <div class="project__details">
                     <div class="project__description">
                         <p>
-                            Web application for managing code snippets (gists). This project is by a wide margin,
-                            my largest solo project to date. It constitutes as the practical part of my thesis for my
-                            Bachelor's degree <a href="https://theseus.fi/handle/10024/123534" target="_blank">(you can find theoretical part here)</a>. and also the stepping stone to learning modern web development techniques
-                            and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.
+                            Web application for managing code snippets (gists). My goal was to create an alternative UI for GitHub Gists that combines
+                            managing your own code snippets with the discovery potential of Gists service under one easy to use package.
+                            This project also constitutes as the practical part of my <a href="https://theseus.fi/handle/10024/123534" target="_blank">thesis</a> for my Bachelor's degree.
+                            <!--This project is by a wide margin,
+                            my largest solo project to date. It  and also the stepping stone to learning modern web development techniques
+                            and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.-->
                         </p>
                     </div>
 
@@ -308,10 +293,10 @@
                         <div class="project__technical-details">
                             <h4>Techical Details</h4>
                             <ul>
-                                <li>Java / Spring back-end (authentication)</li>
-                                <li>UI written in React (consumes Gist API)</li>
-                                <li>Flux architechture implemented on the client-side with Redux</li>
-                                <li>Client-side routing with React Router for SPA experience</li>
+                                <li>Java / Spring back-end (authentication).</li>
+                                <li>UI written in React (consumes Gist API).</li>
+                                <li>Flux architechture implemented on the client-side with Redux.</li>
+                                <li>Client-side routing with React Router for SPA experience.</li>
                             </ul>
                         </div>
                         <div class="project__keywords">
@@ -330,6 +315,7 @@
                                 <span>Spring MVC</span>
                                 <span>REST</span>
                                 <span>JSON</span>
+                                <span>Oauth 2.0</span>
                             </div>
                         </div>
                     </div>
@@ -418,7 +404,7 @@
             <div class="about__container restricted-width-medium">
                 <h2 class="about__title">About Me</h2>
                 <div class="about__profile-picture-container">
-                    <img class="profile-picture" alt="Tatu Putto profile picture" src="./images/headshot.png">
+                    <img class="about__profile-picture" alt="Tatu Putto profile picture" src="./images/headshot.png">
                 </div>
                 <div class="about__text-container">
                     <p class="about__text">
@@ -463,8 +449,48 @@
                         React, HTML5, CSS3, Node, Java, PHP and MySQL in my projects. I also have some exprerience
                         in UI and UX design, but I rather focus on the implementation than design.
                         </br></br>
-                    -->
-                        My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
+
+                        As to how I can best be of use, is from front-end or full-stack developer position.-->
+
+                        As to how I can be of use to use and your organization is from
+
+                        In my dream job I would be solving challenging problems as a front-end or a full-stack developer.
+                        Ideally I would get to use JavaScript in some form and maybe even React.
+                        Of course these are just the ideal settings and where my current skill set and interest align the most.
+                        If JS is not suitable for your needs, I have solid experience with more traditional server-side scripting languages (Java, PHP) as well
+                        and I'm always happy to pick up a new languages if needed.
+
+
+<!--
+                        Although i've grown quite fond of JavaScript lately,
+
+                        It's more about the learning opportunities and the ability to grow and develop as programmer that I look for in a job.
+
+                        it's not about any particular technology or position that I look for in a job.
+
+
+
+                         but after picking up Node.js, JavaScript has become my go to language on server-side as well.
+                     -->
+
+                        <br><br>
+                        <!--These are the ideal settings where you might get the most out of my work effort.
+                        plenty of opportunities to grow and develop as a programmer. -->
+
+
+
+
+
+
+                        <!--As I said, I'm flexible and versatile and its not about any particular position or technology,
+                        its more about the chance and the opportunities to grow and develop as a programmer.-->
+
+                        <!--More importantly grow and develop as a programmer.-->
+
+                        <b>Help me to help you build quality web applications, hit me up with a message or give me a call!</b>
+
+
+                        <!--My dream job would be one where I get to use JavaScript and maybe even React, on a daily basis.
                         Ideal role would be either Front-end or full-stack developer.
                         Although ... the main thing I'm looking for in a job is the ability to learn and grow as a developer.
 
@@ -474,62 +500,31 @@
                         while I have experience working with more conventional server-side programming languages (PHP, Java, C#)
 
                         since picking up Node.js, JavaScript has become my go to language for server-side scripting as well. <br><br>
-
-
-                        <!--Since my projects have been quite front-end development heavy during the later part of my studies,
-                        I am looking for full time employment as a front-end developer.-->
+-->
 
 
 
 
-                        put that skill to use in a professional setting.
+                    <!--    put that skill to use in a professional setting.-->
 
                     </p>
                 </div>
-                <!--<div class="pros-and-cons row">
-                    <div class="pros col-xs-6">
-                        <h4>Why you should consider hiring me</h4>
-                        <ul class="pros-list">
-                            <li>Flexible</li>
-                            <li>Versatile</li>
-                            <li>Learning oriented</li>
-                            <li>Team player</li>
-                            <li>Easy to work with</li>
-                            <li>Problem solver</li>
-                        </ul>
-                    </div>
-                    <div class="cons col-xs-6">
-                        <h4>My signature skills</h4>
-                        <ul class="cons-list">
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                        </ul>
-                    </div>
-                </div>-->
-                    <!--Then moving onto
-                    more challenging avenues of work eventually as my skills progress and ultimately becoming a full-fledged full-stack developer.-->
-                    <!--Then from there gradually moving to more challenging avenues of work with an ultimate goal of becoming a full-fledged full-stack web developer.
-                    <!--My focus started shifting to front-end development during the latter part of my studies due to my intership at Sportspot and more recently my thesis projects practical part.
-                    While both of those projects included alot of back-end work aswell
-                    My skillset leans towards front-end development-->
-                <!--</p>-->
+
                 <section id="contact-info" class="about__contact-info">
-                    <a class="no-underline" href="mailto:tatuputto@gmail.com">
-                        <button class="btn btn--call-to-action btn--email">tatuputto@gmail.com</button>
-                    </a>
-                    <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
-                        <button class="btn btn--linkedin">
-                            <i class="fa fa-linkedin"></i>
-                        </button>
-                    </a>
-                    <a class="no-underline" href="https://github.com/tatuputto" target="_blank">
-                        <button class="btn btn--github">
-                            <i class="fa fa-github"></i>
-                        </button>
-                    </a>
-                    <span class="about__phone-number">+358 50 407 3445</span>
+                    <span style="margin-left: 20px; padding-left: 20px;">
+                        <i class="fa fa-envelope"></i> tatuputto@gmail.com
+                    </span>
+                    <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #000;">
+                        <i class="fa fa-phone"></i> +358 50 407 3445
+                    </span>
+                    <span style="margin-left: 20px; padding-left: 10px; border-left: 1px solid #000;">
+                        <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
+                            <i style="padding-right: 8px;" class="fa fa-linkedin anchor-image anchor-image--black"></i>
+                        </a>
+                        <a class="no-underline" href="https://github.com/tatuputto" target="_blank">
+                            <i style="padding-left: 8px;" class="fa fa-github anchor-image anchor-image--black"></i>
+                        </a>
+                    </span>
                 </section>
             </div>
         </section>
@@ -560,25 +555,12 @@
 
     <footer>
         <span>&copy; 2017 Tatu Putto </span>
-
         <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #fff;">
             <i class="fa fa-envelope"></i> tatuputto@gmail.com
         </span>
-
-        <!--<a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
-            <button class="btn btn--linkedin">
-                <i class="fa fa-linkedin"></i>
-            </button>
-        </a>
-        <a class="no-underline" href="https://github.com/tatuputto" target="_blank">
-            <button class="btn btn--github">
-                <i class="fa fa-github"></i>
-            </button>
-        </a>-->
         <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #fff;">
             <i class="fa fa-phone"></i> +358 50 407 3445
         </span>
-
         <span style="margin-left: 20px; padding-left: 10px; border-left: 1px solid #fff;">
             <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
                 <i style="padding-right: 8px;" class="fa fa-linkedin anchor-image"></i>
@@ -591,5 +573,5 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/tatuputto.github.io/scripts.js"></script>
+    <script src="scripts.js?cdafdas=1323fdsaf1w442352"></script>
 </body>
