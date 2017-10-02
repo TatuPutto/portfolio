@@ -13,11 +13,12 @@ $(document).ready(function () {
     $body.addClass('ready');
 
     // make header fixed onload if scrolled beyond landing page
-    if($document.scrollTop() > ($('.home__navigation').offset().top)) {
+    if($document.scrollTop() > ($('.home__navigation-container').offset().top)) {
         handleScroll();
     }
 
-    shouldAnimateLandingPageNavigation();
+    //shouldAnimateLandingPageNavigation();
+    animateLandingPageNavigation();
 });
 
 
@@ -46,7 +47,7 @@ function animateLandingPageNavigation() {
     setTimeout(function () {
         animationInterval = setInterval(function () {
             if(i <= 5) {
-                $('.nav-menu > li:nth-child(' + i + ')').removeClass('hidden-right');
+                $('.home__nav-menu > ul > li:nth-child(' + i + ')').removeClass('hidden-right');
                 i++;
             } else {
                 clearInterval(animationInterval);
