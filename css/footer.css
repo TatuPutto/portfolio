@@ -1,0 +1,24 @@
+footer {
+    line-height: 100px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(#1d1d1d));
+    background: linear-gradient(to bottom, #212121, #1d1d1d);
+    text-align: center;
+}
+
+footer > span:nth-child(2),
+footer > span:nth-child(3) {
+    margin-left: 16px;
+    padding-left: 20px;
+    border-left: 1px solid #fff;
+}
+
+footer > span:last-child {
+    margin-left: 16px;
+    padding-left: 14px;
+    border-left: 1px solid #fff;
+}
+
+footer > span > i {
+    padding-right: 8px;
+}

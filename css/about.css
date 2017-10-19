@@ -1,0 +1,71 @@
+/* ==========================================================================
+ * About section
+ * ========================================================================== */
+.about__title {
+    margin-bottom: 40px;
+    color: #6d6d6d;
+}
+
+.about__profile-picture-container {
+    float: left;
+    margin-right: 20px;
+}
+
+.about__profile-picture {
+    /*height: 265px;*/
+    height: 215px;
+    width: auto;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.about__call-to-action {
+    text-align: center;
+}
+
+.about__contact-info {
+    text-align: center;
+    font-size: 16px;
+    border-top: 1px solid #dedede;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #fff;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: all 400ms ease-out;
+            transition: all 400ms ease-out;
+}
+
+.about__contact-info > span:nth-child(2),
+.about__contact-info > span:nth-child(3) {
+    margin-left: 16px;
+    padding-left: 20px;
+    border-left: 1px solid #000;
+}
+
+.about__contact-info > span:last-child {
+    margin-left: 16px;
+    padding-left: 14px;
+    border-left: 1px solid #000;
+}
+
+.about__contact-info > span > i {
+    padding-right: 8px;
+}
+
+@media (max-width: 576px) {
+    .about__contact-info > span {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .about__contact-info > span:nth-child(2),
+    .about__contact-info > span:nth-child(3),
+    .about__contact-info > span:last-child {
+        margin-top: 20px;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
+}

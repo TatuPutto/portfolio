@@ -1,12 +1,15 @@
+var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 var viewportWidth = window.innerWidth;
 var viewportHeight = window.innerHeight;
 var $document = $(document);
 var $body = $('body');
-var $header = $('header');
+var $header = $('.sticky-header');
 var $overlay = $('.carousel-overlay');
+var $activeCarousel = null;
 var scrollPosition;
 var scrollTimeout = null;
 var activeProject = 1;
+
 
 $(document).ready(function () {
     setLandingPageHeight();
@@ -19,17 +22,16 @@ $(document).ready(function () {
 
     //shouldAnimateLandingPageNavigation();
     animateLandingPageNavigation();
+
+    setTimeout(function () {
+        $header.removeClass('hidden');
+        $overlay.removeClass('hidden');
+    }, 500);
 });
 
-
 function setLandingPageHeight() {
-    //console.log($('.about-container').height());
     viewportWidth = window.innerWidth;
     viewportHeight = window.innerHeight;
-
-    /*if(viewportHeight > 700 && viewportWidth > 576) {
-        $('#home').css('height', viewportHeight);
-    }*/
 }
 
 function shouldAnimateLandingPageNavigation() {
@@ -53,7 +55,7 @@ function animateLandingPageNavigation() {
                 clearInterval(animationInterval);
             }
         }, 200);
-    }, 1000)
+    }, 500)
 }
 
 function showLandingPageNavigationWithoutAnimation() {
@@ -70,7 +72,9 @@ $(document).on('scroll', function () {
 
 $(window).on('resize', function () {
     setLandingPageHeight();
-})
+    $activeCarousel = $overlay.find('.active-carousel > .carousel-inner');
+    $activeCarousel.css('height', (viewportHeight - 50 - 50 - 30 - 30));
+});
 
 function handleScroll() {
     toggleHeaderPosition();
@@ -151,46 +155,29 @@ function showAdditionalDetails(projectNum) {
 }
 
 function openImageCarouselOverlay(carouselId) {
-    $(carouselId).addClass('active-carousel')
+    $activeCarousel = $(carouselId);
+
+    $(carouselId).addClass('active-carousel');
     $header.removeClass('fixed');
     $overlay.addClass('open');
     $body.css('overflow-y', 'hidden');
+    $body.css('background-color', '#3c3c3c');
     fitImageCarousel(carouselId);
 }
 
 function closeCarouselOverlay() {
-    var $activeCarousel = $overlay.find('.active-carousel');
+    $activeCarousel = $overlay.find('.active-carousel');
 
     $header.addClass('fixed');
     $overlay.removeClass('open');
     $activeCarousel.removeClass('.active-carousel');
     $activeCarousel.css('display', 'none');
     $body.css('overflow-y', 'scroll');
+    $body.css('background-color', 'initial');
 }
 
 function fitImageCarousel(carouselId) {
-    var $activeCarousel = $(carouselId);
-    var $activeImage = $(carouselId + ' .carousel-inner').find('.active img')[0];
-    var naturalWidth = $activeImage.naturalWidth;
-    var naturalHeight = $activeImage.naturalHeight;
-    var aspectRatio = naturalWidth / naturalHeight;
-    var newHeight = viewportHeight - 130;
-    var newWidth = (naturalWidth / naturalHeight) * newHeight;
-    var marginTop, marginLeft, exceedingWidth;
-
-    if(newWidth > (viewportWidth - 200)) {
-        exceedingWidth = newWidth - (viewportWidth - 200);
-        newHeight -= (exceedingWidth / aspectRatio);
-        newWidth = (naturalWidth / naturalHeight) * newHeight;
-    }
-
-    marginTop = (viewportHeight - newHeight) / 2;
-    marginLeft = (viewportWidth - newWidth) / 2;
-
-    $activeCarousel.css('width', newWidth);
-    $activeCarousel.css('height', newHeight);
-    $activeCarousel.css('margin-top', marginTop);
-    $activeCarousel.css('margin-left', marginLeft);
+    $activeCarousel.find('.carousel-inner').css('height', (viewportHeight - 50 - 50 - 30 - 30));
     $activeCarousel.css('display', 'block');
     $overlay.css('display', 'block');
 }
@@ -198,13 +185,23 @@ function fitImageCarousel(carouselId) {
 function toggleGif() {
     var $thumbnailContainer = $('#project-4 .project__thumbnail-container');
     var $gifWrapper = $('#project-4 .gif-wrapper');
-    var $image = $('#project-4 img');
+    var $image = $('#project-4 .project__thumbnail');
 
     if($($thumbnailContainer).hasClass('play-gif')) {
         $thumbnailContainer.removeClass('play-gif');
-        $thumbnailContainer.addClass('stop-gif');
-        $gifWrapper.addClass('gif-playing');
-        $image.attr('src', './images/game-of-life-showcase-large.gif');
+        $thumbnailContainer.addClass('gif-loading');
+
+        var gif = new Image();
+        gif.onload = function() {
+            $thumbnailContainer.removeClass('gif-loading');
+            $thumbnailContainer.addClass('stop-gif');
+            $gifWrapper.addClass('gif-playing');
+
+            setTimeout(function () {
+                $image.attr('src', this.src);
+            }.bind(this), 300);
+        };
+        gif.src = './images/game-of-life-showcase-large.gif';
     } else {
         $thumbnailContainer.removeClass('stop-gif');
         $thumbnailContainer.addClass('play-gif');
@@ -214,18 +211,73 @@ function toggleGif() {
 }
 
 
+var touchStartPointX = null;
+var touchStartPointY = null;
+var touchMovePointX = null;
+var touchMovePointY = null;
 
 $('.header__nav-menu, .home__nav-menu').on('touchstart click', function (e) {
-    var target = e.target;
-    var data;
-
-    if(target && target.nodeName == 'LI' || target.nodeName == 'I' ||
-       target.nodeName == 'DIV') {
-        if(target.nodeName == 'I' || target.nodeName == 'DIV'){
-            target = target.parentElement;
-        }
-
-        data = $(target).data('scroll-to');
-        return scrollToSection(data);
+    if(e.type == 'touchstart') {
+        touchStartPointX = e.originalEvent.touches[0].clientX;
+        touchStartPointY = e.originalEvent.touches[0].clientY;
+    } else {
+        getSectionId(e.target);
     }
 });
+
+$('.header__nav-menu, .home__nav-menu').on('touchmove', function (e) {
+    touchStartPointX = e.originalEvent.touches[0].clientX;
+    touchStartPointY = e.originalEvent.touches[0].clientY;
+});
+
+$('.header__nav-menu, .home__nav-menu').on('touchend', function (e) {
+    // only scroll to target section on touch (ignore swipe)
+    if(touchStartPointX === touchMovePointX && touchStartPointY === touchMovePointY) {
+        getSectionId(e.target);
+    }
+});
+
+function getSectionId(target) {
+    if(target && target.nodeName == 'LI' || target.nodeName == 'I' ||
+       target.nodeName == 'DIV') {
+        if(target.nodeName == 'DIV') target = target.parentElement;
+        if(target.nodeName == 'I') target = target.parentElement.parentElement;
+
+        var data = $(target).data('scroll-to');
+        return scrollToSection(data);
+    }
+}
+
+
+(function initCarouselForTouchDevices() {
+    var touchStartPointX = null;
+    var touchMovePointX = null;
+
+    if(supportsTouch) {
+        // hide carousel controls and use swiping instead to spin the carousel
+        $('.carousel-controls').css('display', 'none');
+        $('.carousel-inner').on('touchstart', function (e) {
+            touchStartPointX = e.originalEvent.touches[0].clientX;
+            touchMovePointX = e.originalEvent.touches[0].clientX;
+        });
+
+        $('.carousel-inner').on('touchmove', function (e) {
+            touchMovePointX = e.originalEvent.touches[0].clientX;
+        });
+
+        $('.carousel-inner').on('touchend', function (e) {
+            if(touchStartPointX !== touchMovePointX &&
+               Math.abs(touchStartPointX - touchMovePointX) > 50) {
+                var swipedLeft = (touchStartPointX - touchMovePointX > 0) ? true : false;
+                var images = $activeCarousel.find('.item');
+                var activeImage = $('div.active').index();
+                var nextImage = 1;
+                var hasPreviousImage = (activeImage - 1) >= 0 ? activeImage - 1 : images.length - 1;
+                var hasNextImage = (activeImage + 1) < images.length ? activeImage + 1 : 0;
+                nextImage = swipedLeft ? hasNextImage : hasPreviousImage;
+
+                $('.carousel').carousel(nextImage);
+            }
+        });
+    }
+}());

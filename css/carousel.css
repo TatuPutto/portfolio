@@ -1,0 +1,187 @@
+.carousel {
+    height: 95%;
+}
+
+.carousel-inner {
+    /*height: 90%;
+    padding-top: 2%;
+    margin-bottom: 2%;*/
+    /*display: table;*/
+    width: 96%;
+    margin: 30px 2%;
+}
+
+.carousel-controls {
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    /*top: -30px;*/
+    /*transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);*/
+    /*width: 112%;
+    height: 100%;
+    margin-left: -6%;*/
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-controls a {
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    width: 14%;
+    max-width: 150px;
+    height: 100%;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-controls a:first-child {
+    float: left;
+    /*border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;*/
+}
+
+.carousel-controls a:last-child {
+    float: right;
+    /*border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;*/
+}
+
+.carousel-controls a:hover {
+    opacity: 1;
+    color: #fff;
+    /*border-color: #e4e4e4;
+    color: black;*/
+}
+
+.carousel-controls i {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.carousel-indicators {
+    position: initial;
+    height: 16px;
+    /*bottom: -50px;
+    left: 0;
+    margin-left: 0;
+    left: 50%;*/
+    width: 100%;
+    margin: 0;
+    /*transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);*/
+}
+
+.carousel-indicators li {
+    background: #616060;
+    width: 14px;
+    height: 14px;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+}
+
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #484848;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1f1f1f), to(#252525));
+    background: linear-gradient(#1f1f1f, #252525);
+    z-index: 2;
+    -ms-transform: translateY(-120%);
+    -webkit-transform: translateY(-120%);
+    -moz-transform: translateY(-120%);
+    -o-transform: translateY(-120%);
+    transform: translateY(-120%);
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -ms-transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+    -moz-transition: transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+    transition: -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+.carousel-overlay.open {
+    transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+}
+
+.carousel-overlay__header {
+    height: 50px;
+    background-color: #3c3c3c;
+}
+
+.toggle-overlay {
+    float: right;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    vertical-align: sub;
+    color: white;
+    height: 100%;
+    /*margin-top: 10px;
+    margin-right: 15px;*/
+    -webkit-text-stroke: 4px #3c3c3c;
+}
+
+.carousel-overlay__controls {
+    display: table;
+    width: 100%;
+    height: 50px;
+    background: #3c3c3c;
+/*    display: flex;
+    align-items: center;*/
+}
+
+.carousel-overlay__centering {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-indicators {
+        height: 22px;
+    }
+
+    .carousel-indicators li {
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    .carousel-indicators .active {
+        width: 22px;
+        height: 22px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+}
+
+@media {
+    .carousel-inner {
+        width: 100%;
+        margin: 30px 0;
+    }
+}

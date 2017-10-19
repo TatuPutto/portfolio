@@ -4,11 +4,22 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
-    <link rel="stylesheet" type="text/css" href="styles.css?cache-bust-12312343243"></link>
+    <!--<link rel="stylesheet" type="text/css" href="./css/styles.css"></link>-->
+    <script type="text/javascript">
+        (function() {
+            var links = document.getElementsByTagName('link');
+            var lastLink = links[links.length - 1];
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('type', 'text/css');
+            link.setAttribute('href', './css/styles.css?' + new Date().getTime().toString());
+            document.querySelector('head').appendChild(link);
+         })();
+     </script>
     <title>Tatu Putto, Web Developer</title>
 </head>
 <body>
-    <header>
+    <header class="sticky-header hidden">
         <div class="restricted-width-medium">
             <nav class="header__nav-menu">
                 <ul>
@@ -22,18 +33,20 @@
         </div>
     </header>
     <!-- Show image carousel for selected project-->
-    <div class="carousel-overlay">
-        <button class="toggle-overlay" onclick="closeCarouselOverlay();">
-            <i class="fa fa-close"></i>
-        </button>
+    <div class="carousel-overlay hidden">
+        <div class="carousel-overlay__header">
+            <button class="toggle-overlay" onclick="closeCarouselOverlay();">
+                <i class="fa fa-close"></i>
+            </button>
+        </div>
         <!--Food diary image carousel-->
         <div id="food-diary-carousel" class="carousel slide" data-ride="carousel" data-interval="false" style="display: none;">
             <div class="carousel-inner" role="listbox">
-                <!--<div class="item active">
-                    <img class="d-block img-fluid" src="./images/food-diary-front.png">
-                </div>-->
                 <div class="item active">
                     <img class="d-block img-fluid" src="./images/food-diary-front-top.png">
+                </div>
+                <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-front-bottom.png">
                 </div>
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
@@ -48,38 +61,39 @@
                     <img class="d-block img-fluid" src="./images/food-diary-week-view.png">
                 </div>
                 <div class="item">
+                    <img class="d-block img-fluid" src="./images/food-diary-day-view.png">
+                </div>
+                <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-week-view-mobile.png">
                 </div>
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/food-diary-day-view-top-mobile.png">
                 </div>
-                <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-day-view-middle-mobile.png">
-                </div>
-                <div class="item">
-                    <img class="d-block img-fluid" src="./images/food-diary-login.png">
+                <div class="carousel-controls">
+                    <a href="#food-diary-carousel" data-slide="prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a href="#food-diary-carousel" data-slide="next">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="carousel-controls">
-                <a href="#food-diary-carousel" data-slide="prev">
-                    <i class="fa fa-chevron-left"></i>
-                </a>
-                <a href="#food-diary-carousel" data-slide="next">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
+            <div class="carousel-overlay__controls">
+                <div class="carousel-overlay__centering">
+                    <ol class="carousel-indicators">
+                        <li data-target="#food-diary-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="1"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="2"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="3"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="4"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="5"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="6"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="7"></li>
+                        <li data-target="#food-diary-carousel" data-slide-to="8"></li>
+                    </ol>
+                </div>
             </div>
-
-            <ol class="carousel-indicators">
-                <li data-target="#food-diary-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="1"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="2"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="3"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="4"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="5"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="6"></li>
-                <li data-target="#food-diary-carousel" data-slide-to="7"></li>
-            </ol>
         </div>
 
         <!--Gist management app image carousel-->
@@ -97,23 +111,26 @@
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/gist-management-app-creating.png">
                 </div>
+                <div class="carousel-controls">
+                    <a href="#gist-manager-carousel" data-slide="prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a href="#gist-manager-carousel" data-slide="next">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="carousel-controls">
-                <a href="#gist-manager-carousel" data-slide="prev">
-                    <i class="fa fa-chevron-left"></i>
-                </a>
-                <a href="#gist-manager-carousel" data-slide="next">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
+            <div class="carousel-overlay__controls">
+                <div class="carousel-overlay__centering">
+                    <ol class="carousel-indicators">
+                        <li data-target="#gist-manager-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#gist-manager-carousel" data-slide-to="1"></li>
+                        <li data-target="#gist-manager-carousel" data-slide-to="2"></li>
+                        <li data-target="#gist-manager-carousel" data-slide-to="3"></li>
+                    </ol>
+                </div>
             </div>
-
-            <ol class="carousel-indicators">
-                <li data-target="#gist-manager-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#gist-manager-carousel" data-slide-to="1"></li>
-                <li data-target="#gist-manager-carousel" data-slide-to="2"></li>
-                <li data-target="#gist-manager-carousel" data-slide-to="3"></li>
-            </ol>
         </div>
 
         <!--T-idea image carousel-->
@@ -134,23 +151,27 @@
                 <div class="item">
                     <img class="d-block img-fluid" src="./images/t-idea-idea-view.png">
                 </div>
+                <div class="carousel-controls">
+                    <a href="#t-idea-carousel" data-slide="prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a href="#t-idea-carousel" data-slide="next">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="carousel-controls">
-                <a href="#t-idea-carousel" data-slide="prev">
-                    <i class="fa fa-chevron-left"></i>
-                </a>
-                <a href="#t-idea-carousel" data-slide="next">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
+            <div class="carousel-overlay__controls">
+                <div class="carousel-overlay__centering">
+                    <ol class="carousel-indicators">
+                        <li data-target="#t-idea-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#t-idea-carousel" data-slide-to="1"></li>
+                        <li data-target="#t-idea-carousel" data-slide-to="2"></li>
+                        <li data-target="#t-idea-carousel" data-slide-to="3"></li>
+                        <li data-target="#t-idea-carousel" data-slide-to="4"></li>
+                    </ol>
+                </div>
             </div>
-
-            <ol class="carousel-indicators">
-                <li data-target="#t-idea-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#t-idea-carousel" data-slide-to="1"></li>
-                <li data-target="#t-idea-carousel" data-slide-to="2"></li>
-                <li data-target="#t-idea-carousel" data-slide-to="3"></li>
-            </ol>
         </div>
     </div>
 
@@ -173,7 +194,7 @@
                     <nav class="home__nav-menu">
                         <ul>
                             <li class="active hidden-right" data-scroll-to="0">
-                                <div class="hexagon"><span><i class="fa fa-home"></i> Home</span></div>
+                                <div class="hexagon"><i class="fa fa-home"></i> Home</div>
                             </li>
                             <li class="active hidden-right" data-scroll-to="1">
                                 <div class="hexagon"><i class="fa fa-flask"></i> Projects</div>
@@ -264,7 +285,7 @@
                         </a>
                         <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
                         <span>
-                            <a onclick="openImageCarouselOverlay('#food-diary-carousel');">Gallery (8)</a>
+                            <a onclick="openImageCarouselOverlay('#food-diary-carousel');">Gallery (7)</a>
                         </span>
                     </div>
                 </div>
@@ -280,12 +301,7 @@
                 <div class="project__details">
                     <div class="project__description">
                         <p>
-                            Web application for managing code snippets (gists). My goal was to create an alternative UI for GitHub Gists that combines
-                            managing your own code snippets with the discovery potential of Gists service under one easy to use package.
-                            This project also constitutes as the practical part of my <a href="https://theseus.fi/handle/10024/123534" target="_blank">thesis</a> for my Bachelor's degree.
-                            <!--This project is by a wide margin,
-                            my largest solo project to date. It  and also the stepping stone to learning modern web development techniques
-                            and modern JavaScript. The goal of this project was to provide an alternative way to use GitHub Gists.-->
+                            Web application for managing / discovering code snippets (gists).
                         </p>
                     </div>
 
@@ -360,7 +376,7 @@
                     </div>
                     <div class="project__content-divider"></div>
                     <div class="project__actions">
-                        <a href="https://github.com/TatuPutto/PHP-works" target="_blank">GitHub</a>
+                        <a href="https://github.com/TatuPutto/T-idea" target="_blank">GitHub</a>
                         <span style="line-height: 21px;">
                             <a onclick="openImageCarouselOverlay('#t-idea-carousel')">Gallery (4)</a>
                         </span>
@@ -422,30 +438,32 @@
                         If JS is not suitable for your needs, I have solid experience with more traditional server-side scripting languages (Java, PHP) as well
                         and I'm always happy to pick up a new technologies if needed.
                         <br><br>
-                        <div style="text-align: center; font-size: 17px;"><b>Help me to help you build quality web applications, hit me up with a message or give me a call!</b><div>
+                        <div class="about__call-to-action">
+                            <b><p>Help me to help you build quality web applications, hit me up with a message or give me a call!</p></b>
+                        <div>
                     </p>
                 </div>
 
                 <section id="contact-info" class="about__contact-info">
-                    <span style="margin-left: 20px; padding-left: 20px;">
+                    <span>
                         <i class="fa fa-envelope"></i> tatuputto@gmail.com
                     </span>
-                    <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #000;">
+                    <span>
                         <i class="fa fa-phone"></i> +358 50 407 3445
                     </span>
-                    <span style="margin-left: 20px; padding-left: 10px; border-left: 1px solid #000;">
+                    <span>
                         <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
-                            <i style="padding-right: 8px;" class="fa fa-linkedin anchor-image anchor-image--black"></i>
+                            <i class="fa fa-linkedin anchor-image anchor-image--black"></i>
                         </a>
                         <a class="no-underline" href="https://github.com/tatuputto" target="_blank">
-                            <i style="padding-left: 8px;" class="fa fa-github anchor-image anchor-image--black"></i>
+                            <i class="fa fa-github anchor-image anchor-image--black"></i>
                         </a>
                     </span>
                 </section>
             </div>
         </section>
 
-        <section id='skills' class="section-light">
+        <section id='skills' class="row section-light">
             <div class="skills__container restricted-width-narrow">
                 <h2 class="skills__title" style="color: #6d6d6d;">My Technical Skills</h2>
                 <ul class="skills__chart">
@@ -471,18 +489,18 @@
 
     <footer>
         <span>&copy; 2017 Tatu Putto </span>
-        <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #fff;">
+        <span>
             <i class="fa fa-envelope"></i> tatuputto@gmail.com
         </span>
-        <span style="margin-left: 20px; padding-left: 20px; border-left: 1px solid #fff;">
+        <span>
             <i class="fa fa-phone"></i> +358 50 407 3445
         </span>
-        <span style="margin-left: 20px; padding-left: 10px; border-left: 1px solid #fff;">
+        <span>
             <a class="no-underline" href="https://www.linkedin.com/in/tatu-putto-297304124/" target="_blank">
-                <i style="padding-right: 8px;" class="fa fa-linkedin anchor-image"></i>
+                <i class="fa fa-linkedin anchor-image"></i>
             </a>
             <a class="no-underline" href="https://github.com/tatuputto" target="_blank">
-                <i style="padding-left: 8px;" class="fa fa-github anchor-image"></i>
+                <i class="fa fa-github anchor-image"></i>
             </a>
         </span>
     </footer>

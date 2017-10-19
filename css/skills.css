@@ -1,0 +1,147 @@
+/* ==========================================================================
+ * Skills section
+ * ========================================================================== */
+ .skills__container {
+    margin-bottom: 60px !important;
+ }
+
+.skills__title {
+    text-align: right;
+}
+
+.skills__chart {
+    background: url("../images/chart-axis-3.png") repeat-x;
+    height: 300px;
+    border-bottom: 2px solid #bdbdbd;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 40px;
+}
+
+.skills__proficiency-labels {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    border-right: 2px solid #bdbdbd;
+    background: #fff;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+.skills__proficiency-labels li {
+    display: list-item;
+    height: 100px;
+}
+
+.skills__bar {
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
+            box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6) inset;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    position: relative;
+    bottom: 12px;
+    white-space: nowrap;
+    -webkit-transition: height 1s;
+    transition: height 1s;
+}
+
+.skills__bar.html-css {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e0b19d), to(#f16528));
+    background: linear-gradient(to bottom, #e0b19d, #f16528);
+    border: 1px solid #ff8b59;
+    height: 250px;
+}
+
+.skills__bar.javascript {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffe1a9), to(orange));
+    background: linear-gradient(to bottom, #ffe1a9, orange);
+    border: 1px solid #fbb941;
+    height: 300px;
+}
+
+.skills__bar.react {
+    background: -webkit-gradient(linear, left top, left bottom, from(lightblue), to(#39bde8));
+    background: linear-gradient(to bottom, lightblue, #39bde8);
+    border: 1px solid #45c1e8;
+    height: 280px;
+}
+
+.skills__bar.jquery {
+    background: -webkit-gradient(linear, left top, left bottom, from(#b0b4ea), to(#777bb4));
+    background: linear-gradient(to bottom, #b0b4ea, #777bb4);
+    border: 1px solid #989cce;
+    height: 235px;
+}
+
+.skills__bar.ux-ui-design {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdd4db), to(#ffaebc));
+    background: linear-gradient(to bottom, #fdd4db, #ffaebc);
+    border: 1px solid #ffc6cf;
+    height: 120px;
+}
+
+.skills__bar.php-java {
+    background: -webkit-gradient(linear, left top, left bottom, from(#e2c6e2), to(#b530b5));
+    background: linear-gradient(to bottom, #e2c6e2, #b530b5);
+    border: 1px solid #d08ed0;
+    height: 230px;
+}
+
+.skills__bar.mysql {
+    background: -webkit-gradient(linear, left top, left bottom, from(#c7ad9b), to(#8B4513));
+    background: linear-gradient(to bottom, #c7ad9b, #8B4513);
+    border: 1px solid #b17e5a;
+    height: 198px;
+}
+
+.skills__bar.nodejs {
+    background: -webkit-gradient(linear, left top, left bottom, from(#add0a2), to(#74ac63));
+    background: linear-gradient(to bottom, #add0a2, #74ac63);
+    border: 1px solid #8cbd7d;
+    height: 167px;
+}
+
+.skills__bar > div {
+    position: relative;
+    top: 100%;
+    margin-top: 25px;
+    margin-left: 14px;
+    -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+}
+
+.skills__bar.deflated {
+    height: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .skills__bar {
+        margin-left: 3%;
+        width: 7%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .skills-chart {
+        font-size: 14px;
+    }
+
+    .skills__bar {
+        width: 6.5%;
+        margin-left: 3%;
+    }
+
+    .skills__bar-label {
+        margin-top: 20px;
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    #skills {
+        display: none;
+    }
+}
