@@ -238,16 +238,19 @@ $('.header__nav-menu, .home__nav-menu').on('touchend', function (e) {
 });
 
 function getSectionId(target) {
-    if(target && target.nodeName == 'LI' || target.nodeName == 'I' ||
-       target.nodeName == 'DIV') {
-        if(target.nodeName == 'DIV') target = target.parentElement;
-        if(target.nodeName == 'I') target = target.parentElement.parentElement;
+    if(target && target.nodeName == 'LI' || target.nodeName == 'I' || target.nodeName == 'DIV') {
+        if(target.nodeName == 'DIV') {
+            target = target.parentElement;
+        } else if(target.nodeName == 'I' && target.parentElement.nodeName == 'DIV') {
+            target = target.parentElement.parentElement;
+        } else if(target.nodeName == 'I') {
+            target = target.parentElement;
+        }
 
         var data = $(target).data('scroll-to');
         return scrollToSection(data);
     }
 }
-
 
 (function initCarouselForTouchDevices() {
     var touchStartPointX = null;
@@ -256,27 +259,29 @@ function getSectionId(target) {
     if(supportsTouch) {
         // hide carousel controls and use swiping instead to spin the carousel
         $('.carousel-controls').css('display', 'none');
-        $('.carousel-inner').on('touchstart', function (e) {
+        $('.carousel').on('touchstart', function (e) {
             touchStartPointX = e.originalEvent.touches[0].clientX;
             touchMovePointX = e.originalEvent.touches[0].clientX;
         });
 
-        $('.carousel-inner').on('touchmove', function (e) {
+        $('.carousel').on('touchmove', function (e) {
             touchMovePointX = e.originalEvent.touches[0].clientX;
         });
 
-        $('.carousel-inner').on('touchend', function (e) {
-            if(touchStartPointX !== touchMovePointX &&
-               Math.abs(touchStartPointX - touchMovePointX) > 50) {
+        $('.carousel').on('touchend', function (e) {
+            var $targetCarousel = $(e.currentTarget);
+            var targetCarouselId = $targetCarousel.attr('id');
+
+            if(touchStartPointX !== touchMovePointX && Math.abs(touchStartPointX - touchMovePointX) > 100) {
                 var swipedLeft = (touchStartPointX - touchMovePointX > 0) ? true : false;
-                var images = $activeCarousel.find('.item');
-                var activeImage = $('div.active').index();
+                var images = $targetCarousel.find('.item');
+                var activeImage = $('#' + targetCarouselId + ' .active').index();
                 var nextImage = 1;
                 var hasPreviousImage = (activeImage - 1) >= 0 ? activeImage - 1 : images.length - 1;
                 var hasNextImage = (activeImage + 1) < images.length ? activeImage + 1 : 0;
                 nextImage = swipedLeft ? hasNextImage : hasPreviousImage;
 
-                $('.carousel').carousel(nextImage);
+                $targetCarousel.carousel(nextImage);
             }
         });
     }
