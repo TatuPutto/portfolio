@@ -118,6 +118,10 @@ function setActiveNavMenuIndex() {
     if($document.scrollTop() >= skillsSectionOffset - 500) inflateBars();
 }
 
+function inflateBars() {
+    $('.skills__bar').removeClass('deflated');
+}
+
 function scrollToSection(section) {
     var sections = $('section');
     var offset = (section === 3 ? viewportHeight / 3 : 0);
@@ -129,14 +133,10 @@ function scrollToSection(section) {
             setTimeout(function () {
                 $('#contact-info').removeClass('highlight');
             }, 400);
-
         }
     });
 }
 
-function inflateBars() {
-    $('.skills__bar').removeClass('deflated');
-}
 
 function showAdditionalDetails(projectNum) {
     var projectIdSelector = '#project-' + projectNum;
@@ -286,3 +286,35 @@ function getSectionId(target) {
         });
     }
 }());
+
+setInterval(changeHomeBackground, 10000);
+var nextImageIndex = 1;
+
+function changeHomeBackground() {
+    var backgroundImages = [
+        './images/bg.png',
+        './images/wordcloud.png',
+        'http://c7.alamy.com/comp/FAMTWT/laptop-computer-works-web-programmer-at-work-men-browsing-website-FAMTWT.jpg'
+    ];
+    var nextImage = new Image();
+
+    var $backgroundImage = $('.home__background-image');
+    $backgroundImage.addClass('fade-out');
+
+    // start downloading next
+    setTimeout(function () {
+        nextImage.onload = function () {
+            $backgroundImage.attr('src', this.src);
+            $backgroundImage.removeClass('fade-out');
+        }
+        nextImage.src = backgroundImages[nextImageIndex];
+    }, 1600);
+
+    if(nextImageIndex < backgroundImages.length - 1) {
+        nextImageIndex++;
+    } else {
+        nextImageIndex = 0;
+    }
+
+
+}

@@ -9,8 +9,22 @@
     background: linear-gradient(to bottom right, #3adca9, #3abca9);
     background: -webkit-gradient(linear, right top, left bottom, from(#59daef), to(#3aaabc));
     background: linear-gradient(to bottom right, #59daef, #3aaabc);
+    background: linear-gradient(to bottom right, rgba(1, 40, 58, 0.95), rgba(43, 157, 175, 0.9));
     color: #676767;
 }
+
+.home__background-image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
 
 .home__intro {
     position: relative;
@@ -31,7 +45,7 @@
 }
 
 .home__secondary-title {
-    color: #676767;
+    /*color: #676767;*/
 }
 
 .home__feature {
