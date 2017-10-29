@@ -287,7 +287,7 @@ function getSectionId(target) {
     }
 }());
 
-setInterval(changeHomeBackground, 10000);
+//setInterval(changeHomeBackground, 10000);
 var nextImageIndex = 1;
 
 function changeHomeBackground() {
@@ -310,7 +310,8 @@ function changeHomeBackground() {
         nextImage.src = backgroundImages[nextImageIndex];
     }, 1600);
 
-    if(nextImageIndex < backgroundImages.length - 1) {
+    console.log(nextImageIndex);
+    if(nextImageIndex < (backgroundImages.length - 1)) {
         nextImageIndex++;
     } else {
         nextImageIndex = 0;

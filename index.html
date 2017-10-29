@@ -34,52 +34,53 @@
     </header>
 
     <div class="container-fluid match-viewport-height">
-        <img class="home__background-image" src="./images/bg.png">
-        <section id="home" class="row home">
-
-            <div class="restricted-width-wide match-viewport-height">
-                <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 home__intro">
-                    <div class="home__title-container">
-                        <h1 class="home__title">Tatu Putto</h1>
-                        <h2 class="home__secondary-title">Aspiring Web Developer</h2>
+        <div class="row match-viewport-height">
+        <img class="home__background-image" src="./images/bg1.png">
+            <section id="home" class="home">
+                <div class="restricted-width-wide match-viewport-height">
+                    <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 home__intro">
+                        <div class="home__title-container">
+                            <h1 class="home__title">Tatu Putto</h1>
+                            <h2 class="home__secondary-title">Aspiring Web Developer</h2>
+                        </div>
+                        <div class="home__feature-container">
+                            <p class="home__feature">
+                                I design and implement beautiful, efficient, mobile-friendly web applications.
+                                Currently looking for a chance to put my web development skills into use in a professional setting.
+                            </p>
+                        </div>
                     </div>
-                    <div class="home__feature-container">
-                        <p class="home__feature">
-                            I design and implement beautiful, efficient, mobile-friendly web applications.
-                            Currently looking for a chance to put my web development skills into use in a professional setting.
-                        </p>
+                    <div class="col-md-3 col-md-offset-1 col-xs-12 home__navigation-container">
+                        <nav class="home__nav-menu">
+                            <ul>
+                                <li class="active hidden-right" data-scroll-to="0">
+                                    <div class="hexagon"><i class="fa fa-home"></i> Home</div>
+                                </li>
+                                <li class="active hidden-right" data-scroll-to="1">
+                                    <div class="hexagon"><i class="fa fa-flask"></i> Projects</div>
+                                </li>
+                                <li class="active hidden-right" data-scroll-to="2">
+                                    <div class="hexagon"><i class="fa fa-info-circle"></i> About</div>
+                                </li>
+                                <li class="active hidden-right" data-scroll-to="3">
+                                    <div class="hexagon"><i class="fa fa-vcard-o"></i> Contact</div>
+                                </li>
+                                <li class="active hidden-right" data-scroll-to="4">
+                                    <div class="hexagon"><i class="fa fa-bar-chart"></i> Skills</div>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-                <div class="col-md-3 col-md-offset-1 col-xs-12 home__navigation-container">
-                    <nav class="home__nav-menu">
-                        <ul>
-                            <li class="active hidden-right" data-scroll-to="0">
-                                <div class="hexagon"><i class="fa fa-home"></i> Home</div>
-                            </li>
-                            <li class="active hidden-right" data-scroll-to="1">
-                                <div class="hexagon"><i class="fa fa-flask"></i> Projects</div>
-                            </li>
-                            <li class="active hidden-right" data-scroll-to="2">
-                                <div class="hexagon"><i class="fa fa-info-circle"></i> About</div>
-                            </li>
-                            <li class="active hidden-right" data-scroll-to="3">
-                                <div class="hexagon"><i class="fa fa-vcard-o"></i> Contact</div>
-                            </li>
-                            <li class="active hidden-right" data-scroll-to="4">
-                                <div class="hexagon"><i class="fa fa-bar-chart"></i> Skills</div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
 
-            <div class="scroll-to-projects">
-                <button onclick="scrollToSection(1)">
-                    Check out my projects<br>
-                    <i class="fa fa-angle-double-down"></i>
-                </button>
-            </div>
-        </section>
+                <div class="scroll-to-projects">
+                    <button onclick="scrollToSection(1)">
+                        Check out my projects<br>
+                        <i class="fa fa-angle-double-down"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
     </div>
 
     <div class="container-fluid">
