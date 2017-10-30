@@ -35,10 +35,10 @@
 
     <div class="container-fluid match-viewport-height">
         <div class="row match-viewport-height">
-        <img class="home__background-image" src="./images/bg1.png">
+        <img class="home__background-image" src="./images/projects.png">
             <section id="home" class="home">
                 <div class="restricted-width-wide match-viewport-height">
-                    <div class="col-md-8 col-sm-10 col-md-offset-0 col-sm-offset-1 home__intro">
+                    <div class="col-sm-8 col-sm-offset-2 home__intro">
                         <div class="home__title-container">
                             <h1 class="home__title">Tatu Putto</h1>
                             <h2 class="home__secondary-title">Aspiring Web Developer</h2>
@@ -50,9 +50,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-md-offset-1 col-xs-12 home__navigation-container">
+                    <div class="col-sm-8 col-sm-offset-2 col-xs-12 home__navigation-container">
                         <nav class="home__nav-menu">
-                            <ul>
+                            <!--<ul>
                                 <li class="active hidden-right" data-scroll-to="0">
                                     <div class="hexagon"><i class="fa fa-home"></i> Home</div>
                                 </li>
@@ -67,6 +67,23 @@
                                 </li>
                                 <li class="active hidden-right" data-scroll-to="4">
                                     <div class="hexagon"><i class="fa fa-bar-chart"></i> Skills</div>
+                                </li>
+                            </ul>-->
+                            <ul>
+                                <!--<li class="active hidden-right" data-scroll-to="0">
+                                    <i class="fa fa-home"></i> Home
+                                </li>-->
+                                <li class="hidden-right active" data-scroll-to="1">
+                                    <i class="fa fa-flask"></i> Projects
+                                </li>
+                                <li class="hidden-right" data-scroll-to="2">
+                                    <i class="fa fa-info-circle"></i> About
+                                </li>
+                                <li class="hidden-right" data-scroll-to="3">
+                                    <i class="fa fa-vcard-o"></i> Contact
+                                </li>
+                                <li class="hidden-right" data-scroll-to="4">
+                                    <i class="fa fa-bar-chart"></i> Skills
                                 </li>
                             </ul>
                         </nav>
@@ -85,304 +102,312 @@
 
     <div class="container-fluid">
         <section id="projects" class="row section-dark">
-            <div id="project-1" class="project">
-                <h3 class="project__title">
-                    <a target="_blank" href="https://fooddiary.tputto.com">Food diary</a>
-                </h3>
-                <div class="project__thumbnail-container">
-                    <div id="food-diary-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="d-block img-fluid" src="./images/food-diary-front-top.png">
+            <div id="project-1" class="row restricted-width-medium">
+                <div class="col-xs-12 project">
+                    <div class="project__thumbnail-container">
+                        <div id="food-diary-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img class="d-block img-fluid" src="./images/food-diary-front-top.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-front-bottom.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-food-selection-mobile.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-front-middle-mobile.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-week-view.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-day-view.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-week-view-mobile.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/food-diary-day-view-top-mobile.png">
+                                </div>
+                                <div class="carousel-controls">
+                                    <a href="#food-diary-carousel" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a href="#food-diary-carousel" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-front-bottom.png">
+                            <ol class="carousel-indicators">
+                                <li data-target="#food-diary-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="1"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="2"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="3"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="4"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="5"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="6"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="7"></li>
+                                <li data-target="#food-diary-carousel" data-slide-to="8"></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="project__details">
+                        <h3 class="project__title">
+                            <a target="_blank" href="https://fooddiary.tputto.com">Food diary</a>
+                        </h3>
+                        <div class="project__description">
+                            <p>
+                                Food diary application for tracking macronutrient and energy consumption.
+                                This is my latest solo project and the first venture into the wonderful world of Node.js development.
+                                My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive
+                                coverage of finnish food products and ingredients by combining
+                                <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
+                            </p>
+                        </div>
+                        <div class="project__additional-info">
+                            <div class="project__technical-details">
+                                <h4>Techical Details</h4>
+                                <ul>
+                                    <li>Node.js / MySQL back-end (exposes resources via RESTful API).</li>
+                                    <li>UI written in React (consumes the API).</li>
+                                    <li>Client-side routing with React Router for SPA experience.</li>
+                                    <li>Responsiveness with Bootstrap 3 and custom CSS.</li>
+                                    <li>Web scraping algorithm with Node.js and Cheerio.</li>
+                                </ul>
                             </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-front-top-mobile.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-food-selection-mobile.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-front-middle-mobile.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-week-view.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-day-view.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-week-view-mobile.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/food-diary-day-view-top-mobile.png">
-                            </div>
-                            <div class="carousel-controls">
-                                <a href="#food-diary-carousel" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                                <a href="#food-diary-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
+                            <div class="project__keywords">
+                                <h4>Keywords</h4>
+                                <div class="project__keyword-labels">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>React Router</span>
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>LESS</span>
+                                    <span>Bootstrap</span>
+                                    <span>Webpack</span>
+                                    <span>Single-page application</span>
+                                    <span>Responsive design</span>
+                                    <span>Node.js</span>
+                                    <span>MySQL</span>
+                                    <span>REST</span>
+                                    <span>JSON</span>
+                                    <span>Web scraping</span>
+                                    <span>Cheerio</span>
+                                </div>
                             </div>
                         </div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#food-diary-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="1"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="2"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="3"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="4"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="5"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="6"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="7"></li>
-                            <li data-target="#food-diary-carousel" data-slide-to="8"></li>
-                        </ol>
+                        <div class="project__content-divider">
+                            <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(1);">
+                                <i class="fa fa-chevron-down"></i> Techical Details
+                            </button>
+                        </div>
+                        <div class="project__actions">
+                            <a class="no-underline" href="https://fooddiary.tputto.com" target="_blank">
+                                <button class="btn btn--call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
+                            </a>
+                            <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
+                            <!--<span>
+                                <a onclick="openImageCarouselOverlay('#food-diary-carousel');">Gallery (7)</a>
+                            </span>-->
+                        </div>
                     </div>
                 </div>
-                <div class="project__details">
-                    <div class="project__description">
-                        <p>
-                            Food diary application for tracking macronutrient and energy consumption.
-                            This is my latest solo project and the first venture into the wonderful world of Node.js development.
-                            My goal was to create a free, easy way to track macronutrient and energy consumption and provide comprehensive
-                            coverage of finnish food products and ingredients by combining
-                            <a href="https://fineli.fi/fineli/en/ohje/19?" target="_blank">Fineli's database</a> with web scraped content.
-                        </p>
-                    </div>
-                    <div class="project__additional-info">
-                        <div class="project__technical-details">
-                            <h4>Techical Details</h4>
-                            <ul>
-                                <li>Node.js / MySQL back-end (exposes resources via RESTful API).</li>
-                                <li>UI written in React (consumes the API).</li>
-                                <li>Client-side routing with React Router for SPA experience.</li>
-                                <li>Responsiveness with Bootstrap 3 and custom CSS.</li>
-                                <li>Web scraping algorithm with Node.js and Cheerio.</li>
-                            </ul>
+            </div>
+
+            <div id="project-2" class="row restricted-width-medium">
+                <div class="col-xs-12 project">
+                    <div class="project__thumbnail-container">
+                        <div id="gist-manager-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-single.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-edit.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/gist-management-app-creating.png">
+                                </div>
+                                <div class="carousel-controls">
+                                    <a href="#gist-manager-carousel" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a href="#gist-manager-carousel" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#gist-manager-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#gist-manager-carousel" data-slide-to="1"></li>
+                                <li data-target="#gist-manager-carousel" data-slide-to="2"></li>
+                                <li data-target="#gist-manager-carousel" data-slide-to="3"></li>
+                            </ol>
                         </div>
-                        <div class="project__keywords">
-                            <h4>Keywords</h4>
+                    </div>
+                    <div class="project__details">
+                        <h3 class="project__title">
+                            <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Manager</a>
+                        </h3>
+                        <div class="project__description">
+                            <p>
+                                Web application for managing / discovering code snippets (gists).
+                            </p>
+                        </div>
+
+                        <div class="project__additional-info">
+                            <div class="project__technical-details">
+                                <h4>Techical Details</h4>
+                                <ul>
+                                    <li>Java / Spring back-end (authentication).</li>
+                                    <li>UI written in React (consumes Gist API).</li>
+                                    <li>Flux architechture implemented on the client-side with Redux.</li>
+                                    <li>Client-side routing with React Router for SPA experience.</li>
+                                </ul>
+                            </div>
+                            <div class="project__keywords">
+                                <h4>Keywords</h4>
+                                <div class="project__keyword-labels">
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>React Router</span>
+                                    <span>Redux</span>
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>LESS</span>
+                                    <span>Webpack</span>
+                                    <span>Single-page application</span>
+                                    <span>Java</span>
+                                    <span>Spring MVC</span>
+                                    <span>REST</span>
+                                    <span>JSON</span>
+                                    <span>Oauth 2.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content-divider">
+                            <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(2);">
+                                <i class="fa fa-chevron-down"></i> Techical Details
+                            </button>
+                        </div>
+                        <div class="project__actions">
+                            <a class="no-underline" href="https://opinnaytetyo.tputto.com" target="_blank">
+                                <button class="btn btn--call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
+                            </a>
+                            <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react" target="_blank">GitHub</a>
+                            <!--<span>
+                                <a onclick="openImageCarouselOverlay('#gist-manager-carousel')">Gallery (4)</a>
+                            </span>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project-3" class="row restricted-width-medium">
+                <div class="col-xs-12 project">
+                    <div class="project__thumbnail-container">
+                        <div id="t-idea-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img class="d-block img-fluid" src="./images/t-idea-landing.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/t-idea-listing-view.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/t-idea-newest-ideas-view.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/t-idea-add-idea.png">
+                                </div>
+                                <div class="item">
+                                    <img class="d-block img-fluid" src="./images/t-idea-idea-view.png">
+                                </div>
+                                <div class="carousel-controls">
+                                    <a href="#t-idea-carousel" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a href="#t-idea-carousel" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#t-idea-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#t-idea-carousel" data-slide-to="1"></li>
+                                <li data-target="#t-idea-carousel" data-slide-to="2"></li>
+                                <li data-target="#t-idea-carousel" data-slide-to="3"></li>
+                                <li data-target="#t-idea-carousel" data-slide-to="4"></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="project__details">
+                        <h3 class="project__title">T-idea</h3>
+                        <div class="project__description">
+                            <p>
+                                Idea / concept sharing platform. This one is an old project from the second year of my studies. Worked as a part of 5 man team,
+                                filling in where more work force was needed. Mostly focused on back-end and database layer.
+                            </p>
+                        </div>
+                        <div class="project__keywords no-margin">
                             <div class="project__keyword-labels">
                                 <span>JavaScript</span>
-                                <span>React</span>
-                                <span>React Router</span>
+                                <span>jQuery</span>
                                 <span>HTML5</span>
                                 <span>CSS3</span>
-                                <span>LESS</span>
-                                <span>Bootstrap</span>
-                                <span>Webpack</span>
-                                <span>Single-page application</span>
-                                <span>Responsive design</span>
-                                <span>Node.js</span>
+                                <span>PHP</span>
                                 <span>MySQL</span>
-                                <span>REST</span>
-                                <span>JSON</span>
-                                <span>Web scraping</span>
-                                <span>Cheerio</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="project__content-divider">
-                        <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(1);">
-                            <i class="fa fa-chevron-down"></i> Techical Details
-                        </button>
-                    </div>
-                    <div class="project__actions">
-                        <a class="no-underline" href="https://fooddiary.tputto.com" target="_blank">
-                            <button class="btn btn--call-to-action" title="Try this application out at fooddiary.tputto.com">Try it Out</button>
-                        </a>
-                        <a href="https://github.com/TatuPutto/food_diary" target="_blank">GitHub</a>
-                        <!--<span>
-                            <a onclick="openImageCarouselOverlay('#food-diary-carousel');">Gallery (7)</a>
-                        </span>-->
+                        <div class="project__content-divider"></div>
+                        <div class="project__actions">
+                            <a href="https://github.com/TatuPutto/T-idea" target="_blank">GitHub</a>
+                            <!--<span style="line-height: 21px;">
+                                <a onclick="openImageCarouselOverlay('#t-idea-carousel')">Gallery (4)</a>
+                            </span>-->
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="project-2" class="project">
-                <h3 class="project__title">
-                    <a href="https://opinnaytetyo.tputto.com" target="_blank">Code Snippet Manager</a>
-                </h3>
-                <div class="project__thumbnail-container">
-                    <div id="gist-manager-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-discover.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-single.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-edit.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/gist-management-app-creating.png">
-                            </div>
-                            <div class="carousel-controls">
-                                <a href="#gist-manager-carousel" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                                <a href="#gist-manager-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
+            <div id="project-4" class="row restricted-width-medium">
+                <div class="col-xs-12 project">
+                    <div class="project__thumbnail-container project__thumbnail-container--dark play-gif" onclick="toggleGif();">
+                        <div class="gif-wrapper">
+                            <img class="project__thumbnail" src="./images/game-of-life-showcase-large.png">
                         </div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#gist-manager-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#gist-manager-carousel" data-slide-to="1"></li>
-                            <li data-target="#gist-manager-carousel" data-slide-to="2"></li>
-                            <li data-target="#gist-manager-carousel" data-slide-to="3"></li>
-                        </ol>
                     </div>
-                </div>
-                <div class="project__details">
-                    <div class="project__description">
-                        <p>
-                            Web application for managing / discovering code snippets (gists).
-                        </p>
-                    </div>
-
-                    <div class="project__additional-info">
-                        <div class="project__technical-details">
-                            <h4>Techical Details</h4>
-                            <ul>
-                                <li>Java / Spring back-end (authentication).</li>
-                                <li>UI written in React (consumes Gist API).</li>
-                                <li>Flux architechture implemented on the client-side with Redux.</li>
-                                <li>Client-side routing with React Router for SPA experience.</li>
-                            </ul>
+                    <div class="project__details">
+                        <h3 class="project__title">Game of Life</h3>
+                        <div class="project__description">
+                            <p>
+                                Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
+                            </p>
                         </div>
-                        <div class="project__keywords">
-                            <h4>Keywords</h4>
+                        <div class="project__keywords no-margin">
                             <div class="project__keyword-labels">
                                 <span>JavaScript</span>
                                 <span>React</span>
-                                <span>React Router</span>
-                                <span>Redux</span>
                                 <span>HTML5</span>
                                 <span>CSS3</span>
-                                <span>LESS</span>
-                                <span>Webpack</span>
-                                <span>Single-page application</span>
-                                <span>Java</span>
-                                <span>Spring MVC</span>
-                                <span>REST</span>
-                                <span>JSON</span>
-                                <span>Oauth 2.0</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="project__content-divider">
-                        <button class="btn btn--toggle project__toggle-additional-info" onclick="showAdditionalDetails(2);">
-                            <i class="fa fa-chevron-down"></i> Techical Details
-                        </button>
-                    </div>
-                    <div class="project__actions">
-                        <a class="no-underline" href="https://opinnaytetyo.tputto.com" target="_blank">
-                            <button class="btn btn--call-to-action" title="Try this application out at opinnaytetyo.tputto.com">Try it Out</button>
-                        </a>
-                        <a href="https://github.com/TatuPutto/opinnaytetyo-redux-react" target="_blank">GitHub</a>
-                        <!--<span>
-                            <a onclick="openImageCarouselOverlay('#gist-manager-carousel')">Gallery (4)</a>
-                        </span>-->
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-3" class="project">
-                <h3 class="project__title">T-idea</h3>
-                <div class="project__thumbnail-container">
-                    <div id="t-idea-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="d-block img-fluid" src="./images/t-idea-landing.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/t-idea-listing-view.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/t-idea-newest-ideas-view.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/t-idea-add-idea.png">
-                            </div>
-                            <div class="item">
-                                <img class="d-block img-fluid" src="./images/t-idea-idea-view.png">
-                            </div>
-                            <div class="carousel-controls">
-                                <a href="#t-idea-carousel" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                </a>
-                                <a href="#t-idea-carousel" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
+                        <div class="project__content-divider"></div>
+                        <div class="project__actions">
+                            <a class="no-underline" href="https://codepen.io/TatuPutto/full/NjWEOM/" target="_blank">
+                                <button class="btn btn--call-to-action">Try it Out</button>
+                            </a>
+                            <a href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
                         </div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#t-idea-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#t-idea-carousel" data-slide-to="1"></li>
-                            <li data-target="#t-idea-carousel" data-slide-to="2"></li>
-                            <li data-target="#t-idea-carousel" data-slide-to="3"></li>
-                            <li data-target="#t-idea-carousel" data-slide-to="4"></li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="project__details">
-                    <div class="project__description">
-                        <p>
-                            Idea / concept sharing platform. This one is an old project from the second year of my studies. Worked as a part of 5 man team,
-                            filling in where more work force was needed. Mostly focused on back-end and database layer.
-                        </p>
-                    </div>
-                    <div class="project__keywords no-margin">
-                        <div class="project__keyword-labels">
-                            <span>JavaScript</span>
-                            <span>jQuery</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                    <div class="project__content-divider"></div>
-                    <div class="project__actions">
-                        <a href="https://github.com/TatuPutto/T-idea" target="_blank">GitHub</a>
-                        <!--<span style="line-height: 21px;">
-                            <a onclick="openImageCarouselOverlay('#t-idea-carousel')">Gallery (4)</a>
-                        </span>-->
-                    </div>
-                </div>
-            </div>
-
-            <div id="project-4" class="project">
-                <h3 class="project__title">Game of Life</h3>
-                <div class="project__thumbnail-container project__thumbnail-container--dark play-gif" onclick="toggleGif();">
-                    <div class="gif-wrapper">
-                        <img class="project__thumbnail" src="./images/game-of-life-showcase-large.png">
-                    </div>
-                </div>
-                <div class="project__details">
-                    <div class="project__description">
-                        <p>
-                            Implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> with React.
-                        </p>
-                    </div>
-                    <div class="project__keywords no-margin">
-                        <div class="project__keyword-labels">
-                            <span>JavaScript</span>
-                            <span>React</span>
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                    <div class="project__content-divider"></div>
-                    <div class="project__actions">
-                        <a class="no-underline" href="https://codepen.io/TatuPutto/full/NjWEOM/" target="_blank">
-                            <button class="btn btn--call-to-action">Try it Out</button>
-                        </a>
-                        <a href="https://github.com/TatuPutto/conway-game-of-life" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>

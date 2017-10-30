@@ -104,6 +104,7 @@ function setActiveNavMenuIndex() {
 
     $('.header__nav-menu > ul > li.active-section').removeClass('active-section');
     if(halfway < projectsSectionOffset) {
+        setPeriodicBackgroundImageChange();
         $('.header__nav-menu > ul > li:first-child').addClass('active-section');
     } else if(halfway >= skillsSectionOffset) {
         $('.header__nav-menu > ul > li:nth-child(5)').addClass('active-section');
@@ -112,6 +113,8 @@ function setActiveNavMenuIndex() {
     } else if(halfway >= aboutSectionOffset) {
         $('.header__nav-menu > ul > li:nth-child(3)').addClass('active-section');
     } else if(halfway >= projectsSectionOffset) {
+        // stop changing landing-page background image
+        clearInterval(backgroundImageChangeInterval);
         $('.header__nav-menu > ul > li:nth-child(2)').addClass('active-section');
     }
 
@@ -287,35 +290,92 @@ function getSectionId(target) {
     }
 }());
 
-//setInterval(changeHomeBackground, 10000);
-var nextImageIndex = 1;
+$('.home__nav-menu > ul > li').on('mouseenter', function (e) {
+    clearInterval(backgroundImageChangeInterval);
+    nextImageIndex = $(e.target).data('scroll-to');
 
-function changeHomeBackground() {
+    if(activeImageIndex !== nextImageIndex) {
+        $('.home__nav-menu > ul > li.active').removeClass('active');
+        changeHomeBackground(nextImageIndex);
+    }
+});
+
+$('.home__nav-menu > ul > li').on('mouseleave', function (e) {
+    // retrigger automatic scroll
+    if(nextImageIndex < 4) {
+        nextImageIndex++;
+    } else {
+        nextImageIndex = 0;
+    }
+
+    setPeriodicBackgroundImageChange();
+});
+
+var backgroundImageChangeInterval = null;
+var changeHomeBackgroundImageTimeout = null;
+var activeImageIndex = 0;
+var nextImageIndex = 1;
+/*
+setTimeout(function () {
+    updateHomeSection();
+    setPeriodicBackgroundImageChange();
+}, 5000);
+*/
+function setPeriodicBackgroundImageChange() {
+    backgroundImageChangeInterval = setInterval(updateHomeSection, 5200);
+}
+
+function updateHomeSection() {
+    changeHomeBackground(nextImageIndex);
+    setListItemActive(nextImageIndex);
+    activeImageIndex = nextImageIndex;
+
+    if(nextImageIndex < 4) {
+        nextImageIndex++;
+    } else {
+        nextImageIndex = 0;
+    }
+}
+
+function setListItemActive(nextImageIndex) {
+    var activeListItem = nextImageIndex;
+    var nextActiveListItem = nextImageIndex + 1;
+
+    if(nextImageIndex === 0) {
+        activeListItem = 5;
+        nextActiveListItem = 1;
+    }
+
+    $('.home__nav-menu > ul > li:nth-child(' + activeListItem + ')').removeClass('active');
+    $('.home__nav-menu > ul > li:nth-child(' + nextActiveListItem + ')').addClass('active');
+
+}
+
+function changeHomeBackground(nextImageIndex) {
     var backgroundImages = [
-        './images/bg.png',
+        //'http://c7.alamy.com/comp/FAMTWT/laptop-computer-works-web-programmer-at-work-men-browsing-website-FAMTWT.jpg',
+        //'./images/placeholder.png',
+        './images/projects.png',
+        './images/image.jpeg',
         './images/wordcloud.png',
-        'http://c7.alamy.com/comp/FAMTWT/laptop-computer-works-web-programmer-at-work-men-browsing-website-FAMTWT.jpg'
+        './images/contact.png',
+        './images/skills.png'
     ];
     var nextImage = new Image();
 
     var $backgroundImage = $('.home__background-image');
     $backgroundImage.addClass('fade-out');
 
-    // start downloading next
-    setTimeout(function () {
+    if(changeHomeBackgroundImageTimeout) {
+        clearTimeout(changeHomeBackgroundImageTimeout);
+    }
+
+    changeHomeBackgroundImageTimeout = setTimeout(function () {
         nextImage.onload = function () {
             $backgroundImage.attr('src', this.src);
             $backgroundImage.removeClass('fade-out');
         }
         nextImage.src = backgroundImages[nextImageIndex];
-    }, 1600);
-
-    console.log(nextImageIndex);
-    if(nextImageIndex < (backgroundImages.length - 1)) {
-        nextImageIndex++;
-    } else {
-        nextImageIndex = 0;
-    }
-
+    }, 1200);
 
 }

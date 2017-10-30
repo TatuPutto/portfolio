@@ -2,6 +2,8 @@
  * Section - HOME
  * ========================================================================== */
 .home {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -18,7 +20,7 @@
     width: 100%;
     height: 100%;
     opacity: 1;
-    transition: opacity 1.5s ease-out;
+    transition: opacity 1s ease-out;
 }
 
 .fade-out {
@@ -105,7 +107,7 @@
             flex-direction: column;
 }
 
-.home__nav-menu ul > li {
+.home__nav-menu > ul > li {
     /*padding: 6px 12px;*/
     width: 120px;
     vertical-align: middle;
@@ -119,16 +121,32 @@
     /*background: #545454;*/
     line-height: 50px;
     cursor: pointer;
+    /*height: 120px;
+    line-height: 110px;*/
+    background: transparent;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    /*margin-bottom: 14px;*/
+    transition: transform 0.3s linear;
+}
+
+.home__nav-menu > ul > li.active {
+    transform: scale(1.1);
+}
+
+.home__nav-menu > ul > li:hover {
+    transform: scale(1.1);
 }
 
 
 
 @media (min-width: 992px) {
-    .home__nav-menu ul > li {
-        -webkit-transform: translateX(0%);
+    .home__nav-menu > ul > li {
+        /*-webkit-transform: translateX(0%);
                 transform: translateX(0%);
         -webkit-transition: all 1s cubic-bezier(0.78, 0, 0.45, 0.86);
         transition: all 1s cubic-bezier(0.78, 0, 0.45, 0.86);
+        transition: all 1s cubic-bezier(0.78, 0, 0.45, 0.86);*/
         /*transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;*/
     }
 }
@@ -179,6 +197,26 @@
         border-bottom: solid 4.8284px #ffffff;
         border-left: solid 4.8284px #ffffff;
     }
+
+    .home__nav-menu > ul {
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    .home__nav-menu > ul > li {
+        margin-left: 4px;
+        margin-right: 4px;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        width: 110px;
+        line-height: 50px;
+    }
 }
 
 
@@ -190,7 +228,7 @@
                 transform: translateX(600%);
     }
 
-    .home__nav-menu ul > li:nth-child(2) {
+    /*.home__nav-menu ul > li:nth-child(2) {
         right: 65px;
         bottom: 28px;
     }
@@ -206,7 +244,7 @@
 
     .home__nav-menu ul > li:nth-child(5) {
         bottom: 115px;
-    }
+    }*/
 }
 
 
