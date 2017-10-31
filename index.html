@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
-    <!--<link rel="stylesheet" type="text/css" href="./css/styles.css"></link>-->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"></link>
     <script type="text/javascript">
-        (function() {
+        /*(function() {
             var links = document.getElementsByTagName('link');
             var lastLink = links[links.length - 1];
             var link = document.createElement('link');
@@ -14,7 +14,7 @@
             link.setAttribute('type', 'text/css');
             link.setAttribute('href', './css/styles.css?' + new Date().getTime().toString());
             document.querySelector('head').appendChild(link);
-         })();
+        })();*/
      </script>
     <title>Tatu Putto, Web Developer</title>
 </head>
@@ -35,10 +35,21 @@
 
     <div class="container-fluid match-viewport-height">
         <div class="row match-viewport-height">
-        <img class="home__background-image" src="./images/projects.png">
+        <img class="active home__background-image" src="./images/wordcloud.png" srcset="
+            ./images/wordcloud.png 1600w,
+            ./images/wordcloud-small.png 1100w,
+            ./images/wordcloud-extra-small.png 800w
+        ">
+        <img class="fade-out home__background-image" src="./images/projects.png">
+        <img class="fade-out home__background-image" src="./images/contact.png" srcset="
+            ./images/contact.png 1400w,
+            ./images/contact-small.png 1000w
+        ">
+        <img class="fade-out home__background-image" src="./images/placeholder.png">
+        <img class="fade-out home__background-image" src="./images/placeholder.png">
             <section id="home" class="home">
                 <div class="restricted-width-wide match-viewport-height">
-                    <div class="col-sm-8 col-sm-offset-2 home__intro">
+                    <div class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 home__intro">
                         <div class="home__title-container">
                             <h1 class="home__title">Tatu Putto</h1>
                             <h2 class="home__secondary-title">Aspiring Web Developer</h2>
@@ -50,7 +61,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-8 col-sm-offset-2 col-xs-12 home__navigation-container">
+                    <div class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 home__navigation-container">
                         <nav class="home__nav-menu">
                             <!--<ul>
                                 <li class="active hidden-right" data-scroll-to="0">
@@ -70,19 +81,19 @@
                                 </li>
                             </ul>-->
                             <ul>
-                                <!--<li class="active hidden-right" data-scroll-to="0">
+                                <li class="active hidden-bottom" data-scroll-to="0">
                                     <i class="fa fa-home"></i> Home
-                                </li>-->
-                                <li class="hidden-right active" data-scroll-to="1">
+                                </li>
+                                <li class="hidden-bottom" data-scroll-to="1">
                                     <i class="fa fa-flask"></i> Projects
                                 </li>
-                                <li class="hidden-right" data-scroll-to="2">
+                                <li class="hidden-bottom" data-scroll-to="2">
                                     <i class="fa fa-info-circle"></i> About
                                 </li>
-                                <li class="hidden-right" data-scroll-to="3">
+                                <li class="hidden-bottom" data-scroll-to="3">
                                     <i class="fa fa-vcard-o"></i> Contact
                                 </li>
-                                <li class="hidden-right" data-scroll-to="4">
+                                <li class="hidden-bottom" data-scroll-to="4">
                                     <i class="fa fa-bar-chart"></i> Skills
                                 </li>
                             </ul>

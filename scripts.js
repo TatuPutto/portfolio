@@ -49,13 +49,13 @@ function animateLandingPageNavigation() {
     setTimeout(function () {
         animationInterval = setInterval(function () {
             if(i <= 5) {
-                $('.home__nav-menu > ul > li:nth-child(' + i + ')').removeClass('hidden-right');
+                $('.home__nav-menu > ul > li:nth-child(' + i + ')').removeClass('hidden-bottom');
                 i++;
             } else {
                 clearInterval(animationInterval);
             }
-        }, 200);
-    }, 500)
+        }, 150);
+    }, 1000)
 }
 
 function showLandingPageNavigationWithoutAnimation() {
@@ -193,6 +193,7 @@ function toggleGif() {
     if($($thumbnailContainer).hasClass('play-gif')) {
         $thumbnailContainer.removeClass('play-gif');
         $thumbnailContainer.addClass('gif-loading');
+        $image.css('visibility', 'hidden');
 
         var gif = new Image();
         gif.onload = function() {
@@ -202,6 +203,7 @@ function toggleGif() {
 
             setTimeout(function () {
                 $image.attr('src', this.src);
+                $image.css('visibility', 'visible');
             }.bind(this), 300);
         };
         gif.src = './images/game-of-life-showcase-large.gif';
@@ -295,7 +297,11 @@ $('.home__nav-menu > ul > li').on('mouseenter', function (e) {
     nextImageIndex = $(e.target).data('scroll-to');
 
     if(activeImageIndex !== nextImageIndex) {
+        var $activeImage = $('home__background-image.active');
+        $activeImage.removeClass('.active');
+        $('.home__background-image:nth-child(' + (nextImageIndex + 1) + ')').addClass('.active');
         $('.home__nav-menu > ul > li.active').removeClass('active');
+        $('.home__nav-menu > ul > li:nth-child(' + (nextImageIndex + 1) + ')').addClass('active');
         changeHomeBackground(nextImageIndex);
     }
 });
@@ -315,14 +321,14 @@ var backgroundImageChangeInterval = null;
 var changeHomeBackgroundImageTimeout = null;
 var activeImageIndex = 0;
 var nextImageIndex = 1;
-/*
+
 setTimeout(function () {
     updateHomeSection();
     setPeriodicBackgroundImageChange();
-}, 5000);
-*/
+}, 2000);
+
 function setPeriodicBackgroundImageChange() {
-    backgroundImageChangeInterval = setInterval(updateHomeSection, 5200);
+    backgroundImageChangeInterval = setInterval(updateHomeSection, 2000);
 }
 
 function updateHomeSection() {
@@ -348,34 +354,17 @@ function setListItemActive(nextImageIndex) {
 
     $('.home__nav-menu > ul > li:nth-child(' + activeListItem + ')').removeClass('active');
     $('.home__nav-menu > ul > li:nth-child(' + nextActiveListItem + ')').addClass('active');
-
 }
 
-function changeHomeBackground(nextImageIndex) {
-    var backgroundImages = [
-        //'http://c7.alamy.com/comp/FAMTWT/laptop-computer-works-web-programmer-at-work-men-browsing-website-FAMTWT.jpg',
-        //'./images/placeholder.png',
-        './images/projects.png',
-        './images/image.jpeg',
-        './images/wordcloud.png',
-        './images/contact.png',
-        './images/skills.png'
-    ];
-    var nextImage = new Image();
+function changeHomeBackground(nextIndex) {
+    var $images = $('.home__background-image');
+    var $activeImage = $('.home__background-image.active');
+    var prevIndex = (nextIndex < ($images.length - 1)) ? nextIndex - 1 : $images.length - 1;
+    var $nextImage = $($images[nextIndex]);
 
-    var $backgroundImage = $('.home__background-image');
-    $backgroundImage.addClass('fade-out');
+    $activeImage.removeClass('active');
 
-    if(changeHomeBackgroundImageTimeout) {
-        clearTimeout(changeHomeBackgroundImageTimeout);
-    }
-
-    changeHomeBackgroundImageTimeout = setTimeout(function () {
-        nextImage.onload = function () {
-            $backgroundImage.attr('src', this.src);
-            $backgroundImage.removeClass('fade-out');
-        }
-        nextImage.src = backgroundImages[nextImageIndex];
-    }, 1200);
-
+    setTimeout(function () {
+        $nextImage.addClass('active');
+    }, 600);
 }
