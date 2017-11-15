@@ -35,26 +35,29 @@
 
     <div class="container-fluid match-viewport-height">
         <div class="row match-viewport-height">
-        <img class="active home__background-image" src="./images/wordcloud.png" srcset="
-            ./images/wordcloud.png 1600w,
-            ./images/wordcloud-small.png 1100w,
-            ./images/wordcloud-extra-small.png 800w
-        ">
-        <img class="fade-out home__background-image" src="./images/projects.png">
-        <img class="fade-out home__background-image" src="./images/contact.png" srcset="
-            ./images/contact.png 1400w,
-            ./images/contact-small.png 1000w
-        ">
-        <img class="fade-out home__background-image" src="./images/placeholder.png">
-        <img class="fade-out home__background-image" src="./images/placeholder.png">
+            <div class="home__background-images">
+                <img class="active fade-out home__background-image" src="./images/placeholder.png">
+                <img class="fade-out home__background-image" src="./images/projects.png">
+                <img class="fade-out home__background-image" src="./images/placeholder.png">
+                <img class="fade-out home__background-image" src="./images/contact.png" srcset="
+                    ./images/contact.png 1400w,
+                    ./images/contact-small.png 1000w
+                ">
+                <img class="home__background-image" src="./images/wordcloud.png" srcset="
+                    ./images/wordcloud.png 1600w,
+                    ./images/wordcloud-small.png 1100w,
+                    ./images/wordcloud-extra-small.png 800w
+                ">
+            </div>
             <section id="home" class="home">
                 <div class="restricted-width-wide match-viewport-height">
                     <div class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 home__intro">
-                        <div class="home__title-container">
+                        <div class="hidden-top home__title-container">
                             <h1 class="home__title">Tatu Putto</h1>
                             <h2 class="home__secondary-title">Aspiring Web Developer</h2>
                         </div>
-                        <div class="home__feature-container">
+                        <hr class="truncated-line home__intro-divider">
+                        <div class="hidden-bottom home__feature-container">
                             <p class="home__feature">
                                 I design and implement beautiful, efficient, mobile-friendly web applications.
                                 Currently looking for a chance to put my web development skills into use in a professional setting.
@@ -63,23 +66,6 @@
                     </div>
                     <div class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 home__navigation-container">
                         <nav class="home__nav-menu">
-                            <!--<ul>
-                                <li class="active hidden-right" data-scroll-to="0">
-                                    <div class="hexagon"><i class="fa fa-home"></i> Home</div>
-                                </li>
-                                <li class="active hidden-right" data-scroll-to="1">
-                                    <div class="hexagon"><i class="fa fa-flask"></i> Projects</div>
-                                </li>
-                                <li class="active hidden-right" data-scroll-to="2">
-                                    <div class="hexagon"><i class="fa fa-info-circle"></i> About</div>
-                                </li>
-                                <li class="active hidden-right" data-scroll-to="3">
-                                    <div class="hexagon"><i class="fa fa-vcard-o"></i> Contact</div>
-                                </li>
-                                <li class="active hidden-right" data-scroll-to="4">
-                                    <div class="hexagon"><i class="fa fa-bar-chart"></i> Skills</div>
-                                </li>
-                            </ul>-->
                             <ul>
                                 <li class="active hidden-bottom" data-scroll-to="0">
                                     <i class="fa fa-home"></i> Home
@@ -513,7 +499,8 @@
         </span>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="scripts.js?cdafdas=1323fdsaf1w442352"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./interactive-hero-section.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>

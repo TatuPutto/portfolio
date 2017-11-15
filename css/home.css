@@ -27,7 +27,6 @@
     opacity: 1;
 }
 
-
 .home__intro {
     position: relative;
     top: 44%;
@@ -36,11 +35,40 @@
     color: #fff;
 }
 
+
 .home__title-container {
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;
     margin-bottom: 35px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #fff;*/
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.5s ease-out, opacity 1s ease-out;
 }
+
+.home__intro-divider {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    border-top: 3px solid #fff;
+    width: 100%;
+    transform: translateX(0%);
+    transition: all 0.4s ease-out;
+}
+
+.truncated-line {
+    width: 0;
+    transform: translateX(50%);
+}
+
+.hidden-top {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.home__feature-container.hidden-bottom {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 
 .home__title {
     color: inherit;
@@ -48,6 +76,12 @@
 
 .home__secondary-title {
     /*color: #676767;*/
+}
+
+.home__feature-container {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.5s ease-out, opacity 1s ease-out;
 }
 
 .home__feature {
@@ -126,17 +160,18 @@
     line-height: 110px;*/
     background: transparent;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 2px solid #fff;
     /*margin-bottom: 14px;*/
-    transition: all 0.3s linear;
+    backface-visibility: hidden;
+    transition: all 0.5s ease-out;
 }
 
 .home__nav-menu > ul > li.active {
-    transform: scale(1.12);
+    transform: scale(1.08);
 }
 
 .home__nav-menu > ul > li:hover {
-    transform: scale(1.12);
+    transform: scale(1.08);
 }
 
 
@@ -160,45 +195,6 @@
         transform: translateY(-50%);
     }
 
-    .hexagon {
-        position: relative;
-        width: 120px;
-        height: 68px;
-        line-height: 68px;
-        background-color: transparent;
-        margin: 34.64px 0;
-        border-left: solid 3px #ffffff;
-        border-right: solid 3px #ffffff;
-        transition: transform 0.3s linear;
-    }
-
-    .hexagon:before,
-    .hexagon:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        width: 88px;
-        height: 86px;
-        -webkit-transform: scaleY(0.5774) rotate(-45deg);
-        transform: scaleY(0.5774) rotate(-45deg);
-        background-color: inherit;
-        left: 13.4px;
-        border-radius: 6px;
-    }
-
-    .hexagon:before {
-        top: -43px;
-        border-top: solid 4.8284px #ffffff;
-        border-right: solid 4.8284px #ffffff;
-        transition: border-top 0.4s linear, border-right 0.4s linear 0.4s;
-    }
-
-    .hexagon:after {
-        bottom: -43px;
-        border-bottom: solid 4.8284px #ffffff;
-        border-left: solid 4.8284px #ffffff;
-    }
-
     .home__nav-menu > ul {
         display: -webkit-box;
         -webkit-box-orient: horizontal;
@@ -213,7 +209,7 @@
     .home__nav-menu > ul > li {
         margin-left: 4px;
         margin-right: 4px;
-        border: 3px solid #fff;
+        /*border: 3px solid #fff;*/
         border-radius: 5px;
         width: 110px;
         line-height: 50px;

@@ -14,6 +14,17 @@ var activeProject = 1;
 $(document).ready(function () {
     setLandingPageHeight();
     $body.addClass('ready');
+    $('.home__title-container').removeClass('hidden-top');
+
+    //setTimeout(function () {
+        $('.home__feature-container').removeClass('hidden-bottom');
+    //}, 500);
+
+    setTimeout(function () {
+        $('.home__intro-divider').removeClass('truncated-line');
+    }, 500);
+
+
 
     // make header fixed onload if scrolled beyond landing page
     if($document.scrollTop() > ($('.home__navigation-container').offset().top)) {
@@ -25,7 +36,7 @@ $(document).ready(function () {
 
     setTimeout(function () {
         $header.removeClass('hidden');
-        $overlay.removeClass('hidden');
+        //$overlay.removeClass('hidden');
     }, 500);
 });
 
@@ -55,7 +66,7 @@ function animateLandingPageNavigation() {
                 clearInterval(animationInterval);
             }
         }, 150);
-    }, 1000)
+    }, 1200)
 }
 
 function showLandingPageNavigationWithoutAnimation() {
@@ -104,7 +115,6 @@ function setActiveNavMenuIndex() {
 
     $('.header__nav-menu > ul > li.active-section').removeClass('active-section');
     if(halfway < projectsSectionOffset) {
-        setPeriodicBackgroundImageChange();
         $('.header__nav-menu > ul > li:first-child').addClass('active-section');
     } else if(halfway >= skillsSectionOffset) {
         $('.header__nav-menu > ul > li:nth-child(5)').addClass('active-section');
@@ -113,8 +123,6 @@ function setActiveNavMenuIndex() {
     } else if(halfway >= aboutSectionOffset) {
         $('.header__nav-menu > ul > li:nth-child(3)').addClass('active-section');
     } else if(halfway >= projectsSectionOffset) {
-        // stop changing landing-page background image
-        clearInterval(backgroundImageChangeInterval);
         $('.header__nav-menu > ul > li:nth-child(2)').addClass('active-section');
     }
 
@@ -155,34 +163,6 @@ function showAdditionalDetails(projectNum) {
         $additionalInfoContainer.addClass('open');
         $additionalInfoVisibilityIndicator.addClass('open');
     }
-}
-
-function openImageCarouselOverlay(carouselId) {
-    $activeCarousel = $(carouselId);
-
-    $(carouselId).addClass('active-carousel');
-    $header.removeClass('fixed');
-    $overlay.addClass('open');
-    $body.css('overflow-y', 'hidden');
-    $body.css('background-color', '#3c3c3c');
-    fitImageCarousel(carouselId);
-}
-
-function closeCarouselOverlay() {
-    $activeCarousel = $overlay.find('.active-carousel');
-
-    $header.addClass('fixed');
-    $overlay.removeClass('open');
-    $activeCarousel.removeClass('.active-carousel');
-    $activeCarousel.css('display', 'none');
-    $body.css('overflow-y', 'scroll');
-    $body.css('background-color', 'initial');
-}
-
-function fitImageCarousel(carouselId) {
-    $activeCarousel.find('.carousel-inner').css('height', (viewportHeight - 50 - 50 - 30 - 30));
-    $activeCarousel.css('display', 'block');
-    $overlay.css('display', 'block');
 }
 
 function toggleGif() {
@@ -291,80 +271,3 @@ function getSectionId(target) {
         });
     }
 }());
-
-$('.home__nav-menu > ul > li').on('mouseenter', function (e) {
-    clearInterval(backgroundImageChangeInterval);
-    nextImageIndex = $(e.target).data('scroll-to');
-
-    if(activeImageIndex !== nextImageIndex) {
-        var $activeImage = $('home__background-image.active');
-        $activeImage.removeClass('.active');
-        $('.home__background-image:nth-child(' + (nextImageIndex + 1) + ')').addClass('.active');
-        $('.home__nav-menu > ul > li.active').removeClass('active');
-        $('.home__nav-menu > ul > li:nth-child(' + (nextImageIndex + 1) + ')').addClass('active');
-        changeHomeBackground(nextImageIndex);
-    }
-});
-
-$('.home__nav-menu > ul > li').on('mouseleave', function (e) {
-    // retrigger automatic scroll
-    if(nextImageIndex < 4) {
-        nextImageIndex++;
-    } else {
-        nextImageIndex = 0;
-    }
-
-    setPeriodicBackgroundImageChange();
-});
-
-var backgroundImageChangeInterval = null;
-var changeHomeBackgroundImageTimeout = null;
-var activeImageIndex = 0;
-var nextImageIndex = 1;
-
-setTimeout(function () {
-    updateHomeSection();
-    setPeriodicBackgroundImageChange();
-}, 2000);
-
-function setPeriodicBackgroundImageChange() {
-    backgroundImageChangeInterval = setInterval(updateHomeSection, 2000);
-}
-
-function updateHomeSection() {
-    changeHomeBackground(nextImageIndex);
-    setListItemActive(nextImageIndex);
-    activeImageIndex = nextImageIndex;
-
-    if(nextImageIndex < 4) {
-        nextImageIndex++;
-    } else {
-        nextImageIndex = 0;
-    }
-}
-
-function setListItemActive(nextImageIndex) {
-    var activeListItem = nextImageIndex;
-    var nextActiveListItem = nextImageIndex + 1;
-
-    if(nextImageIndex === 0) {
-        activeListItem = 5;
-        nextActiveListItem = 1;
-    }
-
-    $('.home__nav-menu > ul > li:nth-child(' + activeListItem + ')').removeClass('active');
-    $('.home__nav-menu > ul > li:nth-child(' + nextActiveListItem + ')').addClass('active');
-}
-
-function changeHomeBackground(nextIndex) {
-    var $images = $('.home__background-image');
-    var $activeImage = $('.home__background-image.active');
-    var prevIndex = (nextIndex < ($images.length - 1)) ? nextIndex - 1 : $images.length - 1;
-    var $nextImage = $($images[nextIndex]);
-
-    $activeImage.removeClass('active');
-
-    setTimeout(function () {
-        $nextImage.addClass('active');
-    }, 600);
-}
